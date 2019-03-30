@@ -16,7 +16,6 @@ class App extends Component {
                             <Button variant="primary">VI</Button>
                             <Button variant="secondary">SKAAA</Button>
                             <Button variant="success">GREJAA</Button>
-                            <Button variant="danger">EXJOBB</Button>
                         </ButtonToolbar>
                     </div>
 
