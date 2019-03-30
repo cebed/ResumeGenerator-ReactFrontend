@@ -1,2 +1,2 @@
 # ResumeGenerator-ReactFrontend
-Frontend of ResumeGenerator
+Frontend of ResumeGenerator..
