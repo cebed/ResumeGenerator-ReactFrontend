@@ -119,17 +119,17 @@ header div.head h1 {
 }
 
 header div.head p {
-  margin: 18px;
-  padding: 15px;
+  margin: 40px;
+  padding: 12px;
   font-style: italic;
   padding-left: 10px;
   color: black;
-  font-size: 18px;
-  width: 355px;
+
+  font-size: 20px;
+  width: 333px;
   font-weight: bold;
-  height: 125px;
+  height: 135px;
   background-color: #ffffff;
-  border: 1px solid black;
   opacity: 0.6;
 
 }
@@ -138,11 +138,13 @@ header div.head p {
  background: ghostwhite;
  display: block;
  color: black;
- font-weight: bold;
- width: 50%;
- margin: 50px;
+  font-size: 25px;
+ font-weight: bolder;
+  width: 50%;
+text-transform: uppercase;
+ margin: -35px 88px;
  text-align: center;
- padding: 17px;
+ padding: 15px;
  border-radius: 10px;
  text-decoration: none;
  -webkit-box-shadow: 0px 10px 54px -11px rgba(0,0,0,0.75);
