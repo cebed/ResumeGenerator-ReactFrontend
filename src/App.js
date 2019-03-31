@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
+import {Form, Button} from 'react-bootstrap';
 import Header from "./components/header";
-//import Main from "./components/main";
 import Footer from "./components/footer";
 //import logo from './logo.svg';
 import './App.css';
@@ -13,9 +13,7 @@ class App extends Component {
         return (
 
             <div className="App">
-
-
-                <Header />
+                <Header/>
                 <Footer />
 
             </div>

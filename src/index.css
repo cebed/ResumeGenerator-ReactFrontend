@@ -70,20 +70,19 @@ nav ul:last-of-type{
 
 }
 
-
-nav ul li a{
-  color:white;
-  text-decoration: none; 
+nav ul li a {
+  color: white;
+  text-decoration: none;
   font-weight: bold;
   display: block;
 
 }
 
-
 /*------------- HEADER -------------------*/
 
 header {
-  background: url("./images/cvvv.png");
+
+  /*background: url("./images/cvvv.png");*/
   background-size: 100%;
   height: 625px;
   background-position: center;
@@ -112,21 +111,26 @@ header div.head  {
 header div.head h1 {
   font-size: 5rem;
   font-weight: bold;
-  padding-top: 0px;
+  height: 360px;
+  padding-top: -1px;
   margin: 0;
   letter-spacing: 4px;
   border-right: 2px solid #111;
 }
 
+header .last-word{
+  color: lightseagreen;
+}
+
+
 header div.head p {
-  margin: 40px;
+  margin-left: 65px;
   padding: 12px;
   font-style: italic;
   padding-left: 10px;
   color: black;
-
   font-size: 20px;
-  width: 333px;
+  width: 340px;
   font-weight: bold;
   height: 135px;
   background-color: #ffffff;
@@ -135,13 +139,11 @@ header div.head p {
 }
 
 .login {
- background: ghostwhite;
  display: block;
  color: black;
   font-size: 25px;
  font-weight: bolder;
   width: 50%;
-text-transform: uppercase;
  margin: -35px 88px;
  text-align: center;
  padding: 15px;
@@ -157,7 +159,10 @@ text-transform: uppercase;
 .login:hover {
   opacity: 20;
 }
-
+.logier{
+  margin: 20px;
+  font-weight: bold;
+}
 
 footer {
   background:black;
