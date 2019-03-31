@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+import Header from "./components/header";
+//import Main from "./components/main";
+import Footer from "./components/footer";
+//import logo from './logo.svg';
 import './App.css';
-import {ButtonToolbar, Button} from 'react-bootstrap';
-import Bootstap from 'bootstrap/dist/css/bootstrap.css';
+//import {ButtonToolbar, Button} from 'react-bootstrap';
+//import Bootstap from 'bootstrap/dist/css/bootstrap.css';
 
 
 class App extends Component {
@@ -10,29 +13,11 @@ class App extends Component {
         return (
 
             <div className="App">
-                <header className="App-header">
-                    <div className="Btn1">
-                        <ButtonToolbar>
-                            <Button variant="primary">VI</Button>
-                            <Button variant="secondary">SKAAA</Button>
-                            <Button variant="success">GREJAA</Button>
-                        </ButtonToolbar>
-                    </div>
 
 
+                <Header />
+                <Footer />
 
-
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-
-
-                </header>
             </div>
         );
     }
