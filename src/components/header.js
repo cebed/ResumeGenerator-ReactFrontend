@@ -1,9 +1,34 @@
 import React, { Component } from 'react';
 import {Button, Form} from "react-bootstrap";
 import Nav from "./nav";
-
+import axios from 'axios';
 
 class Header extends Component {
+
+    /* just nu hannteras bara att registera sin email address. och det funkar inte heller, just nu skicka bara ett H som skiclas till backenden */
+
+    handleSubmit = event => {
+        event.preventDefault();
+
+
+
+
+
+        axios.post(`http://127.0.0.1:5004/email`, "h" )
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
   render() {
     return (
      
@@ -17,7 +42,7 @@ class Header extends Component {
             <div className="parag">
               <p>Do you want to generate your resume? Or do you want to view your CV and maybe download it? <br/>Let's go!</p>
 
-                <Form className="logier">
+                <Form className="logier" onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" />
