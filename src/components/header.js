@@ -5,31 +5,33 @@ import axios from 'axios';
 
 class Header extends Component {
 
-    /* just nu hannteras bara att registera sin email address. och det funkar inte heller, just nu skicka bara ett H som skiclas till backenden */
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
 
-    handleSubmit = event => {
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
+        const {value} = this.state
 
-
-
-
-
-        axios.post(`http://127.0.0.1:5004/email`, "h" )
-
+       //axios.post(`http://127.0.0.1:5004/register`, value )
+         axios.post(`http://127.0.0.1:5004/login`, value )
     }
 
 
 
 
 
-
-
-
-
-
-
-
   render() {
+      const {value} = this.state
     return (
      
       <header>
@@ -40,12 +42,12 @@ class Header extends Component {
             <h1>Front<span className="last-word">Edge IT</span><br/> Resumes </h1>
             </div>
             <div className="parag">
-              <p>Do you want to generate your resume? Or do you want to view your CV and maybe download it? <br/>Let's go!</p>
+              <p> Do you want to generate your resume? Or do you want to view your CV and maybe download it? <br/>Let's go!</p>
 
                 <Form className="logier" onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control  type="text" value={this.state.value} onChange={this.handleChange} />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
