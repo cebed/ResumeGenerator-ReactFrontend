@@ -10,27 +10,50 @@ class Header extends Component {
         this.state = {value: ''};
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmittRegister= this.handleSubmittRegister.bind(this);
+
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({value: event.target.value, Person: []},
+            );
     }
 
-    handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+    handleSubmittRegister(event) {
+
         event.preventDefault();
         const {value} = this.state
+        const config = {
+            headers: {
+                'content-type': 'multi-part/form-data'
+            }
+        };
 
-       //axios.post(`http://127.0.0.1:5004/register`, value )
-         axios.post(`http://127.0.0.1:5004/login`, value )
+
+        axios.post(`http://127.0.0.1:5004/register`,  value, config )
+        //axios.post(`http://127.0.0.1:5004/register`, value )
+             .then((response) =>{
+                 if(response.status === 200){
+                     alert('Registred as: ' + value );
+                 }
+             });
+    }
+
+    componentDidMount() {
+        axios.get(`http://127.0.0.1:5004/all` )
+            .then(res=> {
+                console.log(res)
+                if(res.status === 200){
+                   /* alert('A name was submitted: failed' );*/
+                }
+                this.setState({Person: res.data})
+            })
+
+
     }
 
 
-
-
-
-  render() {
+    render() {
       const {value} = this.state
     return (
      
@@ -44,9 +67,9 @@ class Header extends Component {
             <div className="parag">
               <p> Do you want to generate your resume? Or do you want to view your CV and maybe download it? <br/>Let's go!</p>
 
-                <Form className="logier" onSubmit={this.handleSubmit}>
+                <Form className="logier" onSubmit={this.handleSubmittRegister}>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>Register by email</Form.Label>
                         <Form.Control  type="text" value={this.state.value} onChange={this.handleChange} />
                     </Form.Group>
 
@@ -61,7 +84,10 @@ class Header extends Component {
                     </Button>
 
                 </Form>
+
             </div>
+
+
         </div>
        
       </header>
