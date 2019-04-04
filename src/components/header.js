@@ -30,7 +30,7 @@ class Header extends Component {
         };
 
 
-        axios.post(`http://127.0.0.1:5004/register`,  value, config )
+        axios.post(`http://ec2-3-9-17-175.eu-west-2.compute.amazonaws.com:5004/register`,  value, config )
         //axios.post(`http://127.0.0.1:5004/register`, value )
              .then((response) =>{
                  if(response.status === 200){
@@ -40,7 +40,7 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://127.0.0.1:5004/all` )
+        axios.get(`http://ec2-3-9-17-175.eu-west-2.compute.amazonaws.com:5004/all` )
             .then(res=> {
                 console.log(res)
                 if(res.status === 200){
