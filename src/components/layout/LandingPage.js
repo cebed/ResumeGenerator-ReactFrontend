@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Button, Form} from "react-bootstrap";
-import Nav from "./nav";
+import Nav from "../nav";
+import Footer from "./footer"
 import axios from 'axios';
 
-class Header extends Component {
+class LandingPage extends Component {
 
     constructor(props) {
         super(props);
@@ -33,9 +34,9 @@ class Header extends Component {
   render() {
       const {value} = this.state
     return (
-     
-      <header>
-            <Nav/>
+        <landingpage>
+
+
         <div className="head">
 
             <div>
@@ -63,11 +64,13 @@ class Header extends Component {
                 </Form>
             </div>
         </div>
-       
-      </header>
+        <Footer/>
+        </landingpage>
+
+
       
     );
   }
 }
 
-export default Header;
+export default LandingPage;

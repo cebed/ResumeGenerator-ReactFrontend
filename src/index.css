@@ -80,7 +80,7 @@ nav ul li a {
 
 /*------------- HEADER -------------------*/
 
-header {
+landingpage {
 
   /*background: url("./images/cvvv.png");*/
   background-size: 100%;
@@ -90,7 +90,7 @@ header {
  
 }
 
-header div.head {
+landingpage div.head {
   position: relative;
   z-index: 2;
   display: grid;
@@ -102,13 +102,13 @@ header div.head {
   
 }
 
-header div.head  {
+landingpage div.head  {
   color: #222;
 
 }
 
 {/* vertikal linje */}
-header div.head h1 {
+landingpage div.head h1 {
   font-size: 5rem;
   font-weight: bold;
   height: 360px;
@@ -118,12 +118,12 @@ header div.head h1 {
   border-right: 2px solid #111;
 }
 
-header .last-word{
+landingpage .last-word{
   color: lightseagreen;
 }
 
 
-header div.head p {
+landingpage div.head p {
   margin-left: 65px;
   padding: 12px;
   font-style: italic;
@@ -165,7 +165,7 @@ header div.head p {
 }
 
 footer {
-  background:black;
+  background:#343a40;
   padding: 30px;
   display: grid;
   align-items: center;
