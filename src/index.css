@@ -10,7 +10,12 @@ body * {
   transition: all 0.300s ease-in-out;
 }
 
+.container{
+  height: 100%;
+}
+
 .App {
+  text-align:center;
   background-color: #fff;
   width: auto;
   max-width: 1500px;
@@ -27,8 +32,9 @@ nav {
   z-index: 99;
   background: black;
   width: 100%;
+  height: 70px;
 
-  margin: 0 auto;  
+  margin: 0 auto;
   padding: 5px 0;
 
   grid-template-columns: 2fr 1fr;
@@ -80,7 +86,7 @@ nav ul li a {
 
 /*------------- HEADER -------------------*/
 
-header {
+landingpage {
 
   /*background: url("./images/cvvv.png");*/
   background-size: 100%;
@@ -90,40 +96,45 @@ header {
  
 }
 
-header div.head {
+landingpage div.head {
   position: relative;
   z-index: 2;
   display: grid;
   width: 70%;
   grid-template-columns: repeat(2,1fr);
   margin: 0 auto;
-  padding-top: 12%;
+  padding-top: 10%;
   align-items: center;
   
 }
 
-header div.head  {
+landingpage div.head  {
   color: #222;
 
 }
 
 {/* vertikal linje */}
-header div.head h1 {
+landingpage div.head h1 {
   font-size: 5rem;
   font-weight: bold;
   height: 360px;
+  margin-bottom: 10%;
+  margin-top: -4%;
   padding-top: -1px;
-  margin: 0;
   letter-spacing: 4px;
   border-right: 2px solid #111;
 }
 
-header .last-word{
+landingpage .last-word{
   color: lightseagreen;
 }
 
+landingpage .ittext {
+  margin: 170px;
+}
 
-header div.head p {
+
+landingpage div.head p {
   margin-left: 65px;
   padding: 12px;
   font-style: italic;
@@ -137,6 +148,13 @@ header div.head p {
   opacity: 0.6;
 
 }
+.centeritem{
+  position: center;
+  align-content: center;
+  margin-left: 100px;
+
+}
+
 
 .login {
  display: block;
@@ -165,7 +183,7 @@ header div.head p {
 }
 
 footer {
-  background:black;
+  background:#343a42;
   padding: 30px;
   display: grid;
   align-items: center;
