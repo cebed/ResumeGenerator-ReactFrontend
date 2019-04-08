@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Footer from "./footer"
 import axios from 'axios';
 import Login from "../Login";
+import Header from "./header";
 
 class LandingPage extends Component {
 
@@ -11,7 +12,7 @@ class LandingPage extends Component {
 
     return (
         <landingpage>
-
+            <Header/>
 
         <div className="head">
 

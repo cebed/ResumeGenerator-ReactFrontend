@@ -25,7 +25,7 @@ class Header extends Component {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="/signup">Action</Dropdown.Item>
+                                        <Dropdown.Item href="/signup">Sign up</Dropdown.Item>
                                         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                                     </Dropdown.Menu>
