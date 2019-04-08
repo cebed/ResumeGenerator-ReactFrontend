@@ -11,6 +11,7 @@ body * {
 }
 
 .App {
+  text-align:center;
   background-color: #fff;
   width: auto;
   max-width: 1500px;
@@ -146,7 +147,8 @@ landingpage div.head p {
 .centeritem{
   position: center;
   align-content: center;
-  margin-left: 150px;
+  margin-left: 100px;
+
 }
 
 
@@ -177,7 +179,7 @@ landingpage div.head p {
 }
 
 footer {
-  background:#343a40;
+  background:#343a42;
   padding: 30px;
   display: grid;
   align-items: center;

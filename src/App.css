@@ -2,9 +2,7 @@ img {
   width: 100%;
 }
 
-.navbar {
-  background-color: #e3f2fd;
-}
+
 .fa.fa-edit {
   color: #18a2b9;
 }
@@ -34,7 +32,7 @@ img {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin-top: 24px;
+  margin-top: -24px;
   margin-bottom: -50px;
 }
 
