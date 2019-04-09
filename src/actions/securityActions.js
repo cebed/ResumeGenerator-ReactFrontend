@@ -3,7 +3,9 @@ import setJWTToken from "../securityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 
-
+//this takes the object(projekt) and takes history parameter
+//history parameter, this is what is going to allow us to redirect once we submit the form
+//async the functions always returns a promise, use it with await means that javascript wait until that promise settles and returns its result
 export const createNewUser = (newuser, history) => async dispatch => {
     
     try {
@@ -31,7 +33,7 @@ export const login = LoginRequest => async dispatch => {
         const res = await axios.post("http://localhost:5005/api/users/login", LoginRequest);
 
         //extract token from res.data
-        const {token} = res.data;
+        const { token } = res.data;
         //store the token in the localStorage
         localStorage.setItem("jwtToken", token);
         //make sure to set our token in header
@@ -50,4 +52,13 @@ export const login = LoginRequest => async dispatch => {
             payload: err.response.data
         });
     }
+};
+
+export const logout = () => dispatch => {
+    localStorage.removeItem("jwtToken");
+    setJWTToken(false);
+    dispatch({
+        type: SET_CURRENT_USER,
+        payload: {}
+    });
 };

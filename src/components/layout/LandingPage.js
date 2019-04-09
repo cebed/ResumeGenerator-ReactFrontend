@@ -4,9 +4,10 @@ import Footer from "./footer"
 //import axios from 'axios';
 import Login from "../UserManagement/Login";
 import Header from "./header";
+import {Link} from "react-router-dom";
+import {Button, Form} from "react-bootstrap";
 
 class LandingPage extends Component {
-
 
   render() {
 
@@ -25,7 +26,9 @@ class LandingPage extends Component {
                    // <!--OBS-->
                     //call login component
                 }
-              <Login/>
+                <Link to="/login">  <Button className="login" type="submit">
+                    Sign in now
+                </Button>  </Link>
 
             </div>
         </div>

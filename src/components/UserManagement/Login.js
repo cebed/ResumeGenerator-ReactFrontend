@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Button, Form} from "react-bootstrap";
-//import PropTypes from "prop-types"
+import PropTypes from "prop-types"
 import { connect } from "react-redux";
-//import classnames from "classnames";
+import classnames from "classnames";
 import { login } from "../../actions/securityActions";
 
 class Login extends Component {
@@ -10,10 +10,20 @@ class Login extends Component {
         super();
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            errors: {}
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.security.validToken) {
+            this.props.history.push("/signup");
+        }
+        if (nextProps.errors) {
+            this.setState({ errors: nextProps.errors });
+        }
     }
 
     onSubmit(e) {
@@ -32,27 +42,40 @@ class Login extends Component {
 
 
     render() {
+        const { errors } = this.state;
         return (
             <div>
-                <form onSubmit={this.onSubmit}>
-                    <Form className="logier">
+
+                    <Form className="logier" onSubmit={this.onSubmit}>
                     <Form.Group>
                         <Form.Label>Email</Form.Label>
                         <Form.Control  placeholder="Email"
                                        type="text"
+                                       className={classnames("form-control form-control-lg", {
+                                           "is-invalid": errors.username
+                                       })}
                                        name ="username"
                                        value={this.state.username}
                                        onChange={this.onChange} />
+                        {errors.username && (
+                            <div className="invalid-feedback">{errors.username}</div>
+                        )}
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password"
+                                      className={classnames("form-control form-control-lg", {
+                                          "is-invalid": errors.password
+                                      })}
                                       placeholder="Password"
                                       name="password"
                                       value={this.state.password}
                                       onChange={this.onChange}
                         />
+                        {errors.password && (
+                            <div className="invalid-feedback">{errors.password}</div>
+                        )}
                     </Form.Group>
 
 
@@ -61,12 +84,18 @@ class Login extends Component {
                     </Button>
 
                 </Form>
-                </form>
+
             </div>
 
         );
     }
 }
+Login.propTypes = {
+    login: PropTypes.func.isRequired,
+    errors: PropTypes.object.isRequired,
+    security:PropTypes.object.isRequired
+
+};
 
 const mapStateToProps = state => ({
     security: state.security,
