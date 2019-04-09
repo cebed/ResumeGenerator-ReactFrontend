@@ -3,9 +3,8 @@ import LandingPage from "./components/layout/LandingPage";
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 //import {ButtonToolbar, Button} from 'react-bootstrap';
-import Bootstap from 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from "./components/UserManagement/Signup";
-import Register from "./components/UserManagement/Register";
+import Register from "./components/UserManagement/Registration";
 
 
 //THIS IMPORT ALLOWS US TO HOOK UP REACT WITH REDUX

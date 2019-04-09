@@ -19,11 +19,10 @@ class Signup extends Component {
                         <div className="col-md-4 d-none d-lg-block">
                             <ul className="list-group">
 
-                                <a href="#">
                                     <li className="list-group-item update">
                                         <i className="fa fa-edit pr-1"> Update Info</i>
                                     </li>
-                                </a>
+
 
                             </ul>
                         </div>

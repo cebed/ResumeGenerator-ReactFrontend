@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import {Dropdown} from "react-bootstrap";
+import Bootstap from 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class Header extends Component {
     render() {

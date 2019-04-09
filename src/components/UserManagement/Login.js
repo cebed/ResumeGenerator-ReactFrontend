@@ -1,44 +1,58 @@
 import React, {Component} from 'react';
 import {Button, Form} from "react-bootstrap";
-import axios from "axios";
+//import PropTypes from "prop-types"
+import { connect } from "react-redux";
+//import classnames from "classnames";
+import { login } from "../../actions/securityActions";
 
 class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmittRegister= this.handleSubmittRegister.bind(this);
-
+    constructor() {
+        super();
+        this.state = {
+            username: '',
+            password: ''
+        };
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value, Person: []},
-            );
+    onSubmit(e) {
+        e.preventDefault();
+        const LoginRequest = {
+            username: this.state.username,
+            password: this.state.password
+        };
+
+        this.props.login(LoginRequest);
     }
 
-    handleSubmittRegister(event) {
-
-        event.preventDefault();
-        const {value} = this.state
-
-        //axios.post(`http://127.0.0.1:5004/register`, value )
-        axios.post(`http://127.0.0.1:5004/login`, value )
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
     }
+
 
     render() {
-        const {value} = this.state
         return (
             <div>
-                    <Form className="logier" onSubmit={this.handleSubmit}>
-                    <Form.Group controlId="formBasicEmail">
+                <form onSubmit={this.onSubmit}>
+                    <Form className="logier">
+                    <Form.Group>
                         <Form.Label>Email</Form.Label>
-                        <Form.Control  placeholder="Email"type="text" value={this.state.value} onChange={this.handleChange} />
+                        <Form.Control  placeholder="Email"
+                                       type="text"
+                                       name ="username"
+                                       value={this.state.username}
+                                       onChange={this.onChange} />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password"
+                                      placeholder="Password"
+                                      name="password"
+                                      value={this.state.password}
+                                      onChange={this.onChange}
+                        />
                     </Form.Group>
 
 
@@ -47,10 +61,18 @@ class Login extends Component {
                     </Button>
 
                 </Form>
+                </form>
             </div>
 
         );
     }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+    security: state.security,
+    errors: state.errors
+});
+
+export default connect(
+    mapStateToProps,
+    { login } )(Login);
