@@ -30,7 +30,7 @@ class Login extends Component {
         const {value} = this.state
         return (
             <div>
-                <Form className="logier" onSubmit={this.handleSubmit}>
+                    <Form className="logier" onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control  placeholder="Email"type="text" value={this.state.value} onChange={this.handleChange} />
@@ -47,8 +47,8 @@ class Login extends Component {
                     </Button>
 
                 </Form>
-
             </div>
+
         );
     }
 }

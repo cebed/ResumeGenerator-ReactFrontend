@@ -57,7 +57,7 @@ class Register extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
-                            <div className="card bg-light mb-3">
+                            <div className="card border-dark mb-3">
                                 <div className="card-header"><h1 className="display-4 text-center">Sign Up</h1></div>
                                 <div className="card-body">
 
