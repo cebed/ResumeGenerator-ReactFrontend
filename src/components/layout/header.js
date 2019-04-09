@@ -9,7 +9,7 @@ class Header extends Component {
                 <div className="container">
                     <ul>
                         <li className="logo">Resume<span>Generator</span></li>
-                        <li className="centeritem"> Welcome </li>
+                        <Link to="/"> <h2 className="centeritem"> Welcome </h2> </Link>
                     </ul>
 
 
@@ -25,7 +25,7 @@ class Header extends Component {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="/signup">Sign up</Dropdown.Item>
+                                        <Dropdown.Item href="/Register">Sign up</Dropdown.Item>
                                         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                                     </Dropdown.Menu>

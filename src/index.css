@@ -1,4 +1,4 @@
-body {
+.body {
   width: auto;
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@ body {
   color: #111;
 
 }
-body * {
+.body * {
   transition: all 0.300s ease-in-out;
 }
 
@@ -117,9 +117,9 @@ landingpage div.head  {
 landingpage div.head h1 {
   font-size: 5rem;
   font-weight: bold;
-  height: 360px;
+  height: 340px;
   margin-bottom: 10%;
-  margin-top: -4%;
+  margin-top: -10%;
   padding-top: -1px;
   letter-spacing: 4px;
   border-right: 2px solid #111;
@@ -178,13 +178,14 @@ landingpage div.head p {
   opacity: 20;
 }
 .logier{
-  margin: 20px;
+  margin-left: 150px;
   font-weight: bold;
+  width: 90%;
 }
 
 footer {
   background:#343a42;
-  padding: 30px;
+  padding: 25px;
   display: grid;
   align-items: center;
   text-align: center;
@@ -198,16 +199,25 @@ footer ul {
   justify-items: center;
 }
 
+
 footer ul:first-of-type li{
-  font-size: 1.4rem;
+  font-size: 30px;
   font-weight: bold;
   text-indent: 30px;
   color: white;
+  margin-right: 50px;
 }
+
+
+
 footer ul:first-of-type li span {
-  font-weight: 500;
+  font-weight: bold;
   color: lightseagreen;
 }
 
 
 
+.register{
+    padding: 20px;
+    height: 100%;
+}

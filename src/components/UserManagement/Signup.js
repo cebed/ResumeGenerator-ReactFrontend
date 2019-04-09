@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
+import Header from "../layout/header";
+import Footer from "../layout/footer";
 
 class Signup extends Component {
     render() {
         return (
+            <signup>
+                <Header/>
             <div className="container">
                 <div className="card card-body bg-light mb-3">
                     <div className="row">
@@ -26,6 +30,9 @@ class Signup extends Component {
                     </div>
                 </div>
             </div>
+                <Footer/>
+            </signup>
+
         );
     }
 }

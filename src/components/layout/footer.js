@@ -9,7 +9,7 @@ class Footer extends Component {
       <footer>
 
           <ul>
-              <li className="logo">By<span>Chalmers</span>Students</li>
+              <li className="logo">20<span>19</span></li>
           </ul>
 
       </footer>

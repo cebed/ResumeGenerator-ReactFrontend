@@ -32,8 +32,8 @@ class Login extends Component {
             <div>
                 <Form className="logier" onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Register by email</Form.Label>
-                        <Form.Control  type="text" value={this.state.value} onChange={this.handleChange} />
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control  placeholder="Email"type="text" value={this.state.value} onChange={this.handleChange} />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
