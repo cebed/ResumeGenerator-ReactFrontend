@@ -26,6 +26,11 @@ class Register extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
     }
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.errors){
+            this.setState({errors: nextProps.errors});
+        }
+    }
 
     onSubmit(event){
         event.preventDefault();
@@ -44,6 +49,7 @@ class Register extends Component {
         this.setState({ [e.target.name]: e.target.value });    }
 
     render() {
+        const { errors } = this.state;
         return (
             <register>
                 <Header/>
@@ -51,39 +57,57 @@ class Register extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
-                            <h1 className="display-4 text-center">Sign Up</h1>
+                            <div className="card bg-light mb-3">
+                                <div className="card-header"><h1 className="display-4 text-center">Sign Up</h1></div>
+                                <div className="card-body">
+
                             <p className="lead text-center">Create your Account</p>
                             <form onSubmit={this.onSubmit}>
                                 <div className="form-group">
                                     <input type="text"
-                                           className="form-control form-control-lg"
+                                           className={classnames("form-control form-control-lg", {
+                                               "is-invalid": errors.fullName
+                                           })}
                                            placeholder="Full Name"
                                            name="fullName"
+
                                            value={this.state.fullName}
                                            onChange={this.onChange}
-
                                     />
+                                    {errors.fullName && (
+                                        <div className="invalid-feedback">{errors.fullName}</div>
+                                    )}
                                 </div>
                                 <div className="form-group">
                                     <input type="text"
-                                           className="form-control form-control-lg"
+                                           className={classnames("form-control form-control-lg", {
+                                               "is-invalid": errors.username
+                                           })}
                                            placeholder="Email Address"
                                            name="username"
                                            value={this.state.username}
                                            onChange={this.onChange}
 
                                     />
+                                    {errors.username && (
+                                        <div className="invalid-feedback">{errors.username}</div>
+                                    )}
 
                                 </div>
                                 <div className="form-group">
                                     <input type="password"
-                                           className="form-control form-control-lg"
+                                           className={classnames("form-control form-control-lg", {
+                                               "is-invalid": errors.password
+                                           })}
                                            placeholder="Password"
                                            name="password"
                                            value={this.state.password}
                                            onChange={this.onChange}
 
                                     />
+                                    {errors.password && (
+                                        <div className="invalid-feedback">{errors.password}</div>
+                                    )}
                                 </div>
                                 <div>
                                         <Button type="submit" variant="primary" size="lg" block>
@@ -91,9 +115,13 @@ class Register extends Component {
                                         </Button>
 
                                 </div>
+
+
                             </form>
                         </div>
                     </div>
+                </div>
+            </div>
                 </div>
             </div>
                 <Footer/>
