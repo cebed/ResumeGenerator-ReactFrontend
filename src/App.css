@@ -61,3 +61,12 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+.nav-item{
+  width: 150px;
+  margin-right: -50px;
+}
+
+.navbarwelcome{
+  margin-left: 260px;
+}
