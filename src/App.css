@@ -62,11 +62,17 @@ img {
   color: #bbb !important;
 }
 
-.nav-item{
+.fas {
   width: 150px;
-  margin-right: -50px;
+  margin-left: -50px;
+  padding:0;
+}
+
+.nav-link {
+  width: 160px;
+  margin: -20px;
 }
 
 .navbarwelcome{
-  margin-left: 260px;
+  margin-left: 250px;
 }

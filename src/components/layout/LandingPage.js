@@ -26,9 +26,7 @@ class LandingPage extends Component {
                    // <!--OBS-->
                     //call login component
                 }
-                <Link to="/login">  <Button className="login" type="submit">
-                    Sign in now
-                </Button>  </Link>
+
 
             </div>
         </div>
