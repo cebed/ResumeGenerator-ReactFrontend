@@ -69,8 +69,10 @@ class Header extends Component {
             <nav className="navbar navbar-expand-xl navbar-dark bg-dark mb-4">
                 <div className="container">
                     <ul>
+
                         <li className="logo">Resume<span>Generator</span></li>
                         <Link className="navbar-brand" to="/"><h2 className="navbarwelcome">Welcome</h2> </Link>
+
                     </ul>
 
 

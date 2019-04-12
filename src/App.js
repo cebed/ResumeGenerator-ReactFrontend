@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import LandingPage from "./components/layout/LandingPage";
+import ExperienceContainer from "./components/ExperienceContainer";
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+
 //import {ButtonToolbar, Button} from 'react-bootstrap';
 import Signup from "./components/UserManagement/Signup";
 import Register from "./components/UserManagement/Registration";
@@ -44,6 +46,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
+
             <Router>
             <div className="App">
 
@@ -53,6 +56,7 @@ class App extends Component {
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/Register" component={Register}/>
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/Experience" component={ExperienceContainer} />
 
                 {
                     //Private Routes
