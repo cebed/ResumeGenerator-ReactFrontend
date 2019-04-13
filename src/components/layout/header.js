@@ -10,7 +10,7 @@ import { logout } from "../../actions/securityActions";
 class Header extends Component {
     logout() {
         this.props.logout();
-        window.location.href = "/signup";
+        window.location.href = "/Login";
     }
     render() {
         const { validToken, user } = this.props.security;

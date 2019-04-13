@@ -86,7 +86,7 @@ nav ul li a {
 
 /*------------- HEADER -------------------*/
 
-landingpage {
+loginpage {
 
   /*background: url("./images/cvvv.png");*/
   background-size: 100%;
@@ -96,7 +96,7 @@ landingpage {
  
 }
 
-landingpage div.head {
+loginpage div.head {
   position: relative;
   z-index: 2;
   display: grid;
@@ -108,13 +108,13 @@ landingpage div.head {
   
 }
 
-landingpage div.head  {
+loginpage div.head  {
   color: #222;
 
 }
 
 {/* vertikal linje */}
-landingpage div.head h1 {
+loginpage div.head h1 {
   font-size: 5rem;
   font-weight: bold;
   height: 340px;
@@ -125,16 +125,16 @@ landingpage div.head h1 {
   border-right: 2px solid #111;
 }
 
-landingpage .last-word{
+loginpage .last-word{
   color: lightseagreen;
 }
 
-landingpage .ittext {
+loginpage .ittext {
   margin: 170px;
 }
 
 
-landingpage div.head p {
+loginpage div.head p {
   margin-left: 65px;
   padding: 12px;
   font-style: italic;

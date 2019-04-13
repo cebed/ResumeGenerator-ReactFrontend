@@ -5,21 +5,31 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {logout} from "../../actions/securityActions";
 
-class Signup extends Component {
+class UserboxResume extends Component {
     render() {
         const { validToken, user } = this.props.security;
         return (
-            <signup>
+            <userboxResume>
                 <Header/>
             <div className="container">
                 <div className="card card-body bg-light mb-3">
-                    <div className="row">
-                        <div className="col-2">
-                            <span className="mx-auto">Username</span>
-                        </div>
-                        <div className="col-lg-6 col-md-4 col-8">
-                            <input type="text" placeholder={user.fullName} className="form-control form-control"/>
-                        </div>
+
+                        <form>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Username:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value={user.fullName}/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Email:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value={user.username}/>
+                                </div>
+                            </div>
+                        </form>
+
+
                         <div className="col-md-4 d-none d-lg-block">
                             <ul className="list-group">
 
@@ -32,15 +42,15 @@ class Signup extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+
                 <Footer/>
-            </signup>
+            </userboxResume>
 
         );
     }
 }
 
-Signup.propTypes = {
+UserboxResume.propTypes = {
     security: PropTypes.object.isRequired
 };
 
@@ -51,4 +61,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps
-)(Signup)
+)(UserboxResume)

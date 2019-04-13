@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 //import {ButtonToolbar, Button} from 'react-bootstrap';
-import Signup from "./components/UserManagement/Signup";
+import userboxResume from "./components/UserManagement/userboxResume";
 import Register from "./components/UserManagement/Registration";
 //THIS IMPORT ALLOWS US TO HOOK UP REACT WITH REDUX
 //Provider is basically how we define the store that we are going to use for our APP
@@ -50,13 +50,13 @@ class App extends Component {
                 {
                     //Public Routes
                 }
-                <Route exact path="/" component={LandingPage} />
+                <Route exact path="/" component={Login} />
                 <Route exact path="/Register" component={Register}/>
                 <Route exact path="/login" component={Login} />
 
                 {
                     //Private Routes
-                    <Route exact path="/signup" component={Signup} />
+                    <Route exact path="/userboxResume" component={userboxResume} />
                 }
 
 

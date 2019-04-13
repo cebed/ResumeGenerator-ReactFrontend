@@ -1,6 +1,4 @@
-img {
-  width: 100%;
-}
+
 
 
 .fa.fa-edit {
@@ -24,20 +22,6 @@ img {
 
 .fa.fa-minus-circle {
   color: red;
-}
-
-.landing {
-  position: relative;
-  /* background: url("../img/showcase.jpg") no-repeat; */
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  margin-top: -24px;
-  margin-bottom: -50px;
-}
-
-.landing-inner {
-  padding-top: 80px;
 }
 
 .dark-overlay {

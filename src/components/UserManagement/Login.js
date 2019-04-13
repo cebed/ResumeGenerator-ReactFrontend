@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { login } from "../../actions/securityActions";
+import Header from "../layout/header";
+
 
 class Login extends Component {
     constructor() {
@@ -19,7 +21,7 @@ class Login extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.security.validToken) {
-            this.props.history.push("/signup");
+            this.props.history.push("/userboxResume");
         }
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors });
@@ -42,10 +44,18 @@ class Login extends Component {
 
 
     render() {
-        const { errors } = this.state;
-        return (
-            <div>
 
+        const { errors } = this.state;
+
+        return (
+
+                    //render css
+                <loginpage>
+                    <Header/>
+            <div className="head">
+                <div>
+                    <h1>Front<span className="last-word">Edge</span><br/><span className="ittext">IT</span>  </h1>
+                </div>
                     <Form className="logier" onSubmit={this.onSubmit}>
                     <Form.Group>
                         <Form.Label>Email</Form.Label>
@@ -86,6 +96,8 @@ class Login extends Component {
                 </Form>
 
             </div>
+                </loginpage>
+
 
         );
     }

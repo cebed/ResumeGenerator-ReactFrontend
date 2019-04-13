@@ -23,9 +23,12 @@ class LandingPage extends Component {
             <div className="parag">
 
                 {
+                    //<Login/>
                    // <!--OBS-->
                     //call login component
                 }
+
+
 
 
             </div>
@@ -40,3 +43,4 @@ class LandingPage extends Component {
 }
 
 export default LandingPage;
+
