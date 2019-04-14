@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import Header from "./layout/header";
 import Footer from "./layout/footer";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {logout} from "../actions/securityActions";
 import UserBoard from "./UserBoard";
 
 class ResumeBoard extends Component {

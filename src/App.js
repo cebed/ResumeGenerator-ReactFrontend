@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import LandingPage from "./components/layout/LandingPage";
 import ExperienceContainer from "./components/ExperienceContainer";
 import AddExperience from "./components/AddExperience";
 import './App.css';
@@ -59,9 +58,8 @@ class App extends Component {
                 {
                     //Public Routes
                 }
-                <Route exact path="/" component={LandingPage} />
+                <Route exact path="/" component={Login} />
                 <Route exact path="/Register" component={Register}/>
-                <Route exact path="/login" component={Login} />
                 <Route exact path="/ExperienceContainer" component={ExperienceContainer} />
                 <Route exact path="/AddExperience" component={AddExperience} />
 
