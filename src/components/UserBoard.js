@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
-import Header from "../layout/header";
-import Footer from "../layout/footer";
-import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {logout} from "../../actions/securityActions";
 
-class UserboxResume extends Component {
+class UserBoard extends Component {
     render() {
         const { validToken, user } = this.props.security;
         return (
-            <userboxResume>
-                <Header/>
-            <div className="container">
-                <div className="card card-body bg-light mb-3">
+
+                <div className="container">
+                    <div className="card card-body bg-light mb-3">
 
                         <form>
                             <div class="form-group row">
@@ -33,9 +28,9 @@ class UserboxResume extends Component {
                         <div className="col-md-4 d-none d-lg-block">
                             <ul className="list-group">
 
-                                    <li className="list-group-item update">
-                                        <i className="fa fa-edit pr-1"> Update Info</i>
-                                    </li>
+                                <li className="list-group-item update">
+                                    <i className="fa fa-edit pr-1"> Update Info</i>
+                                </li>
 
 
                             </ul>
@@ -43,17 +38,9 @@ class UserboxResume extends Component {
                     </div>
                 </div>
 
-                <Footer/>
-            </userboxResume>
-
         );
     }
 }
-
-UserboxResume.propTypes = {
-    security: PropTypes.object.isRequired
-};
-
 
 const mapStateToProps = state => ({
     security: state.security
@@ -61,4 +48,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps
-)(UserboxResume)
+)(UserBoard)

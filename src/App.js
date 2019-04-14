@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 //import {ButtonToolbar, Button} from 'react-bootstrap';
-import userboxResume from "./components/UserManagement/userboxResume";
+import Resumeboard from "./components/ResumeBoard";
 import Register from "./components/UserManagement/Registration";
 //THIS IMPORT ALLOWS US TO HOOK UP REACT WITH REDUX
 //Provider is basically how we define the store that we are going to use for our APP
@@ -56,7 +56,7 @@ class App extends Component {
 
                 {
                     //Private Routes
-                    <Route exact path="/userboxResume" component={userboxResume} />
+                    <Route exact path="/ResumeBoard" component={Resumeboard} />
                 }
 
 

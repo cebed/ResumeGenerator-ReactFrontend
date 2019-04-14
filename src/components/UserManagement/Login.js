@@ -22,7 +22,7 @@ class Login extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.security.validToken) {
-            this.props.history.push("/userboxResume");
+            this.props.history.push("/ResumeBoard");
         }
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors });
