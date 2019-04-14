@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LandingPage from "./components/layout/LandingPage";
 import ExperienceContainer from "./components/ExperienceContainer";
+import AddExperience from "./components/AddExperience";
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import jwt_decode from "jwt-decode";
@@ -56,7 +57,8 @@ class App extends Component {
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/Register" component={Register}/>
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/Experience" component={ExperienceContainer} />
+                <Route exact path="/ExperienceContainer" component={ExperienceContainer} />
+                <Route exact path="/AddExperience" component={AddExperience} />
 
                 {
                     //Private Routes
