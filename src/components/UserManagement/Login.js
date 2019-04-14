@@ -4,6 +4,9 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { login } from "../../actions/securityActions";
+import Header from "../layout/header";
+import {Link} from "react-router-dom";
+
 
 class Login extends Component {
     constructor() {
@@ -19,7 +22,7 @@ class Login extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.security.validToken) {
-            this.props.history.push("/signup");
+            this.props.history.push("/ResumeBoard");
         }
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors });
@@ -42,50 +45,89 @@ class Login extends Component {
 
 
     render() {
+        const { validToken, user } = this.props.security;
         const { errors } = this.state;
-        return (
-            <div>
 
-                    <Form className="logier" onSubmit={this.onSubmit}>
-                    <Form.Group>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control  placeholder="Email"
-                                       type="text"
-                                       className={classnames("form-control form-control-lg", {
-                                           "is-invalid": errors.username
-                                       })}
-                                       name ="username"
-                                       value={this.state.username}
-                                       onChange={this.onChange} />
-                        {errors.username && (
-                            <div className="invalid-feedback">{errors.username}</div>
-                        )}
-                    </Form.Group>
+        const userIsAuthenticated = (
 
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password"
-                                      className={classnames("form-control form-control-lg", {
-                                          "is-invalid": errors.password
-                                      })}
-                                      placeholder="Password"
-                                      name="password"
-                                      value={this.state.password}
-                                      onChange={this.onChange}
-                        />
-                        {errors.password && (
-                            <div className="invalid-feedback">{errors.password}</div>
-                        )}
-                    </Form.Group>
-
-
-                    <Button className="login" type="submit">
-                        Login
-                    </Button>
-
-                </Form>
+            <div className="head">
+                <div>
+                    <h1>Front<span className="last-word">Edge</span><br/><span className="ittext">IT</span>  </h1>
+                </div>
 
             </div>
+
+        );
+
+
+        const userIsNotAuthenticated = (
+
+
+                <div className="head">
+                    <div>
+                        <h1>Front<span className="last-word">Edge</span><br/><span className="ittext">IT</span>  </h1>
+                    </div>
+                    <Form className="logier" onSubmit={this.onSubmit}>
+                        <Form.Group>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control  placeholder="Email"
+                                           type="text"
+                                           className={classnames("form-control form-control-lg", {
+                                               "is-invalid": errors.username
+                                           })}
+                                           name ="username"
+                                           value={this.state.username}
+                                           onChange={this.onChange} />
+                            {errors.username && (
+                                <div className="invalid-feedback">{errors.username}</div>
+                            )}
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password"
+                                          className={classnames("form-control form-control-lg", {
+                                              "is-invalid": errors.password
+                                          })}
+                                          placeholder="Password"
+                                          name="password"
+                                          value={this.state.password}
+                                          onChange={this.onChange}
+                            />
+                            {errors.password && (
+                                <div className="invalid-feedback">{errors.password}</div>
+                            )}
+                        </Form.Group>
+
+
+                        <Button className="login" type="submit">
+                            Login
+                        </Button>
+
+                    </Form>
+                </div>
+
+
+        );
+
+        let headerLinks;
+
+        if (validToken && user) {
+            headerLinks = userIsAuthenticated;
+        } else {
+            headerLinks = userIsNotAuthenticated;
+        }
+
+        return (
+
+                    //render css
+                <loginpage>
+
+
+                {headerLinks}
+
+                </loginpage>
+
 
         );
     }
