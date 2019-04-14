@@ -11,9 +11,7 @@ class ResumeBoard extends Component {
         const { validToken, user } = this.props.security;
         return (
             <div>
-           <div>
-               <Header/>
-           </div>
+
 
                 <div>
                 <UserBoard/>

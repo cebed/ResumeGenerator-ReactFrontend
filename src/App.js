@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 //import {ButtonToolbar, Button} from 'react-bootstrap';
-import Resumeboard from "./components/ResumeBoard";
+import ResumeBoard from "./components/ResumeBoard";
 import Register from "./components/UserManagement/Registration";
 //THIS IMPORT ALLOWS US TO HOOK UP REACT WITH REDUX
 //Provider is basically how we define the store that we are going to use for our APP
@@ -14,6 +14,8 @@ import setJWTToken from "./securityUtils/setJWTToken";
 import {SET_CURRENT_USER} from "./actions/types";
 import Login from "./components/UserManagement/Login";
 import {logout} from "./actions/securityActions"
+import Header from "./components/layout/header";
+import UpdateUser from "./components/UpdateUser";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
@@ -47,6 +49,8 @@ class App extends Component {
             <Router>
             <div className="App">
 
+                <Header/>
+
                 {
                     //Public Routes
                 }
@@ -56,8 +60,13 @@ class App extends Component {
 
                 {
                     //Private Routes
-                    <Route exact path="/ResumeBoard" component={Resumeboard} />
                 }
+                    <Route exact path="/ResumeBoard" component={ResumeBoard} />
+                    <Route exact path="/updateUser" component={UpdateUser} />
+
+
+
+
 
 
             </div>

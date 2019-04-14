@@ -122,7 +122,7 @@ class Login extends Component {
 
                     //render css
                 <loginpage>
-                    <Header/>
+
 
                 {headerLinks}
 

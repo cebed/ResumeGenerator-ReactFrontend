@@ -7,7 +7,7 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 //history parameter, this is what is going to allow us to redirect once we submit the form
 //async the functions always returns a promise, use it with await means that javascript wait until that promise settles and returns its result
 export const createNewUser = (newuser, history) => async dispatch => {
-    
+
     try {
         await axios.post("http://localhost:5005/api/users/register", newuser);
         //If everything goes good, send us to our login page
@@ -61,4 +61,23 @@ export const logout = () => dispatch => {
         type: SET_CURRENT_USER,
         payload: {}
     });
+};
+
+    export const UppdateUser = (updateCurrentUser, history, id) => async dispatch => {
+
+    try {
+        await axios.post("http://localhost:5005/api/users/allusers/${id}", updateCurrentUser, id);
+        //If everything goes good, send us to our login page
+        history.push("/ResumeBoard");
+        dispatch({
+            type:GET_ERRORS,
+            payload: {}
+        });
+    }catch (error) {
+        dispatch({
+            type:GET_ERRORS,
+            payload: error.response.data
+        });
+
+    }
 };
