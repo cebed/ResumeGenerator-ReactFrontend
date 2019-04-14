@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchWorkEx  } from '../actions/WorkExActions';
 import _ from 'lodash';
 import {Card} from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 
 class ExperienceContainer extends React.Component {
     // vi förvättar oss att få några posts om vi inte har i början når den startar då har vi inge o starta med dett afår bär vi göra varje ggn

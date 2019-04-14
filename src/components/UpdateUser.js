@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 //import {createNewUser} from "../../actions/securityActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import classnames from "classnames";
+//import classnames from "classnames";
 import Button from "react-bootstrap/Button";
 import {UppdateUser} from "../actions/securityActions";
 
@@ -46,7 +46,7 @@ class UpdateUser extends Component {
     }
 
     render() {
-        const { validToken, user } = this.props.security;
+        const { user } = this.props.security;
         return (
             <register>
                 <div className="register">

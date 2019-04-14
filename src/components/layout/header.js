@@ -10,7 +10,7 @@ import { logout } from "../../actions/securityActions";
 class Header extends Component {
     logout() {
         this.props.logout();
-        window.location.href = "/signup";
+        window.location.href = "/";
     }
     render() {
         const { validToken, user } = this.props.security;
@@ -49,7 +49,7 @@ class Header extends Component {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/Login">
+                        <Link className="nav-link" to="/">
                             Login
                         </Link>
                     </li>
@@ -69,10 +69,8 @@ class Header extends Component {
             <nav className="navbar navbar-expand-xl navbar-dark bg-dark mb-4">
                 <div className="container">
                     <ul>
-
                         <li className="logo">Resume<span>Generator</span></li>
                         <Link className="navbar-brand" to="/"><h2 className="navbarwelcome">Welcome</h2> </Link>
-
                     </ul>
 
 

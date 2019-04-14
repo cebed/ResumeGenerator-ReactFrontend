@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import Footer from "./layout/footer";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import UserBoard from "./UserBoard";
 
 class ResumeBoard extends Component {
     render() {
-        const { validToken, user } = this.props.security;
+
         return (
             <div>
 
@@ -15,9 +14,7 @@ class ResumeBoard extends Component {
                 <UserBoard/>
                 </div>
 
-           <div>
-                <Footer/>
-            </div>
+
             </div>
         );
     }

@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-import Footer from "../layout/footer";
-import Header from "../layout/header";
-
 import {createNewUser} from "../../actions/securityActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -123,7 +120,7 @@ class Registration extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer/>
+
             </register>
         );
     }

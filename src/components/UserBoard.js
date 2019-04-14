@@ -4,29 +4,29 @@ import {Link} from "react-router-dom";
 
 class UserBoard extends Component {
     render() {
-        const { validToken, user } = this.props.security;
+        const { user } = this.props.security;
         return (
 
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
 
                         <form>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-3 col-form-label">Username: {user.fullName}</label>
+                            <div className="form-group row">
+                                <label  className="col-sm-3 col-form-label">Username: {user.fullName}</label>
 
                             </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-3 col-form-label">Email: {user.username}</label>
-
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-3 col-form-label">Address: {user.address}</label>
+                            <div className="form-group row">
+                                <label  className="col-sm-3 col-form-label">Email: {user.username}</label>
 
                             </div>
 
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-3 col-form-label">Phone: {user.phone}</label>
+                            <div className="form-group row">
+                                <label  className="col-sm-3 col-form-label">Address: {user.address}</label>
+
+                            </div>
+
+                            <div className="form-group row">
+                                <label  className="col-sm-3 col-form-label">Phone: {user.phone}</label>
 
                             </div>
 
