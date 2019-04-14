@@ -16,6 +16,7 @@ import Login from "./components/UserManagement/Login";
 import {logout} from "./actions/securityActions"
 import Header from "./components/layout/header";
 import UpdateUser from "./components/UpdateUser";
+import Footer from "./components/layout/footer";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
@@ -64,8 +65,7 @@ class App extends Component {
                     <Route exact path="/ResumeBoard" component={ResumeBoard} />
                     <Route exact path="/updateUser" component={UpdateUser} />
 
-
-
+                <Footer/>
 
 
 

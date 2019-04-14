@@ -49,20 +49,20 @@ class Login extends Component {
         const { errors } = this.state;
 
         const userIsAuthenticated = (
-            <loginpage>
+
             <div className="head">
                 <div>
                     <h1>Front<span className="last-word">Edge</span><br/><span className="ittext">IT</span>  </h1>
                 </div>
 
             </div>
-            </loginpage>
+
         );
 
 
         const userIsNotAuthenticated = (
 
-            <loginpage>
+
                 <div className="head">
                     <div>
                         <h1>Front<span className="last-word">Edge</span><br/><span className="ittext">IT</span>  </h1>
@@ -106,7 +106,7 @@ class Login extends Component {
 
                     </Form>
                 </div>
-            </loginpage>
+
 
         );
 
