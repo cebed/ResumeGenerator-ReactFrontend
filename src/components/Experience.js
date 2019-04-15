@@ -7,7 +7,8 @@ class Experience extends Component {
             experience,
             end_date,
             start_date,
-            description
+            description,
+            user
 
         } = this.props;
         return (
@@ -28,6 +29,7 @@ class Experience extends Component {
                     </div>
                     <div className="row">
                         {description}
+                        {user}
                     </div>
                 </div>
             </div>

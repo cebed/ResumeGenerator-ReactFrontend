@@ -20,6 +20,7 @@ class ExperienceContainer extends React.Component {
                         end_date = {post.end_date}
                         start_date ={post.start_date}
                         description = {post.description}
+
                     />
             )
         });
@@ -35,7 +36,7 @@ class ExperienceContainer extends React.Component {
                     {this.renderWorkEx()}
 
                 <Link className="btn btn-primary" to="/AddExperience">
-                    Add a Post
+                    Add new Experience
                 </Link>
             </div>
 
