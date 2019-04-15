@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 
 class Experience extends Component {
@@ -8,7 +9,7 @@ class Experience extends Component {
             end_date,
             start_date,
             description,
-            user
+            id
 
         } = this.props;
         return (
@@ -29,7 +30,10 @@ class Experience extends Component {
                     </div>
                     <div className="row">
                         {description}
-                        {user}
+                        <Link to={`/EditExperience/${id}`}>
+                          Edit WorkExperience
+                        </Link>
+
                     </div>
                 </div>
             </div>

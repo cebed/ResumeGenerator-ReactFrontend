@@ -20,6 +20,7 @@ class ExperienceContainer extends React.Component {
                         end_date = {post.end_date}
                         start_date ={post.start_date}
                         description = {post.description}
+                        id={post.id}
 
                     />
             )
