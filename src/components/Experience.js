@@ -17,6 +17,7 @@ class Experience extends Component {
                     <div className="row">
                         <div className="col-4">
                             <span className="mx-auto">{experience}</span>
+
                         </div>
                         <div className="col-lg-4 col-md-4 col-8">
                             {start_date}
