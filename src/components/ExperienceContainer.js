@@ -8,7 +8,7 @@ import Experience from "./Experience";
 class ExperienceContainer extends React.Component {
 
     componentDidMount(){
-        this.props.fetchWorkEx();
+        this.props.fetchWorkEx(this.props.user.id);
     }
 
     renderWorkEx(){
@@ -28,11 +28,11 @@ class ExperienceContainer extends React.Component {
 
     render(){
 
-
+const {id} = this.props.user
         return (
             <div>
                 <h4> Work Experience</h4>
-
+                {id}
                     {this.renderWorkEx()}
 
                 <Link className="btn btn-primary" to="/AddExperience">
@@ -45,7 +45,8 @@ class ExperienceContainer extends React.Component {
 };
 
 function mapStateToProps(state) {
-    return { work_ex_list: state.work_ex.Work_ex };
+    return { work_ex_list: state.work_ex.Work_ex ,
+        user: state.security.user};
 }
 
 

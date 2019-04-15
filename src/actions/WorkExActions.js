@@ -1,8 +1,8 @@
 
 import axios from 'axios';
 export const FETCH_WorkEx = 'WorkEx';
-export const fetchWorkEx = () => async dispatch => {
-    const res = await axios.get(`http://localhost:5005/api/work/all`);
+export const fetchWorkEx = (id) => async dispatch => {
+    const res = await axios.get(`http://localhost:5005/api/work/workid/${id}`);
     dispatch({
         type: FETCH_WorkEx,
         payload: res.data
