@@ -1,10 +1,47 @@
 import React, {Component} from 'react';
 
-import Form from 'react-bootstrap/Form';
+
 import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {createNewEx} from "../actions/WorkExActions";
+
 
 class  AddExperience extends Component {
+    constructor(){
+        super();
+
+        this.state = {
+
+            title: '',
+            start_date: '',
+            end_date: '',
+            description: ''
+        };
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+
+    }
+
+
+    onSubmit(event){
+        event.preventDefault();
+        const newuser = {
+            title: this.state.title,
+            start_date: this.state.start_date,
+            end_date: this.state.end_date,
+            description: this.state.description
+
+        };
+
+        this.props.createNewEx(newuser, this.props.history);
+    }
+
+
+    onChange(e){
+        this.setState({ [e.target.name]: e.target.value });
+    }
     render() {
 
         return (
@@ -12,34 +49,54 @@ class  AddExperience extends Component {
 
                 <Card.Body>
 
-           <form>
-               <Form.Group controlId="title">
-                   <Form.Label>Title</Form.Label>
-                   <Form.Control type="text" />
-               </Form.Group>
+           <form onSubmit={this.onSubmit}>
+               <div className="form-group">
+                   <input type="text"
 
-               <Form.Group controlId="start_date">
-                   <Form.Label>Start date</Form.Label>
-                   <Form.Control type="date"/>
-               </Form.Group>
-               <Form.Group controlId="end_date">
-                   <Form.Label>End date</Form.Label>
-                   <Form.Control type="date"/>
-                   <Form.Group controlId="city">
-                       <Form.Label>City</Form.Label>
-                       <Form.Control type="city" />
-                   </Form.Group>
-                   <Form.Group controlId="description">
-                       <Form.Label>Description</Form.Label>
-                       <Form.Control type="text" as="textarea" rows="3" />
-                   </Form.Group>
-                   <Form.Group controlId="description">
-                       <Form.Label>Skills</Form.Label>
-                       <Form.Control type="text"  />
-                   </Form.Group>
+                          placeholder=" title"
+                          name="title"
 
-               </Form.Group>
+                          value={this.state.title}
+                          onChange={this.onChange}
+                   />
 
+               </div>
+
+               <div className="form-group">
+                   <input type="date"
+
+                          placeholder="start_date"
+                          name="start_date"
+                          value={this.state.start_date}
+                          onChange={this.onChange}
+
+                   />
+
+
+               </div>
+               <div className="form-group">
+                   <input type="date"
+
+                          placeholder="end_date"
+                          name="end_date"
+                          value={this.state.end_date}
+                          onChange={this.onChange}
+
+                   />
+
+                   <div >
+                       <textarea type="text"
+
+                              placeholder=" description"
+                              name="description"
+
+                              value={this.state.description}
+                              onChange={this.onChange}
+                       />
+
+                   </div>
+
+               </div>
                <Button type="submit" variant="primary" size="lg" block>
                    Save
                </Button>
@@ -52,5 +109,14 @@ class  AddExperience extends Component {
         );
     }
 }
-export default AddExperience;
+AddExperience.propTypes = {
+    createNewEx: PropTypes.func.isRequired,
+
+};
+
+
+export default connect(
+    null,
+    { createNewEx }
+)(AddExperience);
 
