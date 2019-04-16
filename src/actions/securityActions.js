@@ -2,6 +2,7 @@ import axios from "axios";
 import setJWTToken from "../securityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";
+import {BASE_URL} from "../Utils/environment";
 
 export const UPDATE_user = 'Update_user';
 
@@ -11,7 +12,7 @@ export const UPDATE_user = 'Update_user';
 export const createNewUser = (newuser, history) => async dispatch => {
 
     try {
-        await axios.post("http://localhost:5005/api/users/register", newuser);
+        await axios.post(`${BASE_URL}/users/register`, newuser);
         //If everything goes good, send us to our login page
         history.push("/");
         dispatch({
@@ -32,7 +33,7 @@ export const login = LoginRequest => async dispatch => {
     try {
         //fist we need to do is to hit the end point
         //post => Login request
-        const res = await axios.post("http://localhost:5005/api/users/login", LoginRequest);
+        const res = await axios.post(`${BASE_URL}/users/login`, LoginRequest);
 
         //extract token from res.data
         const { token } = res.data;
@@ -67,7 +68,7 @@ export const logout = () => dispatch => {
 
 
 export const getUsersById = (id) => async dispatch => {
-    const res = await axios.get(`http://localhost:5005/api/users/${id}`);
+    const res = await axios.get(`${BASE_URL}/users/${id}`);
     dispatch({
         type: UPDATE_user,
         payload: res.data
@@ -75,8 +76,6 @@ export const getUsersById = (id) => async dispatch => {
 };
     export const UppdateUser = (updateCurrentUser, history, id) => async dispatch => {
 
-        await axios.put(`http://localhost:5005/api/users/allusers/${id}`, updateCurrentUser);
-       // await axios.post("http://localhost:5005/api/users/allusers/${id}", updateCurrentUser, id);
-        //If everything goes good, send us to our login page
+        await axios.put(`${BASE_URL}/users/allusers/${id}`, updateCurrentUser);
         history.push("/ResumeBoard");
 };
