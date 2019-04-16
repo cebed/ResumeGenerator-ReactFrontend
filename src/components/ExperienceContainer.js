@@ -20,6 +20,7 @@ class ExperienceContainer extends React.Component {
                         end_date = {post.end_date}
                         start_date ={post.start_date}
                         description = {post.description}
+                        id={post.id}
 
                     />
             )
@@ -31,13 +32,17 @@ class ExperienceContainer extends React.Component {
 const {id} = this.props.user
         return (
             <div>
-                <h4> Work Experience</h4>
-                {id}
+                <div className="container">
+                    <div className="card card-body bg-light mb-3">
+                        <div className="card-header"><h1 className="display-4 text-center">Work Experience</h1></div>
+
                     {this.renderWorkEx()}
 
                 <Link className="btn btn-primary" to="/AddExperience">
                     Add new Experience
                 </Link>
+            </div>
+            </div>
             </div>
 
         );

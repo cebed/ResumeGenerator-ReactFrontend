@@ -1,14 +1,24 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import {getUsersById} from "../actions/securityActions";
+import PropTypes from "prop-types";
 
 class UserBoard extends Component {
+
+    componentDidMount(){
+        this.props.getUsersById(this.props.security.user.id);
+    }
+
     render() {
+
+
         const { user } = this.props.security;
         return (
 
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
+                        <div className="card-header"><h1 className="display-4 text-center">Welcome  {user.fullName} </h1></div>
 
                         <form>
                             <div className="form-group row">
@@ -34,15 +44,15 @@ class UserBoard extends Component {
 
 
                         <div className="col-md-4 d-none d-lg-block">
-                            <ul className="list-group">
 
-                                <li className="list-group-item update">
-                                    <Link to="/updateUser">
-                                    <i className="fa fa-edit pr-1"> Update Info</i>
+
+
+                                    <Link className="fa fa-edit pr-1"  to="/updateUser">
+                                        Update Info
                                     </Link>
-                                </li>
 
-                            </ul>
+
+
                         </div>
                     </div>
                 </div>
@@ -53,8 +63,12 @@ class UserBoard extends Component {
 
 const mapStateToProps = state => ({
     security: state.security
-});
 
+});
+UserBoard.propTypes = {
+    getUsersById: PropTypes.func.isRequired,
+    errors: PropTypes.object.isRequired
+};
 export default connect(
-    mapStateToProps
+    mapStateToProps,  { getUsersById}
 )(UserBoard)

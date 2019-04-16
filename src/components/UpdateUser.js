@@ -18,7 +18,7 @@ class UpdateUser extends Component {
             username: '',
             address: '',
             phone:'',
-            errors: {}
+           // errors: {}
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -44,6 +44,8 @@ class UpdateUser extends Component {
     onChange(e){
         this.setState({ [e.target.name]: e.target.value });
     }
+
+
 
     render() {
         const { user } = this.props.security;
@@ -95,7 +97,7 @@ class UpdateUser extends Component {
                                                        placeholder={user.phone}
                                                        name="phone"
                                                        value={this.state.phone}
-                                                       onchange={this.onChange}
+                                                       onChange={this.onChange}
                                                 />
 
                                             </div>

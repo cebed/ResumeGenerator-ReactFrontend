@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ExperienceContainer from "./components/ExperienceContainer";
 import AddExperience from "./components/AddExperience";
+import EditExperience from "./components/EditExperience";
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import jwt_decode from "jwt-decode";
@@ -62,6 +63,8 @@ class App extends Component {
                 <Route exact path="/Register" component={Register}/>
                 <Route exact path="/ExperienceContainer" component={ExperienceContainer} />
                 <Route exact path="/AddExperience" component={AddExperience} />
+                <Route exact path="/EditExperience/:id" component={EditExperience} />
+
 
                 {
                     //Private Routes

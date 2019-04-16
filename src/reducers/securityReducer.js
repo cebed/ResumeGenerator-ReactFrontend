@@ -1,4 +1,6 @@
 import { SET_CURRENT_USER } from "../actions/types";
+import {UPPDATE_WorkExbyId} from "../actions/WorkExActions";
+import {UPDATE_user} from "../actions/securityActions";
 
 const initialState = {
     validToken: false,
@@ -21,7 +23,11 @@ export default function(state = initialState, action) {
                 validToken: booleanActionPayload(action.payload),
                 user: action.payload
             };
-
+        case UPDATE_user:
+            return {
+                ...state,
+                user: action.payload
+            };
 
         default:
             return state;
