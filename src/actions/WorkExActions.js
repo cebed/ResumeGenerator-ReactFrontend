@@ -34,3 +34,13 @@ export const updateWorkExperience = (id, update, history) => async dispatch => {
 
 };
 
+export const deleteWorExpeience = (id, history) => async dispatch => {
+    console.log(id);
+
+    await axios.delete(`http://localhost:5005/api/work/delete/${id}`);
+
+    history.push("/ResumeBoard");
+
+
+};
+

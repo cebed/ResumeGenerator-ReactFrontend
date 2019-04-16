@@ -5,7 +5,7 @@ import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {updateWorkExperience , getWorkExperienceById} from "../actions/WorkExActions";
+import {updateWorkExperience , getWorkExperienceById , deleteWorExpeience} from "../actions/WorkExActions";
 import {Link} from "react-router-dom";
 
 
@@ -66,7 +66,11 @@ class  EditExperience extends Component {
         this.setState({ [e.target.name]: e.target.value } );
     }
 
+    onDeleteClick(){
+        const { id }  = this.props.match.params;
+        this.props.deleteWorExpeience(id , this.props.history);
 
+    }
 
 
     render() {
@@ -137,6 +141,12 @@ class  EditExperience extends Component {
 
 
                     </form>
+                    <button
+                        className="btn btn-danger pull-xs-right"
+                        onClick={this.onDeleteClick.bind(this)}
+                    >
+                        Delete
+                    </button>
                 </Card.Body>
             </Card>
 
@@ -145,6 +155,8 @@ class  EditExperience extends Component {
 }
 EditExperience.propTypes = {
     updateWorkExperience: PropTypes.func.isRequired,
+    deleteWorExpeience: PropTypes.func.isRequired,
+
 
 };
 function mapStateToProps({ work_ex }) {
@@ -154,6 +166,6 @@ function mapStateToProps({ work_ex }) {
 
 export default connect(
     mapStateToProps,
-    { updateWorkExperience, getWorkExperienceById }
+    { updateWorkExperience, getWorkExperienceById, deleteWorExpeience }
 )(EditExperience);
 

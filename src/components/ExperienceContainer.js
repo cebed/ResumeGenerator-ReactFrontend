@@ -32,6 +32,8 @@ class ExperienceContainer extends React.Component {
 const {id} = this.props.user
         return (
             <div>
+                <div className="container">
+                    <div className="card card-body bg-light mb-3">
                 <h4> Work Experience</h4>
                 {id}
                     {this.renderWorkEx()}
@@ -39,6 +41,8 @@ const {id} = this.props.user
                 <Link className="btn btn-primary" to="/AddExperience">
                     Add new Experience
                 </Link>
+            </div>
+            </div>
             </div>
 
         );
