@@ -34,8 +34,8 @@ const {id} = this.props.user
             <div>
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
-                <h4> Work Experience</h4>
-                {id}
+                        <div className="card-header"><h1 className="display-4 text-center">Work Experience</h1></div>
+
                     {this.renderWorkEx()}
 
                 <Link className="btn btn-primary" to="/AddExperience">

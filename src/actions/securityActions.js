@@ -3,6 +3,8 @@ import setJWTToken from "../securityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 
+export const UPDATE_user = 'Update_user';
+
 //this takes the object(projekt) and takes history parameter
 //history parameter, this is what is going to allow us to redirect once we submit the form
 //async the functions always returns a promise, use it with await means that javascript wait until that promise settles and returns its result
@@ -63,21 +65,18 @@ export const logout = () => dispatch => {
     });
 };
 
+
+export const getUsersById = (id) => async dispatch => {
+    const res = await axios.get(`http://localhost:5005/api/users/${id}`);
+    dispatch({
+        type: UPDATE_user,
+        payload: res.data
+    });
+};
     export const UppdateUser = (updateCurrentUser, history, id) => async dispatch => {
 
-    try {
-        await axios.post("http://localhost:5005/api/users/allusers/${id}", updateCurrentUser, id);
+        await axios.put(`http://localhost:5005/api/users/allusers/${id}`, updateCurrentUser);
+       // await axios.post("http://localhost:5005/api/users/allusers/${id}", updateCurrentUser, id);
         //If everything goes good, send us to our login page
         history.push("/ResumeBoard");
-        dispatch({
-            type:GET_ERRORS,
-            payload: {}
-        });
-    }catch (error) {
-        dispatch({
-            type:GET_ERRORS,
-            payload: error.response.data
-        });
-
-    }
 };

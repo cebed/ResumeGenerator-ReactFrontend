@@ -10,6 +10,7 @@ export const fetchWorkEx = (id) => async dispatch => {
     });
 };
 
+
 export const createNewEx = (newuser, history) => async dispatch => {
       await axios.post("http://localhost:5005/api/work/register", newuser);
         history.push("/ResumeBoard");

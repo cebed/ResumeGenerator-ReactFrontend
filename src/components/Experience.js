@@ -27,7 +27,7 @@ class Experience extends Component {
 
                         </div>
                         <div className="col-md-4 d-none d-lg-block">
-                            <Link to={`/EditExperience/${id}`}>
+                            <Link className="fa fa-edit pr-1" to={`/EditExperience/${id}`}>
                                 Edit WorkExperience
                             </Link>
 
