@@ -19,8 +19,8 @@ if (window.navigator.userAgent.includes("Chrome")) {
         compose(
             //PASS AN ARRAY OF MIDDLEWARE
             applyMiddleware(...middleware),
-            window.__REDUX_DEVTOOLS_EXTENSION__ &&
-            window.__REDUX_DEVTOOLS_EXTENSION__()
+           //window.__REDUX_DEVTOOLS_EXTENSION__ &&
+             // window.__REDUX_DEVTOOLS_EXTENSION__()
             //window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose
 
 )
