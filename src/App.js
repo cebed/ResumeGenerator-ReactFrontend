@@ -20,6 +20,9 @@ import {logout} from "./actions/securityActions"
 import Header from "./components/header";
 import UpdateUser from "./components/UpdateUser";
 import Footer from "./components/footer";
+import CourseContainer from "./container/CourseContainer";
+import AddCoursePage from "./pages/AddCoursePage";
+import EditCoursePage from "./pages/EditCoursePage";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
@@ -64,6 +67,10 @@ class App extends Component {
                 <Route exact path="/ExperienceContainer" component={ExperienceContainer} />
                 <Route exact path="/AddExperience" component={AddExperience} />
                 <Route exact path="/EditExperience/:id" component={EditExperience} />
+                <Route exact path="/CourseContainer" component={CourseContainer} />
+                <Route exact path="/AddCoursePage" component={AddCoursePage} />
+                <Route exact path="/EditCoursePage/:id" component={EditCoursePage} />
+
 
 
                 {

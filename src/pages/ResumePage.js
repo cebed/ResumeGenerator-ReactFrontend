@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import UserBoard from "../components/UserBoard";
 import ExperienceContainer from "../container/ExperienceContainer";
+import CourseContainer from "../container/CourseContainer";
 
 class ResumePage extends Component {
     render() {
@@ -14,8 +15,9 @@ class ResumePage extends Component {
                 <div>
                 <UserBoard/>
                 <ExperienceContainer/>
-                </div>
 
+                </div>
+                <CourseContainer/>
 
             </div>
         );
