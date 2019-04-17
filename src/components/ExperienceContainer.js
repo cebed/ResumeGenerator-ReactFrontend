@@ -1,26 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchWorkEx  } from '../actions/WorkExActions';
+
 import _ from 'lodash';
 import Experience from "./Experience";
 
 class ExperienceContainer extends React.Component {
 
-    componentDidMount(){
-        this.props.fetchWorkEx(this.props.user.id);
-    }
+
 
     renderWorkEx(){
-        return _.map(this.props.work_ex_list, post => {
+        return _.map(this.props.user.workExperience, list => {
             return(
 
                     <Experience
-                        experience={post.title}
-                        end_date = {post.end_date}
-                        start_date ={post.start_date}
-                        description = {post.description}
-                        id={post.id}
+
+                        experience={list.title}
+                        end_date = {list.end_date}
+                        start_date ={list.start_date}
+                        description = {list.description}
+                        id = {list.id_workExperience}
 
                     />
             )
@@ -55,4 +54,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, { fetchWorkEx  })(ExperienceContainer);
+export default connect(mapStateToProps)(ExperienceContainer);

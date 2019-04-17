@@ -1,4 +1,4 @@
-import { FETCH_WorkEx, UPPDATE_WorkExbyId } from "../actions/WorkExActions";
+import {  UPPDATE_WorkExbyId } from "../actions/WorkExActions";
 
 const initialState = {
     Work_ex: [],
@@ -7,11 +7,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch (action.type) {
-        case FETCH_WorkEx:
-            return {
-                ...state,
-                Work_ex: action.payload
-            };
+
         case UPPDATE_WorkExbyId:
             return {
                 ...state,

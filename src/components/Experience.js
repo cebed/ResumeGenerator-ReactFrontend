@@ -22,6 +22,7 @@ class Experience extends Component {
                             <div className="row">{start_date}</div>
                             <div className="row"> {end_date}</div>
                             <div className="row">   {description}</div>
+                            <div className="row">   {id}</div>
                         </div>
                         <div className="col-lg-4 col-md-4 col-8">
 

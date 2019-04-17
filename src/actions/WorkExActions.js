@@ -2,19 +2,11 @@
 import axios from 'axios';
 import {BASE_URL} from "../Utils/environment";
 
-export const FETCH_WorkEx = 'WorkEx';
+
 export const UPPDATE_WorkExbyId = 'Uppdate_WorkExbyId';
 
 
 
-
-export const fetchWorkEx = (id) => async dispatch => {
-    const res = await axios.get(`${BASE_URL}/work/workid/${id}`);
-    dispatch({
-        type: FETCH_WorkEx,
-        payload: res.data
-    });
-};
 
 
 

@@ -19,7 +19,7 @@ class  AddExperience extends Component {
             start_date: '',
             end_date: '',
             description: '',
-            user_ID: {}
+            id: ''
         }
         ;
         this.onChange = this.onChange.bind(this);
@@ -35,7 +35,7 @@ class  AddExperience extends Component {
             start_date: this.state.start_date,
             end_date: this.state.end_date,
             description: this.state.description,
-            user_ID:this.state.user_ID,
+            id:this.props.user.id,
 
         };
 
@@ -44,7 +44,7 @@ class  AddExperience extends Component {
 
 
     onChange(e){
-        this.setState({ [e.target.name]: e.target.value , user_ID: this.props.user} );
+        this.setState({ [e.target.name]: e.target.value  } );
     }
 
 
@@ -56,7 +56,7 @@ class  AddExperience extends Component {
 
         return (
             <Card>
-                <h1>   {this.state.user_ID.id}</h1>
+                <h1>  {this.state.id}</h1>
                 <Card.Body>
 
                     <form onSubmit={this.onSubmit}>

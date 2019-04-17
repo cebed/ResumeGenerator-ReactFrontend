@@ -85,7 +85,7 @@ class  EditExperience extends Component {
             <Card>
 
                 <Card.Body>
-                    {this.props.work_ex.title}
+                    { id }
 
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
@@ -159,9 +159,11 @@ EditExperience.propTypes = {
 
 
 };
-function mapStateToProps({ work_ex }) {
-    return {work_ex: work_ex.Work_ex}
+function mapStateToProps(state) {
+    return { work_ex_list: state.work_ex.Work_ex ,
+        user: state.security.user};
 }
+
 
 
 export default connect(
