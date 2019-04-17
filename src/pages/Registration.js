@@ -38,6 +38,7 @@ class Registration extends Component {
         };
 
         this.props.createNewUser(newuser, this.props.history);
+
     }
 
 
@@ -66,7 +67,7 @@ class Registration extends Component {
                                                        })}
                                                        placeholder="Full Name"
                                                        name="fullName"
-
+                                                       required
                                                        value={this.state.fullName}
                                                        onChange={this.onChange}
                                                 />
@@ -79,6 +80,7 @@ class Registration extends Component {
                                                        className={classnames("form-control form-control-lg", {
                                                            "is-invalid": errors.username
                                                        })}
+                                                       required
                                                        placeholder="Email Address"
                                                        name="username"
                                                        value={this.state.username}
@@ -95,6 +97,7 @@ class Registration extends Component {
                                                        className={classnames("form-control form-control-lg", {
                                                            "is-invalid": errors.password
                                                        })}
+                                                       required
                                                        placeholder="Password"
                                                        name="password"
                                                        value={this.state.password}

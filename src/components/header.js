@@ -20,10 +20,10 @@ class Header extends Component {
 
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">
-                            <i className="fas fa-user-circle mr-1" />
-                            {user.fullName}
-                        </Link>
+
+                        <i className="fas fa-user-circle mr-1" />
+                        <h6>{user.fullName}</h6>
+
                     </li>
                     <li className="nav-item">
                         <Link
@@ -70,7 +70,7 @@ class Header extends Component {
                 <div className="container">
                     <ul>
                         <li className="logo">Resume<span>Generator</span></li>
-                        <Link className="navbar-brand" to="/"><h2 className="navbarwelcome">Welcome</h2> </Link>
+                        <li className="navbarwelcome"><h2>FrontEdge<span>IT</span></h2></li>
                     </ul>
 
 
@@ -89,7 +89,7 @@ class Header extends Component {
 
                                     <Dropdown.Menu>
                                         <Dropdown.Item href="/Register">Sign up</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                        <Dropdown.Item href="/ResumeBoard"> ResumeBoard</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
