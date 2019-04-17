@@ -1,10 +1,10 @@
 import axios from "axios";
 import setJWTToken from "../securityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
-import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 import {BASE_URL} from "../Utils/environment";
-
 export const UPDATE_user = 'Update_user';
+export const GET_ERRORS = "GET_ERRORS";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
 
 //this takes the object(projekt) and takes history parameter
 //history parameter, this is what is going to allow us to redirect once we submit the form

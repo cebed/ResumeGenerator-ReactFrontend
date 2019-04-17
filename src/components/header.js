@@ -4,7 +4,7 @@ import {Dropdown} from "react-bootstrap";
 import Bootstap from 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logout } from "../../actions/securityActions";
+import { logout } from "../actions/securityActions";
 
 
 class Header extends Component {

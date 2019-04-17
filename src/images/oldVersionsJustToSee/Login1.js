@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button, Form} from "react-bootstrap";
-import axios from "axios";
+import axios from "axios/index";
 import PropTypes from "prop-types"
 
 class Login1 extends Component {

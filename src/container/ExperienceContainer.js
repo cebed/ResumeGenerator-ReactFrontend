@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import _ from 'lodash';
-import Experience from "./Experience";
+import Experience from "../components/Experience";
 
 class ExperienceContainer extends React.Component {
 

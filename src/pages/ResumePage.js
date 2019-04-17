@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import UserBoard from "./UserBoard";
-import ExperienceContainer from "./ExperienceContainer";
+import UserBoard from "../components/UserBoard";
+import ExperienceContainer from "../container/ExperienceContainer";
 
-class ResumeBoard extends Component {
+class ResumePage extends Component {
     render() {
 
         return (
@@ -22,7 +22,7 @@ class ResumeBoard extends Component {
     }
 }
 
-ResumeBoard.propTypes = {
+ResumePage.propTypes = {
     security: PropTypes.object.isRequired
 };
 
@@ -33,4 +33,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps
-)(ResumeBoard)
+)(ResumePage)

@@ -1,25 +1,25 @@
 import React, {Component} from 'react';
-import ExperienceContainer from "./components/ExperienceContainer";
-import AddExperience from "./components/AddExperience";
-import EditExperience from "./components/EditExperience";
+import ExperienceContainer from "./container/ExperienceContainer";
+import AddExperience from "./pages/AddExperience";
+import EditExperience from "./pages/EditExperience";
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
 //import {ButtonToolbar, Button} from 'react-bootstrap';
-import ResumeBoard from "./components/ResumeBoard";
-import Register from "./components/UserManagement/Registration";
+import ResumeBoard from "./pages/ResumePage";
+import Register from "./pages/Registration";
 //THIS IMPORT ALLOWS US TO HOOK UP REACT WITH REDUX
 //Provider is basically how we define the store that we are going to use for our APP
 import { Provider } from "react-redux";
 import store from "./store";
 import setJWTToken from "./securityUtils/setJWTToken";
-import {SET_CURRENT_USER} from "./actions/types";
-import Login from "./components/UserManagement/Login";
+import {SET_CURRENT_USER} from "./actions/securityActions";
+import Login from "./pages/Login";
 import {logout} from "./actions/securityActions"
-import Header from "./components/layout/header";
+import Header from "./components/header";
 import UpdateUser from "./components/UpdateUser";
-import Footer from "./components/layout/footer";
+import Footer from "./components/footer";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade

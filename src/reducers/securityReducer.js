@@ -1,5 +1,4 @@
-import { SET_CURRENT_USER } from "../actions/types";
-import {UPPDATE_WorkExbyId} from "../actions/WorkExActions";
+import { SET_CURRENT_USER } from "../actions/securityActions";
 import {UPDATE_user} from "../actions/securityActions";
 
 const initialState = {
