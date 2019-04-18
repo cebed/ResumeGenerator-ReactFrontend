@@ -79,10 +79,12 @@ class  EditCoursePage extends Component {
 
 
 
-        const { id }  = this.props.match.params;
+
+        const { title }  = this.props.course;
 
         return (
             <Card>
+                {this.props.course.id}
 
                 <Card.Body>
 

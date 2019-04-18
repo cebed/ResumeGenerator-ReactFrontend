@@ -14,7 +14,7 @@ export const createNewCourse = (newCourse, history) => async dispatch => {
         };
 
 export const getCourseById = (id) => async dispatch => {
-    const res = await axios.get(`${BASE_URL}/course/CourseseById/${id}`);
+    const res = await axios.get(`${BASE_URL}/course/Coursesebyid/${id}`);
     dispatch({
         type: UPDATE_COURSE,
         payload: res.data
