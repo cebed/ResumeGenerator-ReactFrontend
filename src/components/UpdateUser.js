@@ -10,14 +10,14 @@ import {UppdateUser} from "../actions/securityActions";
 
 class UpdateUser extends Component {
 
-    constructor(){
+    constructor(props){
         super();
         this.state = {
 
-            fullName: '',
-            username: '',
-            address: '',
-            phone:'',
+            fullName: props.security.user.fullName,
+            username: props.security.user.username,
+            address: props.security.user.address,
+            phone:props.security.user.phone,
            // errors: {}
         };
         this.onChange = this.onChange.bind(this);
