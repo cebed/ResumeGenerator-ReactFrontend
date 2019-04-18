@@ -23,6 +23,9 @@ import Footer from "./components/footer";
 import CourseContainer from "./container/CourseContainer";
 import AddCoursePage from "./pages/AddCoursePage";
 import EditCoursePage from "./pages/EditCoursePage";
+import EducationContainer from "./container/EducationContainer";
+import AddEducationPage from "./pages/AddEducationPage";
+import EditEducationPage from "./pages/EditEducationPage";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
@@ -70,6 +73,9 @@ class App extends Component {
                 <Route exact path="/CourseContainer" component={CourseContainer} />
                 <Route exact path="/AddCoursePage" component={AddCoursePage} />
                 <Route exact path="/EditCoursePage/:id" component={EditCoursePage} />
+                <Route exact path="/EducationContainer" component={EducationContainer} />
+                <Route exact path="/AddEducationPage" component={AddEducationPage} />
+                <Route exact path="/EditEducationPage/:id" component={EditEducationPage} />
 
 
 

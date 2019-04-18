@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import UserBoard from "../components/UserBoard";
 import ExperienceContainer from "../container/ExperienceContainer";
 import CourseContainer from "../container/CourseContainer";
+import EducationContainer from "../container/EducationContainer";
 
 class ResumePage extends Component {
     render() {
@@ -15,9 +16,10 @@ class ResumePage extends Component {
                 <div>
                 <UserBoard/>
                 <ExperienceContainer/>
-
+                <EducationContainer/>
+                    <CourseContainer/>
                 </div>
-                <CourseContainer/>
+
 
             </div>
         );

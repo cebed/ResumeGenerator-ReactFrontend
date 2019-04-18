@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
 
-class CourseComponent extends Component {
+class EducationComponent extends Component {
     render() {
         const {
             experience,
             start_date,
-
+            end_date,
+            description,
             id
 
         } = this.props;
@@ -19,14 +20,15 @@ class CourseComponent extends Component {
                         <div className="col-4">
                             <div className="row">{experience}</div>
                             <div className="row">{start_date}</div>
-
+                            <div className="row">{end_date}</div>
+                            <div className="row">   {description}</div>
                         </div>
                         <div className="col-lg-4 col-md-4 col-8">
 
                         </div>
                         <div className="col-md-4 d-none d-lg-block">
-                            <Link className="fa fa-edit pr-1" to={`/EditCoursePage/${id}`}>
-                                Edit Course
+                            <Link className="fa fa-edit pr-1" to={`/EditEducationPage/${id}`}>
+                                Edit Education
                             </Link>
 
                         </div>
@@ -40,4 +42,4 @@ class CourseComponent extends Component {
     }
 }
 
-export default CourseComponent;
+export default EducationComponent;
