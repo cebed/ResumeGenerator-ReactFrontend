@@ -228,3 +228,12 @@ footer ul:first-of-type li span {
     padding: 20px;
     height: 100%;
 }
+
+.paddH6{
+  padding-top: 2px;
+}
+
+.paddingUpdateInfoLink{
+  padding: 25px;
+  margin-left: 80%;
+}

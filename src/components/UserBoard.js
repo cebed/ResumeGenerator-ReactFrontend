@@ -18,42 +18,46 @@ class UserBoard extends Component {
 
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
-                        <div className="card-header"><h1 className="display-4 text-center">Welcome  {user.fullName} </h1></div>
+                        <div className="card-header"><h1 className="display-4 text-center">Welcome  {user.fullName} <div><h4>{user.currentTitle} </h4> </div></h1></div>
 
-                        <form>
-                            <div className="form-group row">
-                                <label  className="col-sm-3 col-form-label">Username: {user.fullName}</label>
 
-                            </div>
-                            <div className="form-group row">
-                                <label  className="col-sm-3 col-form-label">Email: {user.username}</label>
+                            <form>
 
-                            </div>
+                                <ul className="list-group">
+                                    <li className="list-group-item align-items-center">
+                                        <p><h6>Title:</h6> {user.currentTitle}</p>
+                                    </li>
 
-                            <div className="form-group row">
-                                <label  className="col-sm-3 col-form-label">Address: {user.address}</label>
+                                    <li className="list-group-item align-items-center">
+                                        <p><h6>Username:</h6> {user.fullName}</p>
+                                    </li>
 
-                            </div>
+                                    <li className="list-group-item align-items-center">
+                                        <p><h6>Email:</h6> {user.username}</p>
+                                    </li>
 
-                            <div className="form-group row">
-                                <label  className="col-sm-3 col-form-label">Phone: {user.phone}</label>
+                                    <li className="list-group-item align-items-center">
+                                        <p><h6>Address:</h6> {user.address}</p>
+                                    </li>
 
-                            </div>
+                                    <li className="list-group-item align-items-center">
+                                        <p><h6>Phone:</h6> {user.phone}</p>
+                                    </li>
+
+                                    <li className="list-group-item align-items-center">
+                                        <p><h6>Description:</h6> {user.userProfile}</p>
+                                    </li>
+
+                                    <div className="paddingUpdateInfoLink">
+                                    <Link className="fa fa-edit pr-1"  to="/updateUser">
+                                        <h3>Update Info</h3>
+                                    </Link>
+                                    </div>
+
+                                </ul>
 
                         </form>
 
-
-                        <div className="col-md-4 d-none d-lg-block">
-
-
-
-                                    <Link className="fa fa-edit pr-1"  to="/updateUser">
-                                        Update Info
-                                    </Link>
-
-
-
-                        </div>
                     </div>
                 </div>
 

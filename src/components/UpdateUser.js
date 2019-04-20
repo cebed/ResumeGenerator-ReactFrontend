@@ -13,11 +13,13 @@ class UpdateUser extends Component {
     constructor(props){
         super();
         this.state = {
-
+            currentTitle: props.security.user.currentTitle,
             fullName: props.security.user.fullName,
             username: props.security.user.username,
             address: props.security.user.address,
             phone:props.security.user.phone,
+            userProfile: props.security.user.userProfile
+
            // errors: {}
         };
         this.onChange = this.onChange.bind(this);
@@ -29,10 +31,12 @@ class UpdateUser extends Component {
     onSubmit(event){
         event.preventDefault();
         const updateCurrentUser = {
+            currentTitle: this.state.currentTitle,
             fullName: this.state.fullName,
             username: this.state.username,
             address: this.state.address,
-            phone: this.state.phone
+            phone: this.state.phone,
+            userProfile: this.state.userProfile
 
         };
         const {id} =   this.props.security.user;
@@ -62,6 +66,19 @@ class UpdateUser extends Component {
                                         <p className="lead text-center">User details</p>
 
                                         <form onSubmit={this.onSubmit}>
+
+
+                                            <div className="form-group">
+
+                                                <input type="text"
+                                                       placeholder="My title"
+                                                       name="currentTitle"
+                                                       value={this.state.currentTitle}
+                                                       onChange={this.onChange}
+                                                />
+
+                                            </div>
+
                                             <div className="form-group">
                                                 <input type="text"
                                                        placeholder="Full Name"
@@ -82,7 +99,7 @@ class UpdateUser extends Component {
 
                                             <div className="form-group">
                                                 <input type="text"
-                                                       placeholder={user.address}
+                                                       placeholder="Address"
                                                        name="address"
                                                        value={this.state.address}
                                                        onChange={this.onChange}
@@ -94,13 +111,25 @@ class UpdateUser extends Component {
                                             <div className="form-group">
                                                 <input type="text"
 
-                                                       placeholder={user.phone}
+                                                       placeholder="Phone"
                                                        name="phone"
                                                        value={this.state.phone}
                                                        onChange={this.onChange}
                                                 />
 
                                             </div>
+
+                                            <div className="form-group">
+                                                <textarea className="form-control" rows="5" id="comment"
+
+                                                       placeholder="userProfile"
+                                                       name="userProfile"
+                                                       value={this.state.userProfile}
+                                                       onChange={this.onChange}
+                                                />
+                                            </div>
+
+
 
                                             <div>
                                                 <Button type="submit" variant="primary" size="lg" block>

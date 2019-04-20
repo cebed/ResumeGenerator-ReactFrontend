@@ -134,6 +134,18 @@ class  EditExperience extends Component {
 
                             </div>
 
+                            {
+                                //BOOLEAN TO ADD LATER
+                              /*   <div className="checkbox">
+                                    <label>
+                                        <input type="checkbox" data-toggle="toggle"/>
+                                        On going
+                                    </label>
+                                </div>
+                                */
+
+                            }
+
                         </div>
                         <Button type="submit" variant="primary" size="lg" block>
                             Save
