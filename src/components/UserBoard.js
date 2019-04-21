@@ -1,24 +1,42 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {getUsersById} from "../actions/securityActions";
+import {getUsersById , generatePdf} from "../actions/securityActions";
 import PropTypes from "prop-types";
+import {Card} from "react-bootstrap";
 
 class UserBoard extends Component {
 
     componentDidMount(){
         this.props.getUsersById(this.props.security.user.id);
+
+    }
+    onGeneratePdf(){
+
+        this.props.generatePdf();
+
     }
 
     render() {
 
 
         const { user } = this.props.security;
+
         return (
 
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
-                        <div className="card-header"><h1 className="display-4 text-center">Welcome  {user.fullName} <div><h4>{user.currentTitle} </h4> </div></h1></div>
+                        <div className="card-header"><h4 className="display-4 text-center">Welcome  {user.fullName}
+
+                            <button
+                                className="btn btn-danger"
+                                onClick={this.onGeneratePdf.bind(this)}
+                                type="submit" variant="primary" size="lg" block
+                            >
+                                GeneratePdf
+                            </button>
+
+                        </h4></div>
 
 
                             <form>
@@ -74,5 +92,5 @@ UserBoard.propTypes = {
     errors: PropTypes.object.isRequired
 };
 export default connect(
-    mapStateToProps,  { getUsersById}
+    mapStateToProps,  { getUsersById , generatePdf}
 )(UserBoard)

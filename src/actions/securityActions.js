@@ -6,6 +6,9 @@ export const UPDATE_user = 'Update_user';
 export const GET_ERRORS = "GET_ERRORS";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 
+
+
+
 //this takes the object(projekt) and takes history parameter
 //history parameter, this is what is going to allow us to redirect once we submit the form
 //async the functions always returns a promise, use it with await means that javascript wait until that promise settles and returns its result
@@ -79,4 +82,30 @@ export const getUsersById = (id) => async dispatch => {
 
         await axios.put(`${BASE_URL}/users/allusers/${id}`, updateCurrentUser);
         history.push("/ResumeBoard");
+};
+
+
+export const generatePdf = () => async dispatch => {
+
+
+    axios(`http://localhost:5005/api/users/pdf`, {
+        method: 'GET',
+        responseType: 'blob' //Force to receive data in a Blob Format
+    })
+        .then(response => {
+//Create a Blob from the PDF Stream
+            const file = new Blob(
+                [response.data],
+                {type: 'application/pdf'});
+//Build a URL from the file
+            const fileURL = URL.createObjectURL(file);
+//Open the URL on new Window
+            window.open(fileURL);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+
+
 };
