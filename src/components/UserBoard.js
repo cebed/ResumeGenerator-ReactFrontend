@@ -13,7 +13,7 @@ class UserBoard extends Component {
     }
     onGeneratePdf(){
 
-        this.props.generatePdf();
+        this.props.generatePdf(this.props.security.user.id);
 
     }
 

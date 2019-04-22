@@ -85,10 +85,10 @@ export const getUsersById = (id) => async dispatch => {
 };
 
 
-export const generatePdf = () => async dispatch => {
+export const generatePdf = (id) => async dispatch => {
 
 
-    axios(`http://localhost:5005/api/users/pdf`, {
+    axios(`${BASE_URL}/users/pdf/${id}`, {
         method: 'GET',
         responseType: 'blob' //Force to receive data in a Blob Format
     })
