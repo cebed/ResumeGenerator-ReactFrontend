@@ -87,7 +87,7 @@ export const getUsersById = (id) => async dispatch => {
 
 export const generatePdf = (id) => async dispatch => {
 
-
+alert("Disable ad-block to be able to generate PDF!");
     axios(`${BASE_URL}/users/pdf/${id}`, {
         method: 'GET',
         responseType: 'blob' //Force to receive data in a Blob Format

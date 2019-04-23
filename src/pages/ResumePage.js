@@ -5,9 +5,10 @@ import UserBoard from "../components/UserBoard";
 import ExperienceContainer from "../container/ExperienceContainer";
 import CourseContainer from "../container/CourseContainer";
 import EducationContainer from "../container/EducationContainer";
-import SkillsComponent from "../components/SkillsComponent";
+//import SkillsComponent from "../components/SkillsComponent";
 import SkillsContainer from "../container/SkillsContainer";
 import OthersContainer from "../container/OthersContainer";
+import LanguageContainer from "../container/LanguageContainer";
 
 class ResumePage extends Component {
     render() {
@@ -23,6 +24,7 @@ class ResumePage extends Component {
                 <CourseContainer/>
                 <OthersContainer/>
                   <SkillsContainer/>
+                <LanguageContainer/>
                 </div>
 
 

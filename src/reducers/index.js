@@ -5,6 +5,7 @@ import errorReducer from "./errorReducer";
 import securityReducer from "./securityReducer"
 import reducer_Course from "./reducer_Course";
 import reducer_Others from "./reducer_Others";
+import reducer_Language from "./reducer_Language";
 
 
 export default combineReducers({
@@ -12,5 +13,6 @@ export default combineReducers({
     security: securityReducer,
     work_ex: reducer_WorkEx,
     courses:  reducer_Course,
-    others: reducer_Others
+    others: reducer_Others,
+    languages: reducer_Language
 });
