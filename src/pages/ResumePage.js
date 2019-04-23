@@ -5,6 +5,7 @@ import UserBoard from "../components/UserBoard";
 import ExperienceContainer from "../container/ExperienceContainer";
 import CourseContainer from "../container/CourseContainer";
 import EducationContainer from "../container/EducationContainer";
+import OthersContainer from "../container/OthersContainer";
 
 class ResumePage extends Component {
     render() {
@@ -17,7 +18,8 @@ class ResumePage extends Component {
                 <UserBoard/>
                 <ExperienceContainer/>
                 <EducationContainer/>
-                    <CourseContainer/>
+                <CourseContainer/>
+                <OthersContainer/>
                 </div>
 
 

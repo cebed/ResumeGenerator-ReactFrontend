@@ -28,6 +28,9 @@ import AddEducationPage from "./pages/AddEducationPage";
 import EditEducationPage from "./pages/EditEducationPage";
 import pdf from "./pages/pdf";
 
+import AddOthersPage from "./pages/AddOthersPage";
+import EditOthersPage from "./pages/EditOthersPage";
+
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
 //så länge som token existerar
@@ -78,6 +81,8 @@ class App extends Component {
                 <Route exact path="/AddEducationPage" component={AddEducationPage} />
                 <Route exact path="/EditEducationPage/:id" component={EditEducationPage} />
                 <Route exact path="/pdf" component={pdf} />
+                <Route exact path="/AddOthersPage" component={AddOthersPage} />
+                <Route exact path="/EditOthersPage/:id" component={EditOthersPage} />
 
 
 
