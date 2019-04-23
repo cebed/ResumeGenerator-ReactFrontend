@@ -27,6 +27,8 @@ import EducationContainer from "./container/EducationContainer";
 import AddEducationPage from "./pages/AddEducationPage";
 import EditEducationPage from "./pages/EditEducationPage";
 import pdf from "./pages/pdf";
+import AddSkillsPage from "./pages/AddSkillsPage";
+import EditSkillsPage from "./pages/EditSkillsPage";
 
 import AddOthersPage from "./pages/AddOthersPage";
 import EditOthersPage from "./pages/EditOthersPage";
@@ -80,6 +82,8 @@ class App extends Component {
                 <Route exact path="/EducationContainer" component={EducationContainer} />
                 <Route exact path="/AddEducationPage" component={AddEducationPage} />
                 <Route exact path="/EditEducationPage/:id" component={EditEducationPage} />
+                <Route exact path="/AddSkillsPage" component={AddSkillsPage} />
+                <Route exact path="/EditSkillsPage/:id" component={EditSkillsPage} />
                 <Route exact path="/pdf" component={pdf} />
                 <Route exact path="/AddOthersPage" component={AddOthersPage} />
                 <Route exact path="/EditOthersPage/:id" component={EditOthersPage} />
