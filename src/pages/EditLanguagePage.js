@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 
-
+import {Link} from "react-router-dom";
 import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import Back from "../components/Back"
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {updateLanguage , getCourseById , deleteLanguage} from "../actions/LanguageActions";
@@ -71,18 +72,19 @@ class  EditLanguagePage extends Component {
 
     render() {
 
-
-
-
-
-
         const { title }  = this.props.language;
 
         return (
-            <Card>
+
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <div className="card border-dark mb-3">
+                            <div className="card-header"><h1 className="display-4 text-center">Edit language</h1></div>
+                            <div className="card-body">
                 {this.props.language.id}
 
-                <Card.Body>
+
 
 
                     <form onSubmit={this.onSubmit}>
@@ -105,28 +107,48 @@ class  EditLanguagePage extends Component {
                                    name="level"
                                    value={this.state.level}
                                    onChange={this.onChange}
-
                             />
-
-
                         </div>
 
-                        <Button type="submit" variant="primary" size="lg" block>
+                        <div className="saveButton">
+                        <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
-
-
+                        </div>
                     </form>
 
-                    <button
-                        className="btn btn-danger"
-                        onClick={this.onDeleteClick.bind(this)}
-                        type="submit" variant="primary" size="lg" block
-                    >
-                        Delete
-                    </button>
-                </Card.Body>
-            </Card>
+
+                    <div className="container">
+
+                            <div className="row">
+                                <div className="col-6">
+                                    <Back/>
+                                </div>
+
+                                <div className="col-6">
+                                    <Button
+                                        variant="outline-danger"
+                                        size="lg"
+                                        block
+                                        onClick={this.onDeleteClick.bind(this)}
+                                        type="submit"  >
+
+                                        Delete
+                                    </Button>
+
+                                </div>
+
+                            </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
 
         );
     }

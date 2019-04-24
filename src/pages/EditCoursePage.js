@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
-
-
-import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {updateCourse , getCourseById , deleteCourse} from "../actions/CourseActions";
-import {Link} from "react-router-dom";
+import Back from "../components/Back";
 
 
 class  EditCoursePage extends Component {
@@ -14,7 +11,6 @@ class  EditCoursePage extends Component {
 
             const { id }  = this.props.match.params;
             this.props.getCourseById(id);
-
 
 
     }
@@ -34,8 +30,6 @@ class  EditCoursePage extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
     }
-
-
 
 
 
@@ -61,9 +55,6 @@ class  EditCoursePage extends Component {
 
 
 
-
-
-
     onChange(e){
         this.setState({ [e.target.name]: e.target.value } );
     }
@@ -80,16 +71,19 @@ class  EditCoursePage extends Component {
 
 
 
-
-
         console.log(this.props.user.id );
         const { title }  = this.props.course;
 
         return (
-            <Card>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <div className="card border-dark mb-3">
+                            <div className="card-header"><h1 className="display-4 text-center">Edit course</h1></div>
+                            <div className="card-body">
                 {this.props.course.id}
 
-                <Card.Body>
+
 
 
                     <form onSubmit={this.onSubmit}>
@@ -118,22 +112,41 @@ class  EditCoursePage extends Component {
 
                         </div>
 
-                        <Button type="submit" variant="primary" size="lg" block>
+                        <div className="saveButton">
+                        <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
+                        </div>
 
 
                     </form>
 
-                    <button
-                        className="btn btn-danger"
-                        onClick={this.onDeleteClick.bind(this)}
-                        type="submit" variant="primary" size="lg" block
-                    >
-                        Delete
-                    </button>
-                </Card.Body>
-            </Card>
+                                <div className="container">
+
+                                    <div className="row">
+                                        <div className="col-6">
+                                            <Back/>
+                                        </div>
+
+                                        <div className="col-6">
+                                            <Button
+                                                variant="outline-danger"
+                                                size="lg"
+                                                block
+                                                onClick={this.onDeleteClick.bind(this)}
+                                                type="submit">
+
+                                                Delete
+                                            </Button>
+                                        </div>
+
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         );
     }

@@ -7,13 +7,14 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {updateWorkExperience , getWorkExperienceById , deleteWorExpeience} from "../actions/WorkExActions";
 import {Link} from "react-router-dom";
+import Back from "../components/Back";
 
 
 class  EditExperience extends Component {
     componentDidMount() {
 
-            const { id }  = this.props.match.params;
-            this.props.getWorkExperienceById(id);
+        const { id }  = this.props.match.params;
+        this.props.getWorkExperienceById(id);
 
 
 
@@ -49,8 +50,8 @@ class  EditExperience extends Component {
 
 
         };
-       // console.log(this.props.match.params);
-       // console.log(update);
+        // console.log(this.props.match.params);
+        // console.log(update);
         const {id} = this.props.match.params
         this.props.updateWorkExperience(id, update, this.props.history, this.props.user.id);
 
@@ -82,48 +83,50 @@ class  EditExperience extends Component {
         const { id }  = this.props.match.params;
 
         return (
-            <Card>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <div className="card border-dark mb-3">
+                            <div className="card-header"><h1 className="display-4 text-center">Edit work experience</h1></div>
+                            <div className="card-body">
 
-                <Card.Body>
-                    { id }
+                                <form onSubmit={this.onSubmit}>
+                                    <div className="form-group">
+                                        <input type="text"
 
-                    <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <input type="text"
+                                               placeholder=" title"
+                                               name="title"
 
-                                   placeholder=" title"
-                                   name="title"
+                                               value={this.state.title}
+                                               onChange={this.onChange}
+                                        />
 
-                                   value={this.state.title}
-                                   onChange={this.onChange}
-                            />
+                                    </div>
 
-                        </div>
+                                    <div className="form-group">
+                                        <input type="date"
 
-                        <div className="form-group">
-                            <input type="date"
+                                               placeholder="start_date"
+                                               name="start_date"
+                                               value={this.state.start_date}
+                                               onChange={this.onChange}
 
-                                   placeholder="start_date"
-                                   name="start_date"
-                                   value={this.state.start_date}
-                                   onChange={this.onChange}
-
-                            />
+                                        />
 
 
-                        </div>
-                        <div className="form-group">
-                            <input type="date"
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="date"
 
-                                   placeholder="end_date"
-                                   name="end_date"
-                                   value={this.state.end_date}
-                                   onChange={this.onChange}
+                                               placeholder="end_date"
+                                               name="end_date"
+                                               value={this.state.end_date}
+                                               onChange={this.onChange}
 
-                            />
+                                        />
 
-                            <div >
-                       <textarea type="text"
+                                        <div >
+                       <textarea className="form-control" rows="5" id="comment"
 
                                  placeholder=" description"
                                  name="description"
@@ -132,36 +135,60 @@ class  EditExperience extends Component {
                                  onChange={this.onChange}
                        />
 
-                            </div>
+                                        </div>
 
-                            {
-                                //BOOLEAN TO ADD LATER
-                              /*   <div className="checkbox">
-                                    <label>
-                                        <input type="checkbox" data-toggle="toggle"/>
-                                        On going
-                                    </label>
+                                        {
+                                            //BOOLEAN TO ADD LATER
+                                            /*   <div className="checkbox">
+                                                  <label>
+                                                      <input type="checkbox" data-toggle="toggle"/>
+                                                      On going
+                                                  </label>
+                                              </div>
+                                              */
+
+                                        }
+
+                                    </div>
+
+
+
+                                    <div className="saveButton">
+                                        <Button type="submit" variant="success" size="lg" block>
+                                            Save
+                                        </Button>
+                                    </div>
+
+
+                                </form>
+                                <div className="container">
+
+                                    <div className="row">
+                                        <div className="col-6">
+                                            <Back/>
+                                        </div>
+
+                                        <div className="col-6">
+                                            <Button
+                                                variant="outline-danger"
+                                                size="lg"
+                                                block
+                                                onClick={this.onDeleteClick.bind(this)}
+                                                type="submit">
+
+                                                Delete
+                                            </Button>
+
+                                        </div>
+
+                                    </div>
                                 </div>
-                                */
-
-                            }
-
+                            </div>
                         </div>
-                        <Button type="submit" variant="primary" size="lg" block>
-                            Save
-                        </Button>
+                    </div>
+                </div>
+            </div>
 
-
-                    </form>
-                    <button
-                        className="btn btn-danger"
-                        onClick={this.onDeleteClick.bind(this)}
-                        type="submit" variant="primary" size="lg" block
-                    >
-                        Delete
-                    </button>
-                </Card.Body>
-            </Card>
 
         );
     }

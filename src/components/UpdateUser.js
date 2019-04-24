@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import Button from "react-bootstrap/Button";
 import {UppdateUser} from "../actions/securityActions";
 import {getUsersById} from "../actions/userActions";
+import Back from "./Back";
 
 
 class UpdateUser extends Component {
@@ -139,9 +140,13 @@ class UpdateUser extends Component {
 
 
                                             <div>
-                                                <Button type="submit" variant="primary" size="lg" block>
-                                                   Update
+                                                <Button type="submit" variant="success" size="lg" block>
+                                                   Save
                                                 </Button>
+
+                                                <div>
+                                                    <Back/>
+                                                </div>
 
                                             </div>
 

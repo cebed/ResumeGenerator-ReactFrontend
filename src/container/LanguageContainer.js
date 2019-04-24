@@ -39,7 +39,7 @@ const {id} = this.props.user
                     {this.renderWorkEx()}
 
                 <Link className="btn btn-primary" to="/AddLanguagePage">
-                    Add Language
+                    Add new language
                 </Link>
             </div>
             </div>

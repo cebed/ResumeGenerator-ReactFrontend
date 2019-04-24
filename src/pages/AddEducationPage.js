@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {createNewEducation} from "../actions/EducationActions";
+import Back from "../components/Back";
 
 
 
@@ -29,9 +30,10 @@ class  AddEducationPage extends Component {
     onSubmit(event){
         event.preventDefault();
         const newEducation = {
-            description: this.state.description,
+
             title: this.state.title,
             start_date: this.state.start_date,
+            description: this.state.description,
             id:this.props.user.id,
 
         };
@@ -52,9 +54,14 @@ class  AddEducationPage extends Component {
 
 
         return (
-            <Card>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <div className="card border-dark mb-3">
+                            <div className="card-header"><h1 className="display-4 text-center">Add education</h1></div>
+                            <div className="card-body">
                 <h1>  {this.state.id}</h1>
-                <Card.Body>
+
 
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
@@ -92,30 +99,37 @@ class  AddEducationPage extends Component {
                             />
 
                             <div >
-                       <textarea type="text"
+                         <textarea className="form-control" rows="5" id="comment"
 
                                  placeholder=" description"
                                  name="description"
 
                                  value={this.state.description}
                                  onChange={this.onChange}
-                       />
-
+                          />
                             </div>
+
+
                         </div>
 
 
 
 
 
-                        <Button type="submit" variant="primary" size="lg" block>
+                        <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
 
 
                     </form>
-                </Card.Body>
-            </Card>
+                                <div className="col-16">
+                                    <Back/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         );
     }

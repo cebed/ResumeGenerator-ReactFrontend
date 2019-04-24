@@ -31,7 +31,7 @@ export const updateSkills = (id, update, history,paramId) => async dispatch => {
 
 export const deleteSkills= (id, history, paramId) => async dispatch => {
     console.log(id);
-
+    alert("Are you sure?");
     await axios.delete(`${BASE_URL}/skills/delete/${id}`);
 
     history.push(`/ResumeBoard/${paramId}`);

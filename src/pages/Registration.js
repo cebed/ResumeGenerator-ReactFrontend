@@ -25,7 +25,9 @@ class Registration extends Component {
 
     componentDidMount(){
         if(this.props.security.validToken){
-            this.props.history.push("/ResumeBoard");
+
+            this.props.history.push("/");
+
         }
     }
 

@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {getUsersById , generatePdf} from "../actions/securityActions";
 import PropTypes from "prop-types";
 import {Card} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 class UserBoard extends Component {
 
@@ -25,15 +26,17 @@ class UserBoard extends Component {
 
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
+
                         <div className="card-header"><h4 className="display-4 text-center">Welcome  {user.fullName}
 
-                            <button
-                                className="btn btn-danger"
+                            <div>
+                            <Button className="pdfButton"
                                 onClick={this.onGeneratePdf.bind(this)}
-                                type="submit" variant="primary" size="lg" block
+                                type="submit" variant="primary" size="lg"
                             >
-                                GeneratePdf
-                            </button>
+                               Download CV PDF
+                            </Button>
+                            </div>
 
                         </h4></div>
 

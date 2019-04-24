@@ -33,7 +33,7 @@ export const updateEducation = (id, update, history, paramId) => async dispatch 
 
 export const deleteEducation= (id, history, paramId) => async dispatch => {
     console.log(id);
-
+    alert("Are you sure?");
     await axios.delete(`${BASE_URL}/edu/delete/${id}`);
 
     history.push(`/ResumeBoard/${paramId}`);

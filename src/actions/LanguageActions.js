@@ -39,7 +39,7 @@ export const updateLanguage = (id, update, history,paramId ) => async dispatch =
 
 export const deleteLanguage= (id, history, paramId) => async dispatch => {
     console.log(id);
-
+    alert("Are you sure?");
     await axios.delete(`${BASE_URL}/language/delete/${id}`);
 
     history.push(`/ResumeBoard/${paramId}`);

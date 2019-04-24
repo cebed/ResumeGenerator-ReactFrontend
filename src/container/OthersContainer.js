@@ -34,7 +34,7 @@ const {id} = this.props.user
             <div>
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
-                        <div className="card-header"><h1 className="display-4 text-center">Others</h1></div>
+                        <div className="card-header"><h1 className="display-4 text-center">Other competences</h1></div>
 
                     {this.renderWorkEx()}
 

@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {createNewOthers} from "../actions/OthersActions";
+import Back from "../components/Back";
 
 
 
@@ -51,9 +52,14 @@ class  AddOthersPage extends Component {
 
 
         return (
-            <Card>
-                <h1>  {this.state.id}</h1>
-                <Card.Body>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <div className="card border-dark mb-3">
+                            <div className="card-header"><h1 className="display-4 text-center">Add other competences</h1></div>
+                            <div className="card-body">
+                             <h1>  {this.state.id}</h1>
+
 
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
@@ -81,18 +87,20 @@ class  AddOthersPage extends Component {
 
                         </div>
 
-
-
-
-
-                        <Button type="submit" variant="primary" size="lg" block>
+                        <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
 
-
                     </form>
-                </Card.Body>
-            </Card>
+
+                                <div className="col-16">
+                                    <Back/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         );
     }

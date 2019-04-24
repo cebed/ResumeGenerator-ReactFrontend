@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {createNewSkills} from "../actions/SkillsActions";
+import Back from "../components/Back";
 
 
 
@@ -51,9 +52,14 @@ class  AddSkillsPage extends Component {
 
 
         return (
-            <Card>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <div className="card border-dark mb-3">
+                            <div className="card-header"><h1 className="display-4 text-center">Add Skill</h1></div>
+                            <div className="card-body">
                 <h1>  {this.state.id}</h1>
-                <Card.Body>
+
 
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
@@ -85,14 +91,21 @@ class  AddSkillsPage extends Component {
 
 
 
-                        <Button type="submit" variant="primary" size="lg" block>
+                        <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
 
 
                     </form>
-                </Card.Body>
-            </Card>
+                                <div className="col-16">
+                                    <Back/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         );
     }

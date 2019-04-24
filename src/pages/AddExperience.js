@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-
-
 import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {createNewEx} from "../actions/WorkExActions";
-import {Link} from "react-router-dom";
+import Back from "../components/Back";
+//import {Link} from "react-router-dom";
 
 
 class  AddExperience extends Component {
@@ -51,13 +50,15 @@ class  AddExperience extends Component {
 
     render() {
 
-
-
-
         return (
-            <Card>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <div className="card border-dark mb-3">
+                            <div className="card-header"><h1 className="display-4 text-center">Add work experience</h1></div>
+                            <div className="card-body">
                 <h1>  {this.state.id}</h1>
-                <Card.Body>
+
 
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
@@ -95,7 +96,7 @@ class  AddExperience extends Component {
                             />
 
                             <div >
-                       <textarea type="text"
+                        <textarea className="form-control" rows="5" id="comment"
 
                                  placeholder=" description"
                                  name="description"
@@ -107,15 +108,20 @@ class  AddExperience extends Component {
                             </div>
 
                         </div>
-                        <Button type="submit" variant="primary" size="lg" block>
+                        <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
 
 
                     </form>
-                </Card.Body>
-            </Card>
-
+                                <div className="col-16">
+                                    <Back/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }

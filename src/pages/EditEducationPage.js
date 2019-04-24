@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 
-
-import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {updateEducation , deleteEducation} from "../actions/EducationActions";
 import {Link} from "react-router-dom";
+import Back from "../components/Back";
 
 
 class  EditEducationPage extends Component {
@@ -75,18 +74,18 @@ class  EditEducationPage extends Component {
 
     render() {
 
-
-
-
-
-
         const { title }  = this.props.course;
 
         return (
-            <Card>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-8 m-auto">
+                        <div className="card border-dark mb-3">
+                            <div className="card-header"><h1 className="display-4 text-center">Edit education</h1></div>
+                            <div className="card-body">
                 {this.props.course.id}
 
-                <Card.Body>
+
 
 
                     <form onSubmit={this.onSubmit}>
@@ -111,26 +110,65 @@ class  EditEducationPage extends Component {
                                    onChange={this.onChange}
 
                             />
-
-
                         </div>
 
-                        <Button type="submit" variant="primary" size="lg" block>
+                        <div className="form-group">
+                                <input type="date"
+
+                                       placeholder="end_date"
+                                       name="end_date"
+                                       value={this.state.end_date}
+                                       onChange={this.onChange}
+
+                                />
+                        </div>
+
+                        <div >
+                         <textarea className="form-control" rows="5" id="comment"
+
+                                   placeholder=" description"
+                                   name="description"
+                                   value={this.state.description}
+                                   onChange={this.onChange}
+                         />
+                        </div>
+
+
+                        <div className="saveButton">
+                        <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
+                        </div>
 
 
                     </form>
 
-                    <button
-                        className="btn btn-danger"
-                        onClick={this.onDeleteClick.bind(this)}
-                        type="submit" variant="primary" size="lg" block
-                    >
-                        Delete
-                    </button>
-                </Card.Body>
-            </Card>
+                                <div className="container">
+
+                                    <div className="row">
+                                        <div className="col-6">
+                                            <Back/>
+                                        </div>
+
+                                        <div className="col-6">
+                                            <Button
+                                                variant="outline-danger"
+                                                size="lg"
+                                                block
+                                                onClick={this.onDeleteClick.bind(this)}
+                                                type="submit">
+
+                                                Delete
+                                            </Button>
+
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         );
     }
