@@ -1,24 +1,28 @@
 import React, {Component} from 'react';
 
-//import {createNewUser} from "../../actions/securityActions";
+
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-//import classnames from "classnames";
 import Button from "react-bootstrap/Button";
 import {UppdateUser} from "../actions/securityActions";
+import {getUsersById} from "../actions/userActions";
 
 
 class UpdateUser extends Component {
+    componentDidMount(){
+        this.props.getUsersById(this.props.match.params.id);
+
+    }
 
     constructor(props){
         super();
         this.state = {
-            currentTitle: props.security.user.currentTitle,
-            fullName: props.security.user.fullName,
-            username: props.security.user.username,
-            address: props.security.user.address,
-            phone:props.security.user.phone,
-            userProfile: props.security.user.userProfile
+            currentTitle: '',
+            fullName: '',
+            username:'',
+            address: '',
+            phone:'',
+            userProfile:''
 
            // errors: {}
         };
@@ -39,9 +43,11 @@ class UpdateUser extends Component {
             userProfile: this.state.userProfile
 
         };
-        const {id} =   this.props.security.user;
+        const {id} =   this.props.user;
+        console.log(id);
 
-        this.props.UppdateUser(updateCurrentUser, this.props.history, id);
+
+        this.props.UppdateUser(updateCurrentUser, this.props.history, id, this.props.user.id);
     }
 
 
@@ -52,9 +58,10 @@ class UpdateUser extends Component {
 
 
     render() {
-        const { user } = this.props.security;
+
         return (
             <register>
+               {this.state.currentTitle}
                 <div className="register">
                     <div className="container">
                         <div className="row">
@@ -158,11 +165,12 @@ UpdateUser.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    security: state.security
+    //user: state.security
+    user: state.user.user
 });
 
 
 export default connect(
     mapStateToProps,
-    { UppdateUser}
+    { UppdateUser, getUsersById}
 )(UpdateUser);

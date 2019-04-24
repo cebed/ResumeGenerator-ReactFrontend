@@ -48,7 +48,7 @@ class  EditLanguagePage extends Component {
        // console.log(this.props.match.params);
        // console.log(update);
         const {id} = this.props.match.params
-        this.props.updateLanguage(id, update, this.props.history);
+        this.props.updateLanguage(id, update, this.props.history, this.props.user.id);
 
     }
 
@@ -64,7 +64,7 @@ class  EditLanguagePage extends Component {
 
     onDeleteClick(){
         const { id }  = this.props.match.params;
-        this.props.deleteLanguage(id , this.props.history);
+        this.props.deleteLanguage(id , this.props.history, this.props.user.id);
 
     }
 
@@ -140,7 +140,7 @@ EditLanguagePage.propTypes = {
 };
 function mapStateToProps(state) {
     return {  language: state.languages.languages  ,
-        user: state.security.user};
+        user: state.user.user};
 }
 
 

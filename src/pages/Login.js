@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { login } from "../actions/securityActions";
+import {BASE_URL} from "../Utils/environment";
 //import {Link} from "react-router-dom";
 
 
@@ -21,7 +22,7 @@ class Login extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.security.validToken) {
-            this.props.history.push("/ResumeBoard");
+            this.props.history.push(`/ResumeBoard/${nextProps.security.user.id}`);
         }
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors });

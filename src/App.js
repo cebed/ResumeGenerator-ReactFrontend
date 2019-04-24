@@ -100,8 +100,8 @@ class App extends Component {
                 <SecuredRoute exact path="/EditOthersPage/:id" component={EditOthersPage} />
                 <SecuredRoute exact path="/AddLanguagePage" component={AddLanguagePage} />
                 <SecuredRoute exact path="/EditLanguagePage/:id" component={EditLanguagePage} />
-                <SecuredRoute exact path="/ResumeBoard" component={ResumeBoard} />
-                <SecuredRoute exact path="/updateUser" component={UpdateUser} />
+                <SecuredRoute exact path="/ResumeBoard/:id" component={ResumeBoard} />
+                <SecuredRoute exact path="/updateUser/:id" component={UpdateUser} />
                 </Switch>
                 <Footer/>
 

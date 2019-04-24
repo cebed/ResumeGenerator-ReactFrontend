@@ -50,7 +50,7 @@ const {id} = this.props.user
 
 function mapStateToProps(state) {
     return { work_ex_list: state.work_ex.Work_ex ,
-        user: state.security.user};
+        user: state.user.user};
 }
 
 

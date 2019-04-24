@@ -51,7 +51,7 @@ const {id} = this.props.user
 
 function mapStateToProps(state) {
     return { other: state.others.others ,
-        user: state.security.user};
+        user: state.user.user};
 }
 
 

@@ -78,10 +78,10 @@ export const getUsersById = (id) => async dispatch => {
         payload: res.data
     });
 };
-    export const UppdateUser = (updateCurrentUser, history, id) => async dispatch => {
+    export const UppdateUser = (updateCurrentUser, history, id,paramId) => async dispatch => {
 
         await axios.put(`${BASE_URL}/users/allusers/${id}`, updateCurrentUser);
-        history.push("/ResumeBoard");
+        history.push(`/ResumeBoard/${paramId}`);
 };
 
 

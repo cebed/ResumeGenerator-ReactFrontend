@@ -48,7 +48,7 @@ class  EditOthersPage extends Component {
        // console.log(this.props.match.params);
        // console.log(update);
         const {id} = this.props.match.params
-        this.props.updateOthers(id, update, this.props.history);
+        this.props.updateOthers(id, update, this.props.history, this.props.user.id);
 
     }
 
@@ -64,7 +64,7 @@ class  EditOthersPage extends Component {
 
     onDeleteClick(){
         const { id }  = this.props.match.params;
-        this.props.deleteOthers(id , this.props.history);
+        this.props.deleteOthers(id , this.props.history, this.props.user.id);
 
     }
 
@@ -140,7 +140,7 @@ EditOthersPage.propTypes = {
 };
 function mapStateToProps(state) {
     return {  other: state.others.others  ,
-        user: state.security.user};
+        user: state.user.user};
 }
 
 

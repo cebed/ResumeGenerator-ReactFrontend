@@ -51,7 +51,7 @@ const {id} = this.props.user
 
 function mapStateToProps(state) {
     return { language: state.languages.languages ,
-        user: state.security.user};
+        user: state.user.user};
 }
 
 

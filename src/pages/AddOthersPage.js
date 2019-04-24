@@ -35,7 +35,7 @@ class  AddOthersPage extends Component {
 
         };
 
-        this.props.createNewOthers(newOthers, this.props.history);
+        this.props.createNewOthers(newOthers, this.props.history, this.props.user.id);
     }
 
 
@@ -102,7 +102,7 @@ AddOthersPage.propTypes = {
 
 };
 const mapStateToProps = state => ({
-    user: state.security.user,
+    user: state.user.user,
 
 });
 

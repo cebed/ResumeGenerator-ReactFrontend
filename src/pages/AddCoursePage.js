@@ -34,8 +34,8 @@ class  AddCoursePage extends Component {
             id:this.props.user.id,
 
         };
-
-        this.props.createNewCourse(newCourse, this.props.history);
+        console.log( this.props.user.id )
+        this.props.createNewCourse(newCourse, this.props.user.id , this.props.history);
     }
 
 
@@ -102,7 +102,7 @@ AddCoursePage.propTypes = {
 
 };
 const mapStateToProps = state => ({
-    user: state.security.user,
+    user: state.user.user,
 
 });
 
