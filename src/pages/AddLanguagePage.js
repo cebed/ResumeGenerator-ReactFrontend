@@ -35,7 +35,7 @@ class  AddLanguagePage extends Component {
 
         };
 
-        this.props.createNewLanguage(newLanguage, this.props.history);
+        this.props.createNewLanguage(newLanguage, this.props.history, this.props.user.id);
     }
 
 
@@ -102,7 +102,7 @@ AddLanguagePage.propTypes = {
 
 };
 const mapStateToProps = state => ({
-    user: state.security.user,
+    user: state.user.user,
 
 });
 

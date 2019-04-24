@@ -8,9 +8,9 @@ export const UPPDATE_WorkExbyId = 'Uppdate_WorkExbyId';
 
 
 
-export const createNewEx = (newuser, history) => async dispatch => {
+export const createNewEx = (newuser, history,paramId) => async dispatch => {
       await axios.post(`${BASE_URL}/work/register`, newuser);
-        history.push("/ResumeBoard");
+        history.push(`/ResumeBoard/${paramId}`);
         };
 
 export const getWorkExperienceById = (id) => async dispatch => {
@@ -20,19 +20,19 @@ export const getWorkExperienceById = (id) => async dispatch => {
         payload: res.data
     });
 };
-export const updateWorkExperience = (id, update, history) => async dispatch => {
+export const updateWorkExperience = (id, update, history, paramId) => async dispatch => {
    await axios.put(`${BASE_URL}/work/upddateWork/${id}`, update);
-    history.push("/ResumeBoard");
+    history.push(`/ResumeBoard/${paramId}`);
 
 
 };
 
-export const deleteWorExpeience = (id, history) => async dispatch => {
+export const deleteWorExpeience = (id, history, paramId) => async dispatch => {
     console.log(id);
 
     await axios.delete(`${BASE_URL}/work/delete/${id}`);
 
-    history.push("/ResumeBoard");
+    history.push(`/ResumeBoard/${paramId}`);
 
 
 };

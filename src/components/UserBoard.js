@@ -7,20 +7,19 @@ import {Card} from "react-bootstrap";
 
 class UserBoard extends Component {
 
-    componentDidMount(){
-        this.props.getUsersById(this.props.security.user.id);
 
-    }
     onGeneratePdf(){
-
-        this.props.generatePdf(this.props.security.user.id);
-
+        const { user } = this.props.user;
+        console.log(user);
+        this.props.generatePdf(user.id);
+       // console.log(this.props.user.user);
     }
 
     render() {
 
 
-        const { user } = this.props.security;
+        const { user } = this.props.user;
+        console.log(user);
 
         return (
 
@@ -65,7 +64,7 @@ class UserBoard extends Component {
                         </div>
 
 
-                            <Link className="fa fa-edit pr-1"  to="/updateUser">
+                            <Link className="fa fa-edit pr-1"  to= {`/updateUser/${user.id}`}>
                                 Update Info
 
                             </Link>
@@ -76,17 +75,21 @@ class UserBoard extends Component {
                 </div>
 
         );
+
     }
+
+
 }
 
 const mapStateToProps = state => ({
-    security: state.security
+   // security: state.security
+    user: state.user
 
 });
 UserBoard.propTypes = {
-    getUsersById: PropTypes.func.isRequired,
+
     errors: PropTypes.object.isRequired
 };
 export default connect(
-    mapStateToProps,  { getUsersById , generatePdf}
+    mapStateToProps,  { generatePdf}
 )(UserBoard)

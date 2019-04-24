@@ -52,7 +52,9 @@ class  EditCoursePage extends Component {
        // console.log(this.props.match.params);
        // console.log(update);
         const {id} = this.props.match.params
-        this.props.updateCourse(id, update, this.props.history);
+
+
+        this.props.updateCourse(id, update, this.props.history, this.props.user.id , this.props.user.id );
 
     }
 
@@ -68,7 +70,8 @@ class  EditCoursePage extends Component {
 
     onDeleteClick(){
         const { id }  = this.props.match.params;
-        this.props.deleteCourse(id , this.props.history);
+        const parmValue=  this.props.user.id;
+        this.props.deleteCourse(id , this.props.history,this.props.user.id);
 
     }
 
@@ -79,7 +82,7 @@ class  EditCoursePage extends Component {
 
 
 
-
+        console.log(this.props.user.id );
         const { title }  = this.props.course;
 
         return (
@@ -144,7 +147,7 @@ EditCoursePage.propTypes = {
 };
 function mapStateToProps(state) {
     return {  course: state.courses.courses  ,
-        user: state.security.user};
+        user: state.user.user};
 }
 
 

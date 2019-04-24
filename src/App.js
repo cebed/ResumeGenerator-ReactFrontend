@@ -97,8 +97,8 @@ class App extends Component {
                 {
                     //Private Routes
                 }
-                    <Route exact path="/ResumeBoard" component={ResumeBoard} />
-                    <Route exact path="/updateUser" component={UpdateUser} />
+                    <Route exact path="/ResumeBoard/:id" component={ResumeBoard} />
+                    <Route exact path="/updateUser/:id" component={UpdateUser} />
 
                 <Footer/>
 

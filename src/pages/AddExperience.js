@@ -39,7 +39,7 @@ class  AddExperience extends Component {
 
         };
 
-        this.props.createNewEx(newuser, this.props.history);
+        this.props.createNewEx(newuser, this.props.history, this.props.user.id);
     }
 
 
@@ -124,7 +124,7 @@ AddExperience.propTypes = {
 
 };
 const mapStateToProps = state => ({
-    user: state.security.user,
+    user: state.user.user,
 
 });
 

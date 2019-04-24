@@ -36,7 +36,7 @@ class  AddEducationPage extends Component {
 
         };
 
-        this.props.createNewEducation(newEducation, this.props.history);
+        this.props.createNewEducation(newEducation, this.props.history, this.props.user.id);
     }
 
 

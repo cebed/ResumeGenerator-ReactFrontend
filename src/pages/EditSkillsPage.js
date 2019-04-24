@@ -50,7 +50,7 @@ class  EditSkillsPage extends Component {
        // console.log(this.props.match.params);
        // console.log(update);
         const {id} = this.props.match.params
-        this.props.updateSkills(id, update, this.props.history);
+        this.props.updateSkills(id, update, this.props.history, this.props.user.id);
 
     }
 
@@ -66,7 +66,7 @@ class  EditSkillsPage extends Component {
 
     onDeleteClick(){
         const { id }  = this.props.match.params;
-        this.props.deleteSkills(id , this.props.history);
+        this.props.deleteSkills(id , this.props.history, this.props.user.id);
 
     }
 
@@ -142,7 +142,7 @@ EditSkillsPage.propTypes = {
 };
 function mapStateToProps(state) {
     return {  course: state.courses.courses  ,
-        user: state.security.user};
+        user: state.user.user};
 }
 
 

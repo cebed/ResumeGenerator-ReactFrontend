@@ -8,9 +8,9 @@ export const UPDATE_OTHERS = 'update_others';
 
 
 
-export const createNewOthers = (newOthers, history) => async dispatch => {
+export const createNewOthers = (newOthers, history, paramId) => async dispatch => {
       await axios.post(`${BASE_URL}/others/reg`, newOthers);
-        history.push("/ResumeBoard");
+        history.push(`/ResumeBoard/${paramId}`);
         };
 
 
@@ -30,19 +30,19 @@ export const createNewOthers = (newOthers, history) => async dispatch => {
 
 
 
-export const updateOthers = (id, update, history) => async dispatch => {
+export const updateOthers = (id, update, history,paramId) => async dispatch => {
    await axios.put(`${BASE_URL}/others/update/${id}`, update);
-    history.push("/ResumeBoard");
+    history.push(`/ResumeBoard/${paramId}`);
 
 
 };
 
-export const deleteOthers= (id, history) => async dispatch => {
+export const deleteOthers= (id, history, paramId) => async dispatch => {
     console.log(id);
 
     await axios.delete(`${BASE_URL}/others/delete/${id}`);
 
-    history.push("/ResumeBoard");
+    history.push(`/ResumeBoard/${paramId}`);
 
 
 };

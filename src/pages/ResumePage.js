@@ -9,8 +9,13 @@ import EducationContainer from "../container/EducationContainer";
 import SkillsContainer from "../container/SkillsContainer";
 import OthersContainer from "../container/OthersContainer";
 import LanguageContainer from "../container/LanguageContainer";
+import {getUsersById } from "../actions/userActions";
 
 class ResumePage extends Component {
+    componentDidMount(){
+        this.props.getUsersById(this.props.match.params.id);
+
+    }
     render() {
 
         return (
@@ -18,13 +23,15 @@ class ResumePage extends Component {
 
 
                 <div>
-                <UserBoard/>
-                <ExperienceContainer/>
-                <EducationContainer/>
-                <CourseContainer/>
-                <OthersContainer/>
-                  <SkillsContainer/>
-                <LanguageContainer/>
+
+                    <UserBoard/>
+                    <ExperienceContainer/>
+                    <EducationContainer/>
+                    <CourseContainer/>
+                    <OthersContainer/>
+                    <SkillsContainer/>
+                    <LanguageContainer/>
+
                 </div>
 
 
@@ -34,14 +41,17 @@ class ResumePage extends Component {
 }
 
 ResumePage.propTypes = {
-    security: PropTypes.object.isRequired
+    //security: PropTypes.object.isRequired
+    getUsersById: PropTypes.func.isRequired,
 };
 
 
 const mapStateToProps = state => ({
-    security: state.security
+    // security: state.security
+    user: state.user.user
 });
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,{getUsersById}
 )(ResumePage)
+

@@ -8,9 +8,9 @@ export const UPDATE_LANGUAGE = 'update_language';
 
 
 
-export const createNewLanguage = (newLanguage, history) => async dispatch => {
+export const createNewLanguage = (newLanguage, history, paramId) => async dispatch => {
       await axios.post(`${BASE_URL}/language/reg`, newLanguage);
-        history.push("/ResumeBoard");
+        history.push(`/ResumeBoard/${paramId}`);
         };
 
 
@@ -30,19 +30,19 @@ export const createNewLanguage = (newLanguage, history) => async dispatch => {
 
 
 
-export const updateLanguage = (id, update, history) => async dispatch => {
+export const updateLanguage = (id, update, history,paramId ) => async dispatch => {
    await axios.put(`${BASE_URL}/language/update/${id}`, update);
-    history.push("/ResumeBoard");
+    history.push(`/ResumeBoard/${paramId}`);
 
 
 };
 
-export const deleteLanguage= (id, history) => async dispatch => {
+export const deleteLanguage= (id, history, paramId) => async dispatch => {
     console.log(id);
 
     await axios.delete(`${BASE_URL}/language/delete/${id}`);
 
-    history.push("/ResumeBoard");
+    history.push(`/ResumeBoard/${paramId}`);
 
 
 };

@@ -35,7 +35,7 @@ class  AddSkillsPage extends Component {
 
         };
 
-        this.props.createNewSkills(newSkills, this.props.history);
+        this.props.createNewSkills(newSkills, this.props.history,this.props.user.id);
     }
 
 
@@ -102,7 +102,7 @@ AddSkillsPage.propTypes = {
 
 };
 const mapStateToProps = state => ({
-    user: state.security.user,
+    user: state.user.user,
 
 });
 

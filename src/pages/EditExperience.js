@@ -52,7 +52,7 @@ class  EditExperience extends Component {
        // console.log(this.props.match.params);
        // console.log(update);
         const {id} = this.props.match.params
-        this.props.updateWorkExperience(id, update, this.props.history);
+        this.props.updateWorkExperience(id, update, this.props.history, this.props.user.id);
 
     }
 
@@ -68,7 +68,7 @@ class  EditExperience extends Component {
 
     onDeleteClick(){
         const { id }  = this.props.match.params;
-        this.props.deleteWorExpeience(id , this.props.history);
+        this.props.deleteWorExpeience(id , this.props.history, this.props.user.id);
 
     }
 
@@ -173,8 +173,8 @@ EditExperience.propTypes = {
 
 };
 function mapStateToProps(state) {
-    return { work_ex_list: state.work_ex.Work_ex ,
-        user: state.security.user};
+    return { /*work_ex_list: state.work_ex.Work_ex ,*/
+        user: state.user.user};
 }
 
 
