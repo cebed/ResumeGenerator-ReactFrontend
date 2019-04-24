@@ -88,7 +88,6 @@ class Header extends Component {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="/Register">Sign up</Dropdown.Item>
                                         <Dropdown.Item href="/ResumeBoard"> ResumeBoard</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                                     </Dropdown.Menu>

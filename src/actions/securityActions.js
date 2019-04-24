@@ -15,7 +15,7 @@ export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const createNewUser = (newuser, history) => async dispatch => {
 
     try {
-        await axios.post(`${BASE_URL}/users/register`, newuser);
+        await axios.post(`${BASE_URL}/users/auth/register`, newuser);
         //If everything goes good, send us to our login page
         history.push("/");
         dispatch({
@@ -37,7 +37,7 @@ export const login = LoginRequest => async dispatch => {
     try {
         //fist we need to do is to hit the end point
         //post => Login request
-        const res = await axios.post(`${BASE_URL}/users/login`, LoginRequest);
+        const res = await axios.post(`${BASE_URL}/users/auth/login`, LoginRequest);
 
         //extract token from res.data
         const { token } = res.data;

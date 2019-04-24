@@ -3,7 +3,7 @@ import ExperienceContainer from "./container/ExperienceContainer";
 import AddExperience from "./pages/AddExperience";
 import EditExperience from "./pages/EditExperience";
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
 //import {ButtonToolbar, Button} from 'react-bootstrap';
@@ -34,6 +34,7 @@ import AddOthersPage from "./pages/AddOthersPage";
 import EditOthersPage from "./pages/EditOthersPage";
 import AddLanguagePage from "./pages/AddLanguagePage";
 import EditLanguagePage from "./pages/EditLanguagePage";
+import SecuredRoute from "./securityUtils/SecureRoute";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
@@ -75,31 +76,33 @@ class App extends Component {
                 }
                 <Route exact path="/" component={Login} />
                 <Route exact path="/Register" component={Register}/>
-                <Route exact path="/ExperienceContainer" component={ExperienceContainer} />
-                <Route exact path="/AddExperience" component={AddExperience} />
-                <Route exact path="/EditExperience/:id" component={EditExperience} />
-                <Route exact path="/CourseContainer" component={CourseContainer} />
-                <Route exact path="/AddCoursePage" component={AddCoursePage} />
-                <Route exact path="/EditCoursePage/:id" component={EditCoursePage} />
-                <Route exact path="/EducationContainer" component={EducationContainer} />
-                <Route exact path="/AddEducationPage" component={AddEducationPage} />
-                <Route exact path="/EditEducationPage/:id" component={EditEducationPage} />
-                <Route exact path="/AddSkillsPage" component={AddSkillsPage} />
-                <Route exact path="/EditSkillsPage/:id" component={EditSkillsPage} />
-                <Route exact path="/pdf" component={pdf} />
-                <Route exact path="/AddOthersPage" component={AddOthersPage} />
-                <Route exact path="/EditOthersPage/:id" component={EditOthersPage} />
-                <Route exact path="/AddLanguagePage" component={AddLanguagePage} />
-                <Route exact path="/EditLanguagePage/:id" component={EditLanguagePage} />
+
 
 
 
                 {
                     //Private Routes
                 }
-                    <Route exact path="/ResumeBoard" component={ResumeBoard} />
-                    <Route exact path="/updateUser" component={UpdateUser} />
-
+                <Switch>
+                <SecuredRoute exact path="/ExperienceContainer" component={ExperienceContainer} />
+                <SecuredRoute exact path="/AddExperience" component={AddExperience} />
+                <SecuredRoute exact path="/EditExperience/:id" component={EditExperience} />
+                <SecuredRoute exact path="/CourseContainer" component={CourseContainer} />
+                <SecuredRoute exact path="/AddCoursePage" component={AddCoursePage} />
+                <SecuredRoute exact path="/EditCoursePage/:id" component={EditCoursePage} />
+                <SecuredRoute exact path="/EducationContainer" component={EducationContainer} />
+                <SecuredRoute exact path="/AddEducationPage" component={AddEducationPage} />
+                <SecuredRoute exact path="/EditEducationPage/:id" component={EditEducationPage} />
+                <SecuredRoute exact path="/AddSkillsPage" component={AddSkillsPage} />
+                <SecuredRoute exact path="/EditSkillsPage/:id" component={EditSkillsPage} />
+                <SecuredRoute exact path="/pdf" component={pdf} />
+                <SecuredRoute exact path="/AddOthersPage" component={AddOthersPage} />
+                <SecuredRoute exact path="/EditOthersPage/:id" component={EditOthersPage} />
+                <SecuredRoute exact path="/AddLanguagePage" component={AddLanguagePage} />
+                <SecuredRoute exact path="/EditLanguagePage/:id" component={EditLanguagePage} />
+                <SecuredRoute exact path="/ResumeBoard" component={ResumeBoard} />
+                <SecuredRoute exact path="/updateUser" component={UpdateUser} />
+                </Switch>
                 <Footer/>
 
 
