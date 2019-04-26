@@ -26,7 +26,7 @@ import EditCoursePage from "./pages/EditCoursePage";
 import EducationContainer from "./container/EducationContainer";
 import AddEducationPage from "./pages/AddEducationPage";
 import EditEducationPage from "./pages/EditEducationPage";
-import pdf from "./pages/pdf";
+import AdminComponenet from "./components/AdminComponenet";
 import AddSkillsPage from "./pages/AddSkillsPage";
 import EditSkillsPage from "./pages/EditSkillsPage";
 
@@ -95,7 +95,7 @@ class App extends Component {
                 <SecuredRoute exact path="/EditEducationPage/:id" component={EditEducationPage} />
                 <SecuredRoute exact path="/AddSkillsPage" component={AddSkillsPage} />
                 <SecuredRoute exact path="/EditSkillsPage/:id" component={EditSkillsPage} />
-                <SecuredRoute exact path="/pdf" component={pdf} />
+                <SecuredRoute exact path="/AdminComponenet" component={AdminComponenet} />
                 <SecuredRoute exact path="/AddOthersPage" component={AddOthersPage} />
                 <SecuredRoute exact path="/EditOthersPage/:id" component={EditOthersPage} />
                 <SecuredRoute exact path="/AddLanguagePage" component={AddLanguagePage} />

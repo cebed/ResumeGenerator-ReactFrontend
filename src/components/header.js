@@ -35,7 +35,22 @@ class Header extends Component {
                         </Link>
                     </li>
                 </ul>
+
+                <li className="nav-item">
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            Menu
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="/ResumeBoard"> Admin</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </li>
+
             </div>
+
         );
 
 
@@ -44,7 +59,7 @@ class Header extends Component {
                 <ul className="navbar-nav ml-auto">
 
                     <li className="nav-item">
-                        <Link className="nav-link" to="/Register">
+                        <Link className="nav-link" to="/ResumeBoard">
                             Sign Up
                         </Link>
                     </li>
@@ -65,6 +80,8 @@ class Header extends Component {
             headerLinks = userIsNotAuthenticated;
         }
 
+
+
         return (
             <nav className="navbar navbar-expand-xl navbar-dark bg-dark mb-4">
                 <div className="container">
@@ -81,18 +98,7 @@ class Header extends Component {
                             {headerLinks}
 
 
-                            <li className="nav-item">
-                                <Dropdown>
-                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        Menu
-                                    </Dropdown.Toggle>
 
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href="/ResumeBoard"> ResumeBoard</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            </li>
                         </ul>
 
                     </div>

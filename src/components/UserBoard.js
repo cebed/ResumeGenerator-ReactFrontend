@@ -20,7 +20,7 @@ class UserBoard extends Component {
 
 
         const { user } = this.props.user;
-        console.log(user);
+
 
         return (
 
