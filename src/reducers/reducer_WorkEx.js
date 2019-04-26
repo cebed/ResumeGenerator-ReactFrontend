@@ -1,17 +1,17 @@
-import {  UPPDATE_WorkExbyId } from "../actions/WorkExActions";
+import {  FETCH_WORK } from "../actions/WorkExActions";
 
 const initialState = {
-    Work_ex: [],
-    project: {}
+
+    work: {}
 };
 
 export default function(state = initialState, action) {
     switch (action.type) {
 
-        case UPPDATE_WorkExbyId:
+        case FETCH_WORK:
             return {
                 ...state,
-                Work_ex: action.payload
+                work: action.payload
             };
 
 

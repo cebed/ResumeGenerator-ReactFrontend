@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import {BASE_URL} from "../Utils/environment";
-export const UPPDATE_WorkExbyId = 'Uppdate_WorkExbyId';
+export const FETCH_WORK = 'FETCH_WORK';
 
 
 
@@ -16,7 +16,7 @@ export const createNewEx = (newuser, history,paramId) => async dispatch => {
 export const getWorkExperienceById = (id) => async dispatch => {
     const res = await axios.get(`${BASE_URL}/work/WorkExperienceById/${id}`);
     dispatch({
-        type: UPPDATE_WorkExbyId,
+        type: FETCH_WORK,
         payload: res.data
     });
 };

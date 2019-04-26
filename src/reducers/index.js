@@ -12,7 +12,7 @@ import userReducer from "./userReducer";
 export default combineReducers({
     errors: errorReducer,
     security: securityReducer,
-    work_ex: reducer_WorkEx,
+    work: reducer_WorkEx,
     courses:  reducer_Course,
     others: reducer_Others,
     languages: reducer_Language,
