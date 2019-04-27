@@ -41,3 +41,8 @@ img {
 .navbarwelcome{
   margin-left: 250px;
 }
+
+.uploadImage{
+  width: 230px;
+  height: 200px;
+}

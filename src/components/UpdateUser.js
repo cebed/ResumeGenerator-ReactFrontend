@@ -23,6 +23,7 @@ class UpdateUser extends Component {
             username:'',
             address: '',
             phone:'',
+            image:'',
             userProfile:''
 
            // errors: {}
@@ -41,6 +42,7 @@ class UpdateUser extends Component {
             username: this.state.username,
             address: this.state.address,
             phone: this.state.phone,
+            image: this.state.image,
             userProfile: this.state.userProfile
 
         };
@@ -122,6 +124,16 @@ class UpdateUser extends Component {
                                                        placeholder="Phone"
                                                        name="phone"
                                                        value={this.state.phone}
+                                                       onChange={this.onChange}
+                                                />
+
+                                            </div>
+                                            <div className="form-group">
+                                                <input type="text"
+
+                                                       placeholder="Image url"
+                                                       name="image"
+                                                       value={this.state.image}
                                                        onChange={this.onChange}
                                                 />
 

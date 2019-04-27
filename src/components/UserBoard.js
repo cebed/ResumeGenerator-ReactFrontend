@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {getUsersById , generatePdf} from "../actions/securityActions";
+import {getUsersById, generatePdf} from "../actions/securityActions";
 import PropTypes from "prop-types";
 import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -9,73 +9,78 @@ import Button from "react-bootstrap/Button";
 class UserBoard extends Component {
 
 
-    onGeneratePdf(){
-        const { user } = this.props.user;
+    onGeneratePdf() {
+        const {user} = this.props.user;
         console.log(user);
         this.props.generatePdf(user.id);
-       // console.log(this.props.user.user);
+        // console.log(this.props.user.user);
     }
 
     render() {
 
 
-        const { user } = this.props.user;
+        const {user} = this.props.user;
 
 
         return (
 
-                <div className="container">
-                    <div className="card card-body bg-light mb-3">
+            <div className="container">
+                <div className="card card-body bg-light mb-3">
 
-                        <div className="card-header"><h4 className="display-4 text-center">Welcome  {user.fullName}
+                    <div className="card-header">
+                        <h4 className="display-4 text-center">Welcome {user.fullName}
 
                             <div>
-                            <Button className="pdfButton"
-                                onClick={this.onGeneratePdf.bind(this)}
-                                type="submit" variant="primary" size="lg"
-                            >
-                               Download CV PDF
-                            </Button>
+                                <Button className="pdfButton"
+                                        onClick={this.onGeneratePdf.bind(this)}
+                                        type="submit" variant="primary" size="lg"
+                                >
+                                    Download CV PDF
+                                </Button>
                             </div>
 
-                        </h4></div>
-
-                        <div className="row">
-                            <div className="container">
-                                <div className="card card-body bg-light mb-3">
-
-                                    <div className="row"> Name: {user.fullName}</div>
-                                    <div className="row"> Email : {user.username}</div>
-                                    <div className="row"> {user.address}</div>
-                                    <div className="row"> {user.phone}</div>
-                        </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="container">
-                                <div className="card card-body bg-light mb-3">
-                                    <div className="card-header"><h4 className="display-4 text-center">About Me</h4></div>
-
-                                    <div className="row"> Title: {user.currentTitle}</div>
-                                    <div className="row"> {user.userProfile}</div>
-
-
-
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                            <Link className="fa fa-edit pr-1"  to= {`/updateUser/${user.id}`}>
-                                Update Info
-
-                            </Link>
-
-
+                        </h4>
                     </div>
 
+                    <div className="row">
+
+                            <div className="card card-body bg-light mb-3">
+                                <div className="col-8">
+                                <div className="row"> Name: {user.fullName}</div>
+                                <div className="row"> Email : {user.username}</div>
+                                <div className="row"> {user.address}</div>
+                                <div className="row"> {user.phone}</div>
+                            </div>
+                            </div>
+                        <div className="col-4">
+                            <div className="card card-body bg-light mb-3" align="center">
+                            <img src={user.image} alt="uploadImage" className="uploadImage"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="container">
+                            <div className="card card-body bg-light mb-3">
+                                <div className="card-header"><h4 className="display-4 text-center">About Me</h4></div>
+
+                                <div className="row"> Title: {user.currentTitle}</div>
+                                <div className="row"> {user.userProfile}</div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <Link className="fa fa-edit pr-1" to={`/updateUser/${user.id}`}>
+                        Update Info
+
+                    </Link>
+
+
                 </div>
+
+            </div>
 
         );
 
@@ -85,7 +90,7 @@ class UserBoard extends Component {
 }
 
 const mapStateToProps = state => ({
-   // security: state.security
+    // security: state.security
     user: state.user
 
 });
@@ -94,5 +99,5 @@ UserBoard.propTypes = {
     errors: PropTypes.object.isRequired
 };
 export default connect(
-    mapStateToProps,  { generatePdf}
+    mapStateToProps, {generatePdf}
 )(UserBoard)
