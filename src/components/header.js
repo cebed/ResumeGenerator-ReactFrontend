@@ -36,22 +36,43 @@ class Header extends Component {
                     </li>
                 </ul>
 
-                <li className="nav-item">
-                    <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            Menu
-                        </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
-                            <Dropdown.Item href="/ResumeBoard"> Admin</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </li>
 
             </div>
 
         );
+
+
+        const isNotadmin=(
+            <div> </div>
+        );
+
+        const isadmin=(
+
+            <div>
+
+        <li className="nav-item">
+            <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    Menu
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                    <Dropdown.Item href="/AdminComponenet"> Admin</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        </li>
+            </div>
+
+        );
+        let Admin;
+
+        if ( user.id ==true) {
+            Admin = isadmin;
+        } else {
+            Admin = isNotadmin;
+        }
 
 
         const userIsNotAuthenticated = (
@@ -96,8 +117,7 @@ class Header extends Component {
 
                         <ul className="navbar-nav ml-auto">
                             {headerLinks}
-
-
+                            {Admin}
 
                         </ul>
 
