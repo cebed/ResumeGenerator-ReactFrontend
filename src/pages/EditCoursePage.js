@@ -31,6 +31,21 @@ class  EditCoursePage extends Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        const {
+            title,
+            start_date,
+            end_date,
+
+        } = nextProps.course;
+
+        this.setState({
+            title,
+            start_date,
+            end_date
+        });
+    }
+
 
 
     onSubmit(event){

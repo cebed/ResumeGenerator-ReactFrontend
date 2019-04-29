@@ -15,7 +15,7 @@ class UpdateUser extends Component {
 
     }
 
-    constructor(props){
+    constructor(){
         super();
         this.state = {
             currentTitle: '',
@@ -33,6 +33,27 @@ class UpdateUser extends Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        const {
+            currentTitle,
+            fullName,
+            username,
+            address,
+            phone,
+            image,
+            userProfile
+        } = nextProps.user;
+
+        this.setState({
+            currentTitle,
+            fullName,
+            username,
+            address,
+            phone,
+            image,
+            userProfile
+        });
+    }
 
     onSubmit(event){
         event.preventDefault();

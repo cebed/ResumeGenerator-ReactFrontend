@@ -14,17 +14,17 @@ export const createNewLanguage = (newLanguage, history, paramId) => async dispat
         };
 
 
-{
 
-  //  export const getCourseById = (id) => async dispatch => {
-    //    const res = await axios.get(`${BASE_URL}/others/Coursesebyid/${id}`);
-      //  dispatch({
-       //     type: UPDATE_OTHERS,
-        //    payload: res.data
-       // });
-    //};
 
-}
+  export const getLanguageById = (id) => async dispatch => {
+     const res = await axios.get(`${BASE_URL}/language/LanguageById/${id}`);
+       dispatch({
+            type: UPDATE_LANGUAGE,
+           payload: res.data
+        });
+    };
+
+
 
 
 

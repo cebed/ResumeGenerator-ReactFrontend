@@ -2,7 +2,9 @@ import {  FETCH_WORK } from "../actions/WorkExActions";
 
 const initialState = {
 
-    work: {}
+    work: [],
+    project: {}
+
 };
 
 export default function(state = initialState, action) {

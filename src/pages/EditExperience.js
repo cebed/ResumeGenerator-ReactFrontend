@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
 
-import {Card} from "react-bootstrap";
+//import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {updateWorkExperience , getWorkExperienceById , deleteWorExpeience} from "../actions/WorkExActions";
-import {Link} from "react-router-dom";
+//import {Link} from "react-router-dom";
 import Back from "../components/Back";
 
 
@@ -36,10 +36,6 @@ class  EditExperience extends Component {
 
     }
 
-
-
-
-
     onSubmit(event){
         event.preventDefault();
         const update = {
@@ -55,6 +51,23 @@ class  EditExperience extends Component {
         const {id} = this.props.match.params
         this.props.updateWorkExperience(id, update, this.props.history, this.props.user.id);
 
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const {
+            title,
+            start_date,
+            end_date,
+            description,
+
+        } = nextProps.work;
+
+        this.setState({
+            title,
+            start_date,
+            end_date,
+            description
+        });
     }
 
 
@@ -200,7 +213,8 @@ EditExperience.propTypes = {
 
 };
 function mapStateToProps(state) {
-    return { /*work_ex_list: state.work_ex.Work_ex ,*/
+    return {
+        work: state.work.work ,
         user: state.user.user};
 }
 

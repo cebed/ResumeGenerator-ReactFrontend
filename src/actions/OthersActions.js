@@ -14,17 +14,17 @@ export const createNewOthers = (newOthers, history, paramId) => async dispatch =
         };
 
 
-{
 
-  //  export const getCourseById = (id) => async dispatch => {
-    //    const res = await axios.get(`${BASE_URL}/others/Coursesebyid/${id}`);
-      //  dispatch({
-       //     type: UPDATE_OTHERS,
-        //    payload: res.data
-       // });
-    //};
 
-}
+   export const getOthersById = (id) => async dispatch => {
+     const res = await axios.get(`${BASE_URL}/others/getOthersById/${id}`);
+        dispatch({
+           type: UPDATE_OTHERS,
+            payload: res.data
+        });
+    };
+
+
 
 
 

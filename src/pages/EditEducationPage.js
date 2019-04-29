@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {updateEducation , deleteEducation} from "../actions/EducationActions";
+import {updateEducation , deleteEducation, getEduById} from "../actions/EducationActions";
 import {Link} from "react-router-dom";
 import Back from "../components/Back";
 
@@ -12,7 +12,7 @@ class  EditEducationPage extends Component {
     componentDidMount() {
 
             const { id }  = this.props.match.params;
-           // this.props.getCourseById(id);
+           this.props.getEduById(id);
 
 
 
@@ -55,7 +55,21 @@ class  EditEducationPage extends Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        const {
+            title,
+            start_date,
+            end_date,
+            description
+        } = nextProps.education;
 
+        this.setState({
+            title,
+            start_date,
+            end_date,
+            description
+        });
+    }
 
 
 
@@ -74,7 +88,7 @@ class  EditEducationPage extends Component {
 
     render() {
 
-        const { title }  = this.props.course;
+        const { title }  = this.props.education;
 
         return (
             <div className="container">
@@ -83,7 +97,7 @@ class  EditEducationPage extends Component {
                         <div className="card border-dark mb-3">
                             <div className="card-header"><h1 className="display-4 text-center">Edit education</h1></div>
                             <div className="card-body">
-                {this.props.course.id}
+                {this.props.education.id}
 
 
 
@@ -176,12 +190,12 @@ class  EditEducationPage extends Component {
 EditEducationPage.propTypes = {
     updateEducation: PropTypes.func.isRequired,
     deleteEducation: PropTypes.func.isRequired,
-   // getCourseById: PropTypes.func.isRequired,
+   getEduById: PropTypes.func.isRequired,
 
 
 };
 function mapStateToProps(state) {
-    return {  course: state.courses.courses  ,
+    return {  education: state.education.education  ,
         user: state.user.user};
 }
 
@@ -189,6 +203,6 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { updateEducation,  deleteEducation }
+    { updateEducation,  deleteEducation, getEduById }
 )(EditEducationPage);
 

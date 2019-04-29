@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {updateSkills, deleteSkills} from "../actions/SkillsActions";
+import {updateSkills, deleteSkills, getTheSkillsById} from "../actions/SkillsActions";
 import Back from "../components/Back";
 
 //import {Link} from "react-router-dom";
@@ -13,8 +13,8 @@ import Back from "../components/Back";
 class EditSkillsPage extends Component {
     componentDidMount() {
 
-        //  const { id }  = this.props.match.params;
-        //  this.props.getCourseById(id);
+        const { id }  = this.props.match.params;
+         this.props.getTheSkillsById(id);
 
     }
 
@@ -50,6 +50,20 @@ class EditSkillsPage extends Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        const {
+            title,
+            level,
+
+        } = nextProps.skills;
+
+        this.setState({
+            title,
+            level
+        });
+    }
+
+
 
     onChange(e) {
         this.setState({[e.target.name]: e.target.value});
@@ -62,7 +76,7 @@ class EditSkillsPage extends Component {
     }
 
     render() {
-        const {title} = this.props.course;
+        const {title} = this.props.skills;
 
         return (
             <div className="container">
@@ -71,7 +85,7 @@ class EditSkillsPage extends Component {
                         <div className="card border-dark mb-3">
                             <div className="card-header"><h1 className="display-4 text-center">Edit skills</h1></div>
                             <div className="card-body">
-                                {this.props.course.id}
+                                {this.props.skills.id}
 
 
                                 <form onSubmit={this.onSubmit}>
@@ -143,18 +157,18 @@ class EditSkillsPage extends Component {
                 EditSkillsPage.propTypes = {
                 updateSkills: PropTypes.func.isRequired,
                 deleteSkills: PropTypes.func.isRequired,
-                //getCourseById: PropTypes.func.isRequired,
+                getTheSkillsById: PropTypes.func.isRequired,
 
 
             };
                 function mapStateToProps(state) {
-                return {course: state.courses.courses  ,
+                return {skills: state.skills.skills  ,
                 user: state.user.user};
             }
 
 
                 export default connect(
                 mapStateToProps,
-                {updateSkills,  deleteSkills}
+                {updateSkills,  deleteSkills, getTheSkillsById}
                 )(EditSkillsPage);
 

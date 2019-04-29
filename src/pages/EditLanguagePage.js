@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import {Link} from "react-router-dom";
-import {Card} from "react-bootstrap";
+//import {Link} from "react-router-dom";
+//import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Back from "../components/Back"
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {updateLanguage , getCourseById , deleteLanguage} from "../actions/LanguageActions";
+import {updateLanguage , getLanguageById , deleteLanguage} from "../actions/LanguageActions";
 //import {Link} from "react-router-dom";
 
 
@@ -14,7 +14,7 @@ class  EditLanguagePage extends Component {
     componentDidMount() {
 
             const { id }  = this.props.match.params;
-           // this.props.getCourseById(id);
+           this.props.getLanguageById(id);
 
 
 
@@ -53,6 +53,18 @@ class  EditLanguagePage extends Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        const {
+            title,
+            level,
+
+        } = nextProps.language;
+
+        this.setState({
+            title,
+            level
+        });
+    }
 
 
 
@@ -156,7 +168,7 @@ class  EditLanguagePage extends Component {
 EditLanguagePage.propTypes = {
     updateLanguage: PropTypes.func.isRequired,
     deleteLanguage: PropTypes.func.isRequired,
-    //getCourseById: PropTypes.func.isRequired,
+    getLanguageById: PropTypes.func.isRequired,
 
 
 };
@@ -169,6 +181,6 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { updateLanguage, deleteLanguage }
+    { updateLanguage, deleteLanguage, getLanguageById }
 )(EditLanguagePage);
 

@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import {BASE_URL} from "../Utils/environment";
-export const UPDATE_Education = 'update_education';
+export const FETCH_EDUCATION = 'update_education';
 
 
 
@@ -14,16 +14,16 @@ export const createNewEducation = (newEducation, history,paramid) => async dispa
         };
 
 
-/*
-export const getCourseById = (id) => async dispatch => {
-    const res = await axios.get(`${BASE_URL}/course/Coursesebyid/${id}`);
+
+export const getEduById = (id) => async dispatch => {
+    const res = await axios.get(`${BASE_URL}/edu/EduById/${id}`);
     dispatch({
-        type: UPDATE_Education,
+        type: FETCH_EDUCATION,
         payload: res.data
     });
 };
 
-*/
+
 export const updateEducation = (id, update, history, paramId) => async dispatch => {
    await axios.put(`${BASE_URL}/edu/update/${id}`, update);
     history.push(`/ResumeBoard/${paramId}`);

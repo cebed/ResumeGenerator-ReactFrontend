@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
 
-import {Card} from "react-bootstrap";
+//import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {updateOthers , getCourseById , deleteOthers} from "../actions/OthersActions";
+import {updateOthers , getOthersById , deleteOthers} from "../actions/OthersActions";
 import Back from "../components/Back";
 //import {Link} from "react-router-dom";
 
@@ -14,7 +14,7 @@ class  EditOthersPage extends Component {
     componentDidMount() {
 
             const { id }  = this.props.match.params;
-           // this.props.getCourseById(id);
+            this.props.getOthersById(id);
 
 
 
@@ -53,7 +53,18 @@ class  EditOthersPage extends Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        const {
+            title,
+            description,
 
+        } = nextProps.others;
+
+        this.setState({
+            title,
+            description
+        });
+    }
 
 
 
@@ -72,7 +83,7 @@ class  EditOthersPage extends Component {
 
     render() {
 
-        const { title }  = this.props.other;
+        const { title }  = this.props.others;
 
         return (
             <div className="container">
@@ -81,7 +92,7 @@ class  EditOthersPage extends Component {
                         <div className="card border-dark mb-3">
                             <div className="card-header"><h1 className="display-4 text-center">Edit other competences</h1></div>
                             <div className="card-body">
-                {this.props.other.id}
+                {this.props.others.id}
 
 
 
@@ -153,12 +164,12 @@ class  EditOthersPage extends Component {
 EditOthersPage.propTypes = {
     updateOthers: PropTypes.func.isRequired,
     deleteOthers: PropTypes.func.isRequired,
-    //getCourseById: PropTypes.func.isRequired,
+    getOthersById: PropTypes.func.isRequired,
 
 
 };
 function mapStateToProps(state) {
-    return {  other: state.others.others  ,
+    return {  others: state.others.others  ,
         user: state.user.user};
 }
 
@@ -166,6 +177,6 @@ function mapStateToProps(state) {
 
 export default connect(
     mapStateToProps,
-    { updateOthers, deleteOthers }
+    { updateOthers, getOthersById, deleteOthers }
 )(EditOthersPage);
 

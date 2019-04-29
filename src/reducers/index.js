@@ -7,6 +7,8 @@ import reducer_Course from "./reducer_Course";
 import reducer_Others from "./reducer_Others";
 import reducer_Language from "./reducer_Language";
 import userReducer from "./userReducer";
+import reducer_Education from "./reducer_Education";
+import reducer_Skills from "./reducer_Skills";
 
 
 export default combineReducers({
@@ -16,5 +18,7 @@ export default combineReducers({
     courses:  reducer_Course,
     others: reducer_Others,
     languages: reducer_Language,
+    skills: reducer_Skills,
+    education: reducer_Education,
     user: userReducer
 });
