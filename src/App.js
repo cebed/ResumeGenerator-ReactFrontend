@@ -35,6 +35,7 @@ import EditOthersPage from "./pages/EditOthersPage";
 import AddLanguagePage from "./pages/AddLanguagePage";
 import EditLanguagePage from "./pages/EditLanguagePage";
 import SecuredRoute from "./securityUtils/SecureRoute";
+import EditFrontEdgeAddressPage from "./pages/EditFrontEdgeAddressPage";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
@@ -102,6 +103,7 @@ class App extends Component {
                 <SecuredRoute exact path="/EditLanguagePage/:id" component={EditLanguagePage} />
                 <SecuredRoute exact path="/ResumeBoard/:id" component={ResumeBoard} />
                 <SecuredRoute exact path="/updateUser/:id" component={UpdateUser} />
+                <SecuredRoute exact path="/EditFrontEdgeAddressPage" component={EditFrontEdgeAddressPage} />
                 </Switch>
                 <Footer/>
 

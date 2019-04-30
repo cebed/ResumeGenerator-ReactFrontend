@@ -16,10 +16,25 @@ class adminComponenet extends Component {
     renderUsers(){
         return _.map(this.props.user.user, list => {
             return(
-                <li className="list-group-item" key={list.id}>
-                    <Link to={`/ResumeBoard/${list.id}`}>
-                       Name:  {list.fullName}   email : {list.username}
-                    </Link>
+                <li className="list-group-item " key={list.id}>
+                    <div className="container">
+                        <Link to={`/ResumeBoard/${list.id}`}>
+                    <div className="row">
+                    <div className="col-6">
+
+
+                      {list.fullName}
+                    </div>
+                    <div className="col-6">
+
+                        {list.username}
+                    </div>
+                    </div>
+                        </Link>
+                    </div>
+
+
+
                 </li>
 
             )
@@ -33,16 +48,18 @@ class adminComponenet extends Component {
         return (
             <div>
 
+                <div className="container">
+                    <div className="card card-body bg-light mb-3">
                 {this.renderUsers()}
-
-
+                </div>
+                </div>
             </div>
         );
     }
 }
 
 adminComponenet.propTypes = {
-   // security: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
     fechUsers: PropTypes.func.isRequired
 };
 
