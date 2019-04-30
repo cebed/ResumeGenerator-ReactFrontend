@@ -46,3 +46,12 @@ img {
   width: 230px;
   height: 200px;
 }
+
+.cardimage{
+  width: 160px;
+  height: 100px;
+}
+.paddingCard{
+  padding: 10px;
+}
+
