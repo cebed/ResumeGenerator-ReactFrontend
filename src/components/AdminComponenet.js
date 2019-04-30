@@ -24,7 +24,7 @@ class adminComponenet extends Component {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="paddingCard">
-                          
+
 
                 <Card className="text-center" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={list.image}  alt="Upload Image" />
@@ -70,16 +70,18 @@ class adminComponenet extends Component {
         return (
             <div>
 
+                <div className="container">
+                    <div className="card card-body bg-light mb-3">
                 {this.renderUsers()}
-
-
+                </div>
+                </div>
             </div>
         );
     }
 }
 
 adminComponenet.propTypes = {
-   // security: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
     fechUsers: PropTypes.func.isRequired
 };
 

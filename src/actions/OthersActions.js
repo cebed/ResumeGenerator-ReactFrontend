@@ -47,3 +47,18 @@ export const deleteOthers= (id, history, paramId) => async dispatch => {
 
 };
 
+
+
+export const getFrontEdgeInformation = (id) => async dispatch => {
+    const res = await axios.get(`${BASE_URL}/company/byId/${id}`);
+    dispatch({
+        type: UPDATE_OTHERS,
+        payload: res.data
+    });
+};
+export const updateFrontEdgeInformation = ( update) => async dispatch => {
+    await axios.post(`${BASE_URL}/company/register`, update);
+
+
+
+};

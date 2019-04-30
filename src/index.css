@@ -90,10 +90,10 @@ loginpage {
 
   /*background: url("./images/cvvv.png");*/
   background-size: 100%;
-  height: 625px;
+  height: 1100px;
   background-position: center;
   position: relative;
- 
+
 }
 
 loginpage div.head {
@@ -105,7 +105,7 @@ loginpage div.head {
   margin: 0 auto;
   padding-top: 10%;
   align-items: center;
-  
+
 }
 
 loginpage div.head  {
@@ -189,6 +189,7 @@ footer {
   display: grid;
   align-items: center;
   text-align: center;
+
   /*
   position:fixed;
 

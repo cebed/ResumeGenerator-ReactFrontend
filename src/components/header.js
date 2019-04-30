@@ -58,8 +58,8 @@ class Header extends Component {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    <Dropdown.Item href="/AdminComponenet"> Admin</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <Dropdown.Item href="/AdminComponenet"> Search for employees</Dropdown.Item>
+                    <Dropdown.Item href="/EditFrontEdgeAddressPage">Edit Company information</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
         </li>
