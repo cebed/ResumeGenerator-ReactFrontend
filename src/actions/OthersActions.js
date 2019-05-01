@@ -2,7 +2,7 @@
 import axios from 'axios';
 import {BASE_URL} from "../Utils/environment";
 export const UPDATE_OTHERS = 'update_others';
-
+export const FETCH_FOOTER_PDF_DATA = 'FETCH_FOOTER_PDF_DATA'
 
 
 
@@ -52,7 +52,7 @@ export const deleteOthers= (id, history, paramId) => async dispatch => {
 export const getFrontEdgeInformation = (id) => async dispatch => {
     const res = await axios.get(`${BASE_URL}/company/byId/${id}`);
     dispatch({
-        type: UPDATE_OTHERS,
+        type: FETCH_FOOTER_PDF_DATA,
         payload: res.data
     });
 };
