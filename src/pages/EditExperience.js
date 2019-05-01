@@ -25,6 +25,7 @@ class  EditExperience extends Component {
         this.state = {
 
             title: '',
+            company:'',
             start_date: '',
             end_date: '',
             description: '',
@@ -40,6 +41,7 @@ class  EditExperience extends Component {
         event.preventDefault();
         const update = {
             title: this.state.title,
+            company: this.state.company,
             start_date: this.state.start_date,
             end_date: this.state.end_date,
             description: this.state.description,
@@ -56,6 +58,7 @@ class  EditExperience extends Component {
     componentWillReceiveProps(nextProps) {
         const {
             title,
+            company,
             start_date,
             end_date,
             description,
@@ -64,6 +67,7 @@ class  EditExperience extends Component {
 
         this.setState({
             title,
+            company,
             start_date,
             end_date,
             description
@@ -104,49 +108,70 @@ class  EditExperience extends Component {
                             <div className="card-body">
 
                                 <form onSubmit={this.onSubmit}>
-                                    <div className="form-group">
-                                        <input type="text"
-
+                                    <div className="input-group">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text" id="" style={{width:'90px'}}>Title</span>
+                                        </div>
+                                        <input type="text" className="form-control"
                                                placeholder=" title"
                                                name="title"
-
                                                value={this.state.title}
                                                onChange={this.onChange}
                                         />
-
                                     </div>
 
-                                    <div className="form-group">
-                                        <input type="date"
 
+                                    <div className="input-group">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text" id="" style={{width:'90px'}}>Company</span>
+                                        </div>
+                                        <input type="text" className="form-control"
+                                               placeholder="Company"
+                                               name="company"
+                                               value={this.state.company}
+                                               onChange={this.onChange}
+                                        />
+                                    </div>
+
+
+
+                                    <div className="input-group">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text" id="" style={{width:'90px'}}>Start date</span>
+                                        </div>
+                                        <input type="date" className="form-control"
                                                placeholder="start_date"
                                                name="start_date"
                                                value={this.state.start_date}
                                                onChange={this.onChange}
-
                                         />
-
-
                                     </div>
-                                    <div className="form-group">
-                                        <input type="date"
 
-                                               placeholder="end_date"
-                                               name="end_date"
-                                               value={this.state.end_date}
-                                               onChange={this.onChange}
 
-                                        />
+                                        <div className="input-group">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text" id="" style={{width:'90px'}}>End date</span>
+                                            </div>
+                                            <input type="date" className="form-control"
+                                                   placeholder="end_date"
+                                                   name="end_date"
+                                                   value={this.state.end_date}
+                                                   onChange={this.onChange}
+                                            />
+                                        </div>
 
-                                        <div >
-                       <textarea className="form-control" rows="5" id="comment"
 
-                                 placeholder=" description"
-                                 name="description"
 
-                                 value={this.state.description}
-                                 onChange={this.onChange}
-                       />
+                                        <div style={{padding:'10px'}}>
+                                            <div>
+                                                <h6>Description</h6>
+                                            </div>
+                                                 <textarea className="form-control" rows="5" id="comment"
+                                                           placeholder=" description"
+                                                           name="description"
+                                                           value={this.state.description}
+                                                           onChange={this.onChange}
+                                                 />
 
                                         </div>
 
@@ -162,7 +187,7 @@ class  EditExperience extends Component {
 
                                         }
 
-                                    </div>
+
 
 
 
@@ -201,6 +226,7 @@ class  EditExperience extends Component {
                     </div>
                 </div>
             </div>
+
 
 
         );

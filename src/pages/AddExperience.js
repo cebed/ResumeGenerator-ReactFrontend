@@ -15,6 +15,7 @@ class  AddExperience extends Component {
         this.state = {
 
             title: '',
+            company: '',
             start_date: '',
             end_date: '',
             description: '',
@@ -31,6 +32,7 @@ class  AddExperience extends Component {
         event.preventDefault();
         const newuser = {
             title: this.state.title,
+            company: this.state.company,
             start_date: this.state.start_date,
             end_date: this.state.end_date,
             description: this.state.description,
@@ -57,7 +59,7 @@ class  AddExperience extends Component {
                         <div className="card border-dark mb-3">
                             <div className="card-header"><h1 className="display-4 text-center">Add work experience</h1></div>
                             <div className="card-body">
-                <h1>  {this.state.id}</h1>
+
 
 
                     <form onSubmit={this.onSubmit}>
@@ -68,6 +70,19 @@ class  AddExperience extends Component {
                                    name="title"
 
                                    value={this.state.title}
+                                   onChange={this.onChange}
+                            />
+
+                        </div>
+
+
+                        <div className="form-group">
+                            <input type="text"
+
+                                   placeholder=" company"
+                                   name="company"
+
+                                   value={this.state.company}
                                    onChange={this.onChange}
                             />
 
