@@ -57,7 +57,7 @@ export const getFrontEdgeInformation = (id) => async dispatch => {
     });
 };
 export const updateFrontEdgeInformation = ( update) => async dispatch => {
-    await axios.post(`${BASE_URL}/company/register`, update);
+    await axios.post(`${BASE_URL}/company/update`, update);
 
 
 

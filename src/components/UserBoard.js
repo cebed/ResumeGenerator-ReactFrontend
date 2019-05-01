@@ -11,9 +11,9 @@ class UserBoard extends Component {
 
     onGeneratePdf() {
         const {user} = this.props.user;
-        console.log(user);
+
         this.props.generatePdf(user.id);
-        // console.log(this.props.user.user);
+       console.log(user.id);
     }
 
     render() {

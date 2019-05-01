@@ -14,6 +14,7 @@ class Header extends Component {
     }
     render() {
         const { validToken, user } = this.props.security;
+        console.log(user);
 
         const userIsAuthenticated = (
             <div className="collapse navbar-collapse" id="mobile-nav">
@@ -68,7 +69,7 @@ class Header extends Component {
         );
         let Admin;
 
-        if ( user.id ==true) {
+        if ( user.adminOrUser == true) {
             Admin = isadmin;
         } else {
             Admin = isNotadmin;
