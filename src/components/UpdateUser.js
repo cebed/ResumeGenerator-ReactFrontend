@@ -103,9 +103,11 @@ class UpdateUser extends Component {
                                         <form onSubmit={this.onSubmit}>
 
 
-                                            <div className="form-group">
-
-                                                <input type="text"
+                                            <div className="input-group">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text"  style={{width:'90px'}} id="">Title</span>
+                                                </div>
+                                                <input type="text" className="form-control"
                                                        placeholder="My title"
                                                        name="currentTitle"
                                                        value={this.state.currentTitle}
@@ -114,26 +116,40 @@ class UpdateUser extends Component {
 
                                             </div>
 
-                                            <div className="form-group">
-                                                <input type="text"
+
+                                            <div className="input-group">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Name</span>
+                                                </div>
+                                                <input type="text" className="form-control"
                                                        placeholder="Full Name"
                                                        name="fullName"
                                                        value={this.state.fullName}
                                                        onChange={this.onChange}
                                                 />
+
                                             </div>
 
-                                            <div className="form-group">
-                                                <input type="text"
+                                            <div className="input-group">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Email</span>
+                                                </div>
+                                                <input type="text" className="form-control"
                                                        placeholder="Email Address"
                                                        name="username"
                                                        value={this.state.username}
                                                        onChange={this.onChange}
                                                 />
+
                                             </div>
 
-                                            <div className="form-group">
-                                                <input type="text"
+
+
+                                            <div className="input-group">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Address</span>
+                                                </div>
+                                                <input type="text" className="form-control"
                                                        placeholder="Address"
                                                        name="address"
                                                        value={this.state.address}
@@ -142,40 +158,46 @@ class UpdateUser extends Component {
 
                                             </div>
 
-
-                                            <div className="form-group">
-                                                <input type="text"
-
+                                            <div className="input-group">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Phone</span>
+                                                </div>
+                                                <input type="text" className="form-control"
                                                        placeholder="Phone"
                                                        name="phone"
                                                        value={this.state.phone}
                                                        onChange={this.onChange}
                                                 />
-
                                             </div>
-                                            <div className="form-group">
-                                                <input type="text"
 
+
+                                            <div className="input-group">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Image</span>
+                                                </div>
+                                                <input type="text" className="form-control"
                                                        placeholder="Image url"
                                                        name="image"
                                                        value={this.state.image}
                                                        onChange={this.onChange}
                                                 />
-
                                             </div>
 
-                                            <div className="form-group">
-
-                                                <input type="password"
-
+                                            <div className="input-group">
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Password</span>
+                                                </div>
+                                                <input type="password" className="form-control"
                                                        placeholder="password"
                                                        name="password"
                                                        value={this.state.password}
                                                        onChange={this.onChange}
                                                 />
-
                                             </div>
 
+                                            <div style={{padding:'5px'}}>
+                                                <h6>Profile</h6>
+                                            </div>
                                             <div className="form-group">
                                                 <textarea className="form-control" rows="5" id="comment"
 

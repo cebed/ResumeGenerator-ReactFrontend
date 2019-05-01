@@ -46,10 +46,10 @@ class UserBoard extends Component {
 
                             <div className="card card-body bg-light mb-3">
                                 <div className="col-8">
-                                <div className="row"> Name: {user.fullName}</div>
+                                    <div className="row">Name: {user.fullName}</div>
                                 <div className="row"> Email : {user.username}</div>
-                                <div className="row"> {user.address}</div>
-                                <div className="row"> {user.phone}</div>
+                                <div className="row"> Address: {user.address}</div>
+                                <div className="row"> Phone: {user.phone}</div>
                             </div>
                             </div>
                         <div className="col-4">
