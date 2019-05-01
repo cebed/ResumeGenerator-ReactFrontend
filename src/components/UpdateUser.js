@@ -24,7 +24,8 @@ class UpdateUser extends Component {
             address: '',
             phone:'',
             image:'',
-            userProfile:''
+            userProfile:'',
+            password:''
 
            // errors: {}
         };
@@ -41,7 +42,9 @@ class UpdateUser extends Component {
             address,
             phone,
             image,
-            userProfile
+            userProfile,
+            password
+
         } = nextProps.user;
 
         this.setState({
@@ -51,7 +54,8 @@ class UpdateUser extends Component {
             address,
             phone,
             image,
-            userProfile
+            userProfile,
+            password
         });
     }
 
@@ -64,8 +68,8 @@ class UpdateUser extends Component {
             address: this.state.address,
             phone: this.state.phone,
             image: this.state.image,
-            userProfile: this.state.userProfile
-
+            userProfile: this.state.userProfile,
+            password: this.state.password
         };
         const {id} =   this.props.user;
         console.log(id);
@@ -155,6 +159,18 @@ class UpdateUser extends Component {
                                                        placeholder="Image url"
                                                        name="image"
                                                        value={this.state.image}
+                                                       onChange={this.onChange}
+                                                />
+
+                                            </div>
+
+                                            <div className="form-group">
+
+                                                <input type="password"
+
+                                                       placeholder="password"
+                                                       name="password"
+                                                       value={this.state.password}
                                                        onChange={this.onChange}
                                                 />
 
