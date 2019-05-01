@@ -19,6 +19,7 @@ class ExperienceContainer extends React.Component {
                         end_date = {list.end_date}
                         start_date ={list.start_date}
                         description = {list.description}
+                        company={list.company}
                         id = {list.id_workExperience}
 
                     />
