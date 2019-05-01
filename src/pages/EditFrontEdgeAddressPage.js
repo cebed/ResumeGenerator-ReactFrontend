@@ -55,6 +55,22 @@ class  EditFrontEdgeAddressPage extends Component {
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        const {
+            address,
+            gata,
+            postno,
+
+        } = nextProps.others;
+
+        this.setState({
+            address,
+            gata,
+            postno
+        });
+    }
+
+
 
 
 

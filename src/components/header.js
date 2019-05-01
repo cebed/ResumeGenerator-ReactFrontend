@@ -20,12 +20,14 @@ class Header extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
 
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
 
+                    <li className="nav-item">
+                        <Link to={`/ResumeBoard/${user.id}`}>
                         <i className="fas fa-user-circle mr-1" />
                         <h6>{user.fullName}</h6>
-
+                        </Link>
                     </li>
+
                     <li className="nav-item">
                         <Link
                             className="nav-link"
@@ -36,8 +38,6 @@ class Header extends Component {
                         </Link>
                     </li>
                 </ul>
-
-
 
             </div>
 

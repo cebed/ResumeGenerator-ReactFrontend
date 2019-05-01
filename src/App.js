@@ -36,6 +36,7 @@ import AddLanguagePage from "./pages/AddLanguagePage";
 import EditLanguagePage from "./pages/EditLanguagePage";
 import SecuredRoute from "./securityUtils/SecureRoute";
 import EditFrontEdgeAddressPage from "./pages/EditFrontEdgeAddressPage";
+import SecureAdminRoute from "./securityUtils/SecureAdminRoute";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
@@ -96,14 +97,14 @@ class App extends Component {
                 <SecuredRoute exact path="/EditEducationPage/:id" component={EditEducationPage} />
                 <SecuredRoute exact path="/AddSkillsPage" component={AddSkillsPage} />
                 <SecuredRoute exact path="/EditSkillsPage/:id" component={EditSkillsPage} />
-                <SecuredRoute exact path="/AdminComponenet" component={AdminComponenet} />
+                <SecureAdminRoute exact path="/AdminComponenet" component={AdminComponenet} />
                 <SecuredRoute exact path="/AddOthersPage" component={AddOthersPage} />
                 <SecuredRoute exact path="/EditOthersPage/:id" component={EditOthersPage} />
                 <SecuredRoute exact path="/AddLanguagePage" component={AddLanguagePage} />
                 <SecuredRoute exact path="/EditLanguagePage/:id" component={EditLanguagePage} />
                 <SecuredRoute exact path="/ResumeBoard/:id" component={ResumeBoard} />
                 <SecuredRoute exact path="/updateUser/:id" component={UpdateUser} />
-                <SecuredRoute exact path="/EditFrontEdgeAddressPage" component={EditFrontEdgeAddressPage} />
+                <SecureAdminRoute exact path="/EditFrontEdgeAddressPage" component={EditFrontEdgeAddressPage} />
                 </Switch>
                 <Footer/>
 
