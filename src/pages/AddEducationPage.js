@@ -18,6 +18,7 @@ class  AddEducationPage extends Component {
             description:'',
             title: '',
             start_date: '',
+            end_date:'',
             id: ''
         }
         ;
@@ -33,6 +34,7 @@ class  AddEducationPage extends Component {
 
             title: this.state.title,
             start_date: this.state.start_date,
+            end_date: this.state.end_date,
             description: this.state.description,
             id:this.props.user.id,
 
@@ -64,53 +66,58 @@ class  AddEducationPage extends Component {
 
 
                     <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <input type="text"
 
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Title</span>
+                            </div>
+                            <input type="text" className="form-control"
                                    placeholder=" title"
                                    name="title"
-
                                    value={this.state.title}
                                    onChange={this.onChange}
                             />
-
                         </div>
 
-                        <div className="form-group">
-                            <input type="date"
 
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Start date</span>
+                            </div>
+                            <input type="date" className="form-control"
                                    placeholder="start_date"
                                    name="start_date"
                                    value={this.state.start_date}
                                    onChange={this.onChange}
-
                             />
-
-
                         </div>
-                        <div className="form-group">
-                            <input type="date"
 
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>End date</span>
+                            </div>
+                            <input type="date" className="form-control"
                                    placeholder="end_date"
                                    name="end_date"
                                    value={this.state.end_date}
                                    onChange={this.onChange}
+                            />
+                        </div>
 
+                        <div style={{padding:'5px'}}>
+                            <div>
+                                <h6>Description</h6>
+                            </div>
+                            <textarea className="form-control" rows="5" id="comment"
+                                      placeholder=" description"
+                                      name="description"
+                                      value={this.state.description}
+                                      onChange={this.onChange}
                             />
 
-                            <div >
-                         <textarea className="form-control" rows="5" id="comment"
-
-                                 placeholder=" description"
-                                 name="description"
-
-                                 value={this.state.description}
-                                 onChange={this.onChange}
-                          />
-                            </div>
-
-
                         </div>
+
+
 
 
 

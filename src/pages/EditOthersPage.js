@@ -92,36 +92,36 @@ class  EditOthersPage extends Component {
                         <div className="card border-dark mb-3">
                             <div className="card-header"><h1 className="display-4 text-center">Edit other competences</h1></div>
                             <div className="card-body">
-                {this.props.others.id}
+
 
 
 
 
                     <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <input type="text"
-
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Title</span>
+                            </div>
+                            <input type="text" className="form-control"
                                    placeholder=" title"
                                    name="title"
-
                                    value={this.state.title}
                                    onChange={this.onChange}
                             />
-
                         </div>
 
-                        <div className="form-group">
-                            <input type="text"
+                        <div style={{padding:'5px'}}>
 
-                                   placeholder="description"
-                                   name="description"
-                                   value={this.state.description}
-                                   onChange={this.onChange}
-
+                            <textarea className="form-control" rows="5" id="comment"
+                                      placeholder="Description"
+                                      name="description"
+                                      value={this.state.description}
+                                      onChange={this.onChange}
                             />
+
                         </div>
 
-                       <div className="saveButton">
+                       <div className="saveButton" style={{margin:'5px'}}>
                         <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
@@ -133,11 +133,11 @@ class  EditOthersPage extends Component {
                                 <div className="container">
 
                                     <div className="row">
-                                        <div className="col-6">
+                                        <div className="col-6" style={{padding:'5px'}}>
                                             <Back/>
                                         </div>
 
-                                        <div className="col-6">
+                                        <div className="col-6" style={{padding:'5px'}}>
                                             <Button
                                                 variant="outline-danger"
                                                 size="lg"

@@ -138,6 +138,7 @@ class UpdateUser extends Component {
                                                        placeholder="Email Address"
                                                        name="username"
                                                        value={this.state.username}
+                                                       disabled="true"
                                                        onChange={this.onChange}
                                                 />
 

@@ -62,29 +62,29 @@ class  AddSkillsPage extends Component {
 
 
                     <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <input type="text"
-
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Title</span>
+                            </div>
+                            <input type="text" className="form-control"
                                    placeholder=" title"
                                    name="title"
-
                                    value={this.state.title}
                                    onChange={this.onChange}
                             />
-
                         </div>
 
-                        <div className="form-group">
-                            <input type="text"
 
-                                   placeholder="level"
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Level</span>
+                            </div>
+                            <input type="text" className="form-control"
+                                   placeholder=" Level"
                                    name="level"
                                    value={this.state.level}
                                    onChange={this.onChange}
-
                             />
-
-
                         </div>
 
 

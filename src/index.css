@@ -240,11 +240,11 @@ footer ul:first-of-type li span {
 }
 
 .saveButton{
-  width: 96%;
+  width: 99%;
   margin-left: 15px;
 }
 
-.pdfButton{
-
-
+.paddbetweensection{
+  padding-top: 80px;
+  height : 125px;
 }

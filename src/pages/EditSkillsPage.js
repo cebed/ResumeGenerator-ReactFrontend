@@ -85,36 +85,36 @@ class EditSkillsPage extends Component {
                         <div className="card border-dark mb-3">
                             <div className="card-header"><h1 className="display-4 text-center">Edit skills</h1></div>
                             <div className="card-body">
-                                {this.props.skills.id}
+
 
 
                                 <form onSubmit={this.onSubmit}>
-                                    <div className="form-group">
-                                        <input type="text"
-
+                                    <div className="input-group" style={{padding:'5px'}}>
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text" id="" style={{width:'90px'}}>Title</span>
+                                        </div>
+                                        <input type="text" className="form-control"
                                                placeholder=" title"
                                                name="title"
-
                                                value={this.state.title}
                                                onChange={this.onChange}
                                         />
-
                                     </div>
 
-                                    <div className="form-group">
-                                        <input type="text"
 
+                                    <div className="input-group" style={{padding:'5px'}}>
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text" id="" style={{width:'90px'}}>Level</span>
+                                        </div>
+                                        <input type="text" className="form-control"
                                                placeholder="level"
                                                name="level"
                                                value={this.state.level}
                                                onChange={this.onChange}
-
                                         />
-
-
                                     </div>
 
-                                    <div className="saveButton">
+                                    <div className="saveButton" style={{margin:'5px'}}>
                                         <Button type="submit" variant="success" size="lg" block>
                                             Save
                                         </Button>
@@ -125,11 +125,11 @@ class EditSkillsPage extends Component {
                                 <div className="container">
 
                                     <div className="row">
-                                        <div className="col-6">
+                                        <div className="col-6" style={{padding:'5px'}}>
                                             <Back/>
                                         </div>
 
-                                        <div className="col-6">
+                                        <div className="col-6" style={{padding:'5px'}}>
                                             <Button
                                                 variant="outline-danger"
                                                 size="lg"

@@ -102,32 +102,31 @@ class  EditCoursePage extends Component {
 
 
                     <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <input type="text"
-
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Title</span>
+                            </div>
+                            <input type="text" className="form-control"
                                    placeholder=" title"
                                    name="title"
-
                                    value={this.state.title}
                                    onChange={this.onChange}
                             />
-
                         </div>
 
-                        <div className="form-group">
-                            <input type="date"
-
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Date</span>
+                            </div>
+                            <input type="date" className="form-control"
                                    placeholder="start_date"
                                    name="start_date"
                                    value={this.state.start_date}
                                    onChange={this.onChange}
-
                             />
-
-
                         </div>
 
-                        <div className="saveButton">
+                        <div className="saveButton" style={{margin:'5px'}}>
                         <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
@@ -139,11 +138,11 @@ class  EditCoursePage extends Component {
                                 <div className="container">
 
                                     <div className="row">
-                                        <div className="col-6">
+                                        <div className="col-6" style={{padding:'5px'}}>
                                             <Back/>
                                         </div>
 
-                                        <div className="col-6">
+                                        <div className="col-6" style={{padding:'5px'}}>
                                             <Button
                                                 variant="outline-danger"
                                                 size="lg"
