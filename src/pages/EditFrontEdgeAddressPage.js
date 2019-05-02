@@ -100,60 +100,61 @@ class  EditFrontEdgeAddressPage extends Component {
 
 
                     <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <input type="text"
 
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Address</span>
+                            </div>
+                            <input type="text" className="form-control"
                                    placeholder=" Address"
                                    name="address"
-
                                    value={this.state.address}
                                    onChange={this.onChange}
                             />
-
                         </div>
 
-                        <div className="form-group">
-                            <input type="text"
 
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>City</span>
+                            </div>
+                            <input type="text" className="form-control"
                                    placeholder="City"
                                    name="gata"
                                    value={this.state.gata}
                                    onChange={this.onChange}
-
                             />
                         </div>
-                        <div className="form-group">
-                            <input type="text"
 
-                                   placeholder="post no"
+
+                        <div className="input-group" style={{padding:'5px'}}>
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="" style={{width:'90px'}}>Post no</span>
+                            </div>
+                            <input type="text" className="form-control"
+                                   placeholder="Post number"
                                    name="postno"
                                    value={this.state.postno}
                                    onChange={this.onChange}
-
                             />
                         </div>
 
 
 
-                        <div className="saveButton">
                         <Button type="submit" variant="success" size="lg" block>
                             Save
                         </Button>
-                        </div>
+
 
 
                     </form>
 
-                                <div className="container">
 
-                                    <div className="row">
-                                        <div className="col-12">
+                                        <div className="col-16">
                                             <Back/>
                                         </div>
 
 
-                                    </div>
-                                    </div>
                             </div>
                         </div>
                     </div>
