@@ -72,7 +72,7 @@ class EditCoursePage extends Component {
 
     onDeleteClick() {
         const {id} = this.props.match.params;
-        const parmValue = this.props.user.id;
+        //const parmValue = this.props.user.id;
         this.props.deleteCourse(id, this.props.history, this.props.user.id);
 
     }
@@ -91,7 +91,7 @@ class EditCoursePage extends Component {
                                 <h1 className="display-4 text-center">Edit course</h1>
                             </div>
                             <div className="card-body">
-                                {this.props.course.id}
+
 
 
                                 <form onSubmit={this.onSubmit}>

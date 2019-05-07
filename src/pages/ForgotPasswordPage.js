@@ -7,15 +7,14 @@ import {forgotpassword} from "../actions/OthersActions";
 import Back from "../components/Back";
 
 
-class  ForgotPasswordPage extends Component {
+class ForgotPasswordPage extends Component {
 
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
 
             toEmail: '',
-
 
 
         }
@@ -26,40 +25,27 @@ class  ForgotPasswordPage extends Component {
     }
 
 
-
-
-
-    onSubmit(event){
+    onSubmit(event) {
         event.preventDefault();
         const update = {
             toEmail: this.state.toEmail,
 
 
-
         };
 
-       // console.log()
+        // console.log()
 
         this.props.forgotpassword(update);
 
     }
 
 
-
-
-
-
-
-
-    onChange(e){
-        this.setState({ [e.target.name]: e.target.value } );
+    onChange(e) {
+        this.setState({[e.target.name]: e.target.value});
     }
 
 
-
-
     render() {
-
 
 
         return (
@@ -68,44 +54,40 @@ class  ForgotPasswordPage extends Component {
                 <div className="row">
                     <div className="col-md-8 m-auto">
                         <div className="card border-dark mb-3">
-                            <div className="card-header"><h1 className="display-4 text-center">Forgot Password</h1></div>
+                            <div className="card-header"><h1 className="display-4 text-center">Forgot Password</h1>
+                            </div>
                             <div className="card-body">
 
                                 {this.state.toEmail}
 
 
+                                <form onSubmit={this.onSubmit}>
 
-                    <form onSubmit={this.onSubmit}>
-
-                        <div className="input-group" style={{padding:'5px'}}>
-                            <div className="input-group-prepend">
-                                <span className="input-group-text" id="" style={{width:'90px'}}>Email</span>
-                            </div>
-                            <input type="text" className="form-control"
-                                   placeholder=" email"
-                                   name="toEmail"
-                                   value={this.state.toEmail}
-                                   onChange={this.onChange}
-                            />
-                        </div>
-
-
-
-
-
-
-                        <Button type="submit" variant="success" size="lg" block>
-                            Uppdate you
-                        </Button>
-
-
-
-                    </form>
-
-
-                                        <div className="col-16">
-                                            <Back/>
+                                    <div className="input-group" style={{padding: '5px'}}>
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text" id=""
+                                                  style={{width: '90px'}}>Email</span>
                                         </div>
+                                        <input type="text" className="form-control"
+                                               placeholder=" email"
+                                               name="toEmail"
+                                               value={this.state.toEmail}
+                                               onChange={this.onChange}
+                                        />
+                                    </div>
+
+
+                                    <Button type="submit" variant="success" size="lg" block>
+                                        Send email
+                                    </Button>
+
+
+                                </form>
+
+
+                                <div className="col-16">
+                                    <Back/>
+                                </div>
 
 
                             </div>
@@ -117,6 +99,7 @@ class  ForgotPasswordPage extends Component {
         );
     }
 }
+
 ForgotPasswordPage.propTypes = {
     forgotpassword: PropTypes.func.isRequired,
 
@@ -124,9 +107,7 @@ ForgotPasswordPage.propTypes = {
 };
 
 
-
 export default connect(
-
-    null,  { forgotpassword  }
+    null, {forgotpassword}
 )(ForgotPasswordPage);
 
