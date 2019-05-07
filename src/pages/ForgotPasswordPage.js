@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-//import {forgotPassword} from "../actions/OthersActions";
+import {forgotpassword} from "../actions/OthersActions";
 import Back from "../components/Back";
 
 
@@ -14,7 +14,7 @@ class  ForgotPasswordPage extends Component {
 
         this.state = {
 
-            email: '',
+            toEmail: '',
 
 
 
@@ -32,14 +32,15 @@ class  ForgotPasswordPage extends Component {
     onSubmit(event){
         event.preventDefault();
         const update = {
-            email: this.state.email,
+            toEmail: this.state.toEmail,
 
 
 
         };
 
+       // console.log()
 
-      //  this.props.forgotPassword( update);
+        this.props.forgotpassword(update);
 
     }
 
@@ -63,13 +64,14 @@ class  ForgotPasswordPage extends Component {
 
         return (
             <div className="container">
+
                 <div className="row">
                     <div className="col-md-8 m-auto">
                         <div className="card border-dark mb-3">
-                            <div className="card-header"><h1 className="display-4 text-center">Edit Location</h1></div>
+                            <div className="card-header"><h1 className="display-4 text-center">Forgot Password</h1></div>
                             <div className="card-body">
 
-
+                                {this.state.toEmail}
 
 
 
@@ -81,8 +83,8 @@ class  ForgotPasswordPage extends Component {
                             </div>
                             <input type="text" className="form-control"
                                    placeholder=" email"
-                                   name="email"
-                                   value={this.state.email}
+                                   name="toEmail"
+                                   value={this.state.toEmail}
                                    onChange={this.onChange}
                             />
                         </div>
@@ -93,7 +95,7 @@ class  ForgotPasswordPage extends Component {
 
 
                         <Button type="submit" variant="success" size="lg" block>
-                            Update your password
+                            Uppdate you
                         </Button>
 
 
@@ -116,9 +118,7 @@ class  ForgotPasswordPage extends Component {
     }
 }
 ForgotPasswordPage.propTypes = {
-    forgotPassword: PropTypes.func.isRequired,
-
-
+    forgotpassword: PropTypes.func.isRequired,
 
 
 };
@@ -127,6 +127,6 @@ ForgotPasswordPage.propTypes = {
 
 export default connect(
 
-    { /*forgotPassword*/ }
+    null,  { forgotpassword  }
 )(ForgotPasswordPage);
 
