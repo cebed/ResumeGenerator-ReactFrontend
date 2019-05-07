@@ -53,8 +53,9 @@ export const updateFrontEdgeInformation = (update) => async dispatch => {
 };
 
 
-export const forgotPassword = (update) => async dispatch => {
-    await axios.post(`${BASE_URL}/company/update`, update);
+export const forgotpassword = ( update) => async dispatch => {
+    console.log(update)
+    await axios.post(`${BASE_URL}/email/pass`, update);
 
 
 };
