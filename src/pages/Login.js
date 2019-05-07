@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import { login } from "../actions/securityActions";
 import {BASE_URL} from "../Utils/environment";
-//import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
+import ForgotPasswordPage from "./ForgotPasswordPage";
 
 
 class Login extends Component {
@@ -67,6 +68,7 @@ class Login extends Component {
                     <div>
                         <h1>Front<span className="last-word">Edge</span><br/><span className="ittext">IT</span>  </h1>
                     </div>
+
                     <Form className="logier" onSubmit={this.onSubmit}>
                         <Form.Group>
                             <Form.Label>Email</Form.Label>
@@ -103,8 +105,12 @@ class Login extends Component {
                         <Button className="login" type="submit">
                             Login
                         </Button>
+                        <Link className="fa " to={`/ForgotPasswordPage`}>
+                           forgot password
+                        </Link>
 
                     </Form>
+
                 </div>
 
 
@@ -125,7 +131,6 @@ class Login extends Component {
 
 
                 {headerLinks}
-
                 </loginpage>
 
 

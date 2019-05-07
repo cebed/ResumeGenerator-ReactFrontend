@@ -49,6 +49,18 @@ export const deleteOthers= (id, history, paramId) => async dispatch => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* those two metods are to be able to get information and uppdate */
+
 export const getFrontEdgeInformation = (id) => async dispatch => {
     const res = await axios.get(`${BASE_URL}/company/byId/${id}`);
     dispatch({
@@ -57,6 +69,14 @@ export const getFrontEdgeInformation = (id) => async dispatch => {
     });
 };
 export const updateFrontEdgeInformation = ( update) => async dispatch => {
+    await axios.post(`${BASE_URL}/company/update`, update);
+
+
+
+};
+
+
+export const forgotPassword = ( update) => async dispatch => {
     await axios.post(`${BASE_URL}/company/update`, update);
 
 
