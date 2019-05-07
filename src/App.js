@@ -37,6 +37,8 @@ import EditLanguagePage from "./pages/EditLanguagePage";
 import SecuredRoute from "./securityUtils/SecureRoute";
 import EditFrontEdgeAddressPage from "./pages/EditFrontEdgeAddressPage";
 import SecureAdminRoute from "./securityUtils/SecureAdminRoute";
+import LinkedInPopUp from "./components/LinkedInPopUp";
+import LinkedInPage from "./components/LinkedInPage";
 
 
 //anledning till att vi sätter upp token här är för att varje gång vi refreshar sidan så vill vi alltid vara inloggade
@@ -105,6 +107,8 @@ class App extends Component {
                 <SecuredRoute exact path="/ResumeBoard/:id" component={ResumeBoard} />
                 <SecuredRoute exact path="/updateUser/:id" component={UpdateUser} />
                 <SecureAdminRoute exact path="/EditFrontEdgeAddressPage" component={EditFrontEdgeAddressPage} />
+                    <Route exact path="/linkedin" component={LinkedInPopUp} />
+                    <Route path="/LinkedInPage" component={LinkedInPage} />
                 </Switch>
                 <Footer/>
 

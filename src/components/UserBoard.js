@@ -5,6 +5,7 @@ import {getUsersById, generatePdf} from "../actions/securityActions";
 import PropTypes from "prop-types";
 import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import LinkedInPage from "./LinkedInPage";
 
 class UserBoard extends Component {
 
@@ -40,6 +41,8 @@ class UserBoard extends Component {
                             </div>
 
                         </h4>
+
+                        <LinkedInPage/>
                     </div>
 
                     <div className="row">
