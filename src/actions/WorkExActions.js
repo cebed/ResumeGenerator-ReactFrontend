@@ -1,17 +1,13 @@
-
 import axios from 'axios';
 import {BASE_URL} from "../Utils/environment";
+
 export const FETCH_WORK = 'FETCH_WORK';
 
 
-
-
-
-
-export const createNewEx = (newuser, history,paramId) => async dispatch => {
-      await axios.post(`${BASE_URL}/work/register`, newuser);
-        history.push(`/ResumeBoard/${paramId}`);
-        };
+export const createNewEx = (newuser, history, paramId) => async dispatch => {
+    await axios.post(`${BASE_URL}/work/register`, newuser);
+    history.push(`/ResumeBoard/${paramId}`);
+};
 
 export const getWorkExperienceById = (id) => async dispatch => {
     const res = await axios.get(`${BASE_URL}/work/WorkExperienceById/${id}`);
@@ -21,7 +17,7 @@ export const getWorkExperienceById = (id) => async dispatch => {
     });
 };
 export const updateWorkExperience = (id, update, history, paramId) => async dispatch => {
-   await axios.put(`${BASE_URL}/work/upddateWork/${id}`, update);
+    await axios.put(`${BASE_URL}/work/upddateWork/${id}`, update);
     history.push(`/ResumeBoard/${paramId}`);
 
 

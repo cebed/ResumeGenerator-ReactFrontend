@@ -3,15 +3,13 @@ import ExperienceContainer from "./container/ExperienceContainer";
 import AddExperience from "./pages/AddExperience";
 import EditExperience from "./pages/EditExperience";
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import jwt_decode from "jwt-decode";
-
-//import {ButtonToolbar, Button} from 'react-bootstrap';
 import ResumeBoard from "./pages/ResumePage";
 import Register from "./pages/Registration";
 //THIS IMPORT ALLOWS US TO HOOK UP REACT WITH REDUX
 //Provider is basically how we define the store that we are going to use for our APP
-import { Provider } from "react-redux";
+import {Provider} from "react-redux";
 import store from "./store";
 import setJWTToken from "./securityUtils/setJWTToken";
 import {SET_CURRENT_USER} from "./actions/securityActions";
@@ -71,55 +69,53 @@ class App extends Component {
         return (
             <Provider store={store}>
 
-            <Router>
-            <div className="App">
+                <Router>
+                    <div className="App">
 
-                <Header/>
+                        <Header/>
 
-                {
-                    //Public Routes
-                }
-                <Route exact path="/" component={Login} />
-                <Route exact path="/Register" component={Register}/>
-                <Route path ="/ForgotPasswordPage " component={ForgotPasswordPage}/>
-
-
+                        {
+                            //Public Routes
+                        }
+                        <Route exact path="/" component={Login}/>
+                        <Route exact path="/Register" component={Register}/>
+                        <Route path="/ForgotPasswordPage " component={ForgotPasswordPage}/>
 
 
-                {
-                    //Private Routes
-                }
-                <Switch>
-                <SecuredRoute exact path="/ExperienceContainer" component={ExperienceContainer} />
-                <SecuredRoute exact path="/AddExperience" component={AddExperience} />
-                <SecuredRoute exact path="/EditExperience/:id" component={EditExperience} />
-                <SecuredRoute exact path="/CourseContainer" component={CourseContainer} />
-                <SecuredRoute exact path="/AddCoursePage" component={AddCoursePage} />
-                <SecuredRoute exact path="/EditCoursePage/:id" component={EditCoursePage} />
-                <SecuredRoute exact path="/EducationContainer" component={EducationContainer} />
-                <SecuredRoute exact path="/AddEducationPage" component={AddEducationPage} />
-                <SecuredRoute exact path="/EditEducationPage/:id" component={EditEducationPage} />
-                <SecuredRoute exact path="/AddSkillsPage" component={AddSkillsPage} />
-                <SecuredRoute exact path="/EditSkillsPage/:id" component={EditSkillsPage} />
-                <SecureAdminRoute exact path="/AdminComponenet" component={AdminComponenet} />
-                <SecuredRoute exact path="/AddOthersPage" component={AddOthersPage} />
-                <SecuredRoute exact path="/EditOthersPage/:id" component={EditOthersPage} />
-                <SecuredRoute exact path="/AddLanguagePage" component={AddLanguagePage} />
-                <SecuredRoute exact path="/EditLanguagePage/:id" component={EditLanguagePage} />
-                <SecuredRoute exact path="/ResumeBoard/:id" component={ResumeBoard} />
-                <SecuredRoute exact path="/updateUser/:id" component={UpdateUser} />
-                <SecureAdminRoute exact path="/EditFrontEdgeAddressPage" component={EditFrontEdgeAddressPage} />
-                    <Route exact path="/linkedin" component={LinkedInPopUp} />
-                    <Route path="/LinkedInPage" component={LinkedInPage} />
-                    <Route path="/ForgotPasswordPage" component={ForgotPasswordPage}/>
+                        {
+                            //Private Routes
+                        }
+                        <Switch>
+                            <SecuredRoute exact path="/ExperienceContainer" component={ExperienceContainer}/>
+                            <SecuredRoute exact path="/AddExperience" component={AddExperience}/>
+                            <SecuredRoute exact path="/EditExperience/:id" component={EditExperience}/>
+                            <SecuredRoute exact path="/CourseContainer" component={CourseContainer}/>
+                            <SecuredRoute exact path="/AddCoursePage" component={AddCoursePage}/>
+                            <SecuredRoute exact path="/EditCoursePage/:id" component={EditCoursePage}/>
+                            <SecuredRoute exact path="/EducationContainer" component={EducationContainer}/>
+                            <SecuredRoute exact path="/AddEducationPage" component={AddEducationPage}/>
+                            <SecuredRoute exact path="/EditEducationPage/:id" component={EditEducationPage}/>
+                            <SecuredRoute exact path="/AddSkillsPage" component={AddSkillsPage}/>
+                            <SecuredRoute exact path="/EditSkillsPage/:id" component={EditSkillsPage}/>
+                            <SecureAdminRoute exact path="/AdminComponenet" component={AdminComponenet}/>
+                            <SecuredRoute exact path="/AddOthersPage" component={AddOthersPage}/>
+                            <SecuredRoute exact path="/EditOthersPage/:id" component={EditOthersPage}/>
+                            <SecuredRoute exact path="/AddLanguagePage" component={AddLanguagePage}/>
+                            <SecuredRoute exact path="/EditLanguagePage/:id" component={EditLanguagePage}/>
+                            <SecuredRoute exact path="/ResumeBoard/:id" component={ResumeBoard}/>
+                            <SecuredRoute exact path="/updateUser/:id" component={UpdateUser}/>
+                            <SecureAdminRoute exact path="/EditFrontEdgeAddressPage"
+                                              component={EditFrontEdgeAddressPage}/>
+                            <Route exact path="/linkedin" component={LinkedInPopUp}/>
+                            <Route path="/LinkedInPage" component={LinkedInPage}/>
+                            <Route path="/ForgotPasswordPage" component={ForgotPasswordPage}/>
 
-                </Switch>
-                <Footer/>
+                        </Switch>
+                        <Footer/>
 
 
-
-            </div>
-            </Router>
+                    </div>
+                </Router>
             </Provider>
         );
     }

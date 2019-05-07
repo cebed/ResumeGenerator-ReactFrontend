@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 class Experience extends Component {
@@ -16,7 +16,7 @@ class Experience extends Component {
         return (
 
             <div className="container">
-                <div className="card card-body bg-light mb-3" >
+                <div className="card card-body bg-light mb-3">
                     <div className="row">
                         <div className="col-4">
                             <div className="row">{experience}</div>

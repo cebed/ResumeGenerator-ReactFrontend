@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
 import {Dropdown} from "react-bootstrap";
-import Bootstap from 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { logout } from "../actions/securityActions";
+import {connect} from "react-redux";
+import {logout} from "../actions/securityActions";
 
 
 class Header extends Component {
@@ -12,8 +11,9 @@ class Header extends Component {
         this.props.logout();
         window.location.href = "/";
     }
+
     render() {
-        const { validToken, user } = this.props.security;
+        const {validToken, user} = this.props.security;
         console.log(user);
 
         const userIsAuthenticated = (
@@ -23,8 +23,8 @@ class Header extends Component {
 
                     <li className="nav-item">
                         <Link to={`/ResumeBoard/${user.id}`}>
-                        <i className="fas fa-user-circle mr-1" />
-                        <h6>{user.fullName}</h6>
+                            <i className="fas fa-user-circle mr-1"/>
+                            <h6>{user.fullName}</h6>
                         </Link>
                     </li>
 
@@ -44,32 +44,32 @@ class Header extends Component {
         );
 
 
-        const isNotadmin=(
-            <div> </div>
+        const isNotadmin = (
+            <div></div>
         );
 
-        const isadmin=(
+        const isadmin = (
 
             <div>
 
-        <li className="nav-item">
-            <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Menu
-                </Dropdown.Toggle>
+                <li className="nav-item">
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            Menu
+                        </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                    <Dropdown.Item href="/AdminComponenet"> Search for employees</Dropdown.Item>
-                    <Dropdown.Item href="/EditFrontEdgeAddressPage">Edit Company information</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
-        </li>
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="/AdminComponenet"> Search for employees</Dropdown.Item>
+                            <Dropdown.Item href="/EditFrontEdgeAddressPage">Edit company information</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </li>
             </div>
 
         );
         let Admin;
 
-        if ( user.adminOrUser == true) {
+        if (user.adminOrUser === true) {
             Admin = isadmin;
         } else {
             Admin = isNotadmin;
@@ -101,7 +101,6 @@ class Header extends Component {
         } else {
             headerLinks = userIsNotAuthenticated;
         }
-
 
 
         return (
@@ -141,5 +140,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { logout }
+    {logout}
 )(Header)

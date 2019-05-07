@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {createNewUser} from "../actions/securityActions";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import classnames from "classnames";
 import Button from "react-bootstrap/Button";
 
 
 class Registration extends Component {
 
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
@@ -23,8 +23,8 @@ class Registration extends Component {
 
     }
 
-    componentDidMount(){
-        if(this.props.security.validToken){
+    componentDidMount() {
+        if (this.props.security.validToken) {
 
             this.props.history.push("/");
 
@@ -32,12 +32,12 @@ class Registration extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.errors){
+        if (nextProps.errors) {
             this.setState({errors: nextProps.errors});
         }
     }
 
-    onSubmit(event){
+    onSubmit(event) {
         event.preventDefault();
         const newuser = {
             fullName: this.state.fullName,
@@ -51,12 +51,12 @@ class Registration extends Component {
     }
 
 
-    onChange(e){
-        this.setState({ [e.target.name]: e.target.value });
+    onChange(e) {
+        this.setState({[e.target.name]: e.target.value});
     }
 
     render() {
-        const { errors } = this.state;
+        const {errors} = this.state;
         return (
             <register>
                 <div className="register">
@@ -64,7 +64,9 @@ class Registration extends Component {
                         <div className="row">
                             <div className="col-md-8 m-auto">
                                 <div className="card border-dark mb-3">
-                                    <div className="card-header"><h1 className="display-4 text-center">Sign Up</h1></div>
+                                    <div className="card-header">
+                                        <h1 className="display-4 text-center">Sign Up</h1>
+                                    </div>
                                     <div className="card-body">
 
                                         <p className="lead text-center">Create your Account</p>
@@ -150,5 +152,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
     mapStateToProps,
-    { createNewUser }
+    {createNewUser}
 )(Registration);

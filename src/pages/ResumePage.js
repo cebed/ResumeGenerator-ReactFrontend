@@ -5,17 +5,17 @@ import UserBoard from "../components/UserBoard";
 import ExperienceContainer from "../container/ExperienceContainer";
 import CourseContainer from "../container/CourseContainer";
 import EducationContainer from "../container/EducationContainer";
-//import SkillsComponent from "../components/SkillsComponent";
 import SkillsContainer from "../container/SkillsContainer";
 import OthersContainer from "../container/OthersContainer";
 import LanguageContainer from "../container/LanguageContainer";
-import {getUsersById } from "../actions/userActions";
+import {getUsersById} from "../actions/userActions";
 
 class ResumePage extends Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.getUsersById(this.props.match.params.id);
 
     }
+
     render() {
 
         return (
@@ -52,6 +52,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-    mapStateToProps,{getUsersById}
+    mapStateToProps, {getUsersById}
 )(ResumePage)
 

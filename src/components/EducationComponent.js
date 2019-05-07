@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 class EducationComponent extends Component {
@@ -15,13 +15,13 @@ class EducationComponent extends Component {
         return (
 
             <div className="container">
-                <div className="card card-body bg-light mb-3" >
+                <div className="card card-body bg-light mb-3">
                     <div className="row">
                         <div className="col-4">
                             <div className="row">{experience}</div>
                             <div className="row">{start_date}</div>
                             <div className="row">{end_date}</div>
-                            <div className="row">   {description}</div>
+                            <div className="row">{description}</div>
                         </div>
                         <div className="col-lg-4 col-md-4 col-8">
 

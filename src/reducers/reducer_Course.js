@@ -1,11 +1,11 @@
-import {  UPDATE_COURSE } from "../actions/CourseActions";
+import {UPDATE_COURSE} from "../actions/CourseActions";
 
 const initialState = {
     courses: [],
     project: {}
 };
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
     switch (action.type) {
 
         case UPDATE_COURSE:

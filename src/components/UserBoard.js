@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {getUsersById, generatePdf} from "../actions/securityActions";
+import {generatePdf} from "../actions/securityActions";
 import PropTypes from "prop-types";
-import {Card} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import LinkedInPage from "./LinkedInPage";
 
@@ -14,7 +13,7 @@ class UserBoard extends Component {
         const {user} = this.props.user;
 
         this.props.generatePdf(user.id);
-       console.log(user.id);
+        console.log(user.id);
     }
 
     render() {
@@ -47,17 +46,17 @@ class UserBoard extends Component {
 
                     <div className="row">
 
-                            <div className="card card-body bg-light mb-3">
-                                <div className="col-8">
-                                    <div className="row">Name: {user.fullName}</div>
+                        <div className="card card-body bg-light mb-3">
+                            <div className="col-8">
+                                <div className="row">Name: {user.fullName}</div>
                                 <div className="row"> Email : {user.username}</div>
                                 <div className="row"> Address: {user.address}</div>
                                 <div className="row"> Phone: {user.phone}</div>
                             </div>
-                            </div>
+                        </div>
                         <div className="col-4">
                             <div className="card card-body bg-light mb-3" align="center">
-                            <img src={user.image} alt="uploadImage" className="uploadImage"/>
+                                <img src={user.image} alt="uploadImage" className="uploadImage"/>
                             </div>
                         </div>
                     </div>

@@ -1,26 +1,20 @@
-import React, { Component } from 'react';
-import {Link} from "react-router-dom";
-
+import React, {Component} from 'react';
 
 class Footer extends Component {
 
-  render() {
-    return (
-     
-      <footer>
+    render() {
+        return (
 
-          <ul>
-              <li className="logo">20<span>19</span></li>
-              {
-                  //<Link  to="/ExperienceContainer">nur-workbench</Link>
-              }
+            <footer>
 
-          </ul>
+                <ul>
+                    <li className="logo">20<span>19</span></li>
+                </ul>
 
-      </footer>
-      
-    );
-  }
+            </footer>
+
+        );
+    }
 }
 
 export default Footer;

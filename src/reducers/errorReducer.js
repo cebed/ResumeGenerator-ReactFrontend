@@ -1,10 +1,10 @@
-import { GET_ERRORS } from "../actions/securityActions";
+import {GET_ERRORS} from "../actions/securityActions";
 
 
 const initialState = {};
 
 //takes first the initialstate, means we do not have errors
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
     switch (action.type) {
 
         //if we have errors from the server this is going to return the errors
@@ -13,7 +13,7 @@ export default function(state = initialState, action) {
         case GET_ERRORS:
             return action.payload;
 
-            //returns the state as it is
+        //returns the state as it is
         default:
             return state;
     }

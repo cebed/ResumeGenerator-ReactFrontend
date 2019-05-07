@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 class CourseComponent extends Component {
@@ -7,14 +7,13 @@ class CourseComponent extends Component {
         const {
             experience,
             start_date,
-
             id
 
         } = this.props;
         return (
 
             <div className="container">
-                <div className="card card-body bg-light mb-3" >
+                <div className="card card-body bg-light mb-3">
                     <div className="row">
                         <div className="col-4">
                             <div className="row">{experience}</div>

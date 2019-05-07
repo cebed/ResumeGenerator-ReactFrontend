@@ -1,58 +1,56 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import _ from 'lodash';
-import Experience from "../components/Experience";
-import AddCoursePage from "../pages/AddCoursePage";
 import CourseComponent from "../components/CourseComponent";
 
 class CourseContainer extends React.Component {
 
 
-
-    renderWorkEx(){
+    renderWorkEx() {
         return _.map(this.props.user.courses, list => {
-            return(
+            return (
 
-                    <CourseComponent
+                <CourseComponent
 
-                        experience={list.title}
+                    experience={list.title}
 
-                        start_date ={list.start_date}
+                    start_date={list.start_date}
 
-                        id = {list.coursesId}
+                    id={list.coursesId}
 
-                    />
+                />
             )
         });
     }
 
-    render(){
+    render() {
 
-const {id} = this.props.user
+        //const {id} = this.props.user;
         return (
             <div>
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
                         <div className="card-header"><h1 className="display-4 text-center">Courses</h1></div>
 
-                    {this.renderWorkEx()}
+                        {this.renderWorkEx()}
 
-                <Link className="btn btn-primary" to="/AddCoursePage">
-                    Add new Courses
-                </Link>
-            </div>
-            </div>
+                        <Link className="btn btn-primary" to="/AddCoursePage">
+                            Add new Courses
+                        </Link>
+                    </div>
+                </div>
             </div>
 
         );
     };
-};
+}
 
 function mapStateToProps(state) {
-    return { course: state.courses.courses ,
-        user: state.user.user};
+    return {
+        course: state.courses.courses,
+        user: state.user.user
+    };
 }
 
 

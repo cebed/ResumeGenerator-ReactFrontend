@@ -1,20 +1,16 @@
 import React, {Component} from 'react';
-
-
 import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {updateSkills, deleteSkills, getTheSkillsById} from "../actions/SkillsActions";
 import Back from "../components/Back";
 
-//import {Link} from "react-router-dom";
-
 
 class EditSkillsPage extends Component {
     componentDidMount() {
 
-        const { id }  = this.props.match.params;
-         this.props.getTheSkillsById(id);
+        const {id} = this.props.match.params;
+        this.props.getTheSkillsById(id);
 
     }
 
@@ -27,8 +23,8 @@ class EditSkillsPage extends Component {
             level: '',
 
 
-        }
-        ;
+        };
+
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -43,9 +39,8 @@ class EditSkillsPage extends Component {
 
 
         };
-        // console.log(this.props.match.params);
-        // console.log(update);
-        const {id} = this.props.match.params
+
+        const {id} = this.props.match.params;
         this.props.updateSkills(id, update, this.props.history, this.props.user.id);
 
     }
@@ -64,7 +59,6 @@ class EditSkillsPage extends Component {
     }
 
 
-
     onChange(e) {
         this.setState({[e.target.name]: e.target.value});
     }
@@ -76,7 +70,7 @@ class EditSkillsPage extends Component {
     }
 
     render() {
-        const {title} = this.props.skills;
+        //const {title} = this.props.skills;
 
         return (
             <div className="container">
@@ -87,12 +81,14 @@ class EditSkillsPage extends Component {
                             <div className="card-body">
 
 
-
                                 <form onSubmit={this.onSubmit}>
-                                    <div className="input-group" style={{padding:'5px'}}>
+                                    <div className="input-group" style={{padding: '5px'}}>
                                         <div className="input-group-prepend">
-                                            <span className="input-group-text" id="" style={{width:'90px'}}>Title</span>
+                                            <span className="input-group-text" id=""
+                                                  style={{width: '90px'}}>Title
+                                            </span>
                                         </div>
+
                                         <input type="text" className="form-control"
                                                placeholder=" title"
                                                name="title"
@@ -102,9 +98,11 @@ class EditSkillsPage extends Component {
                                     </div>
 
 
-                                    <div className="input-group" style={{padding:'5px'}}>
+                                    <div className="input-group" style={{padding: '5px'}}>
                                         <div className="input-group-prepend">
-                                            <span className="input-group-text" id="" style={{width:'90px'}}>Level</span>
+                                            <span className="input-group-text" id=""
+                                                  style={{width: '90px'}}>Level
+                                            </span>
                                         </div>
                                         <input type="text" className="form-control"
                                                placeholder="level"
@@ -114,7 +112,7 @@ class EditSkillsPage extends Component {
                                         />
                                     </div>
 
-                                    <div className="saveButton" style={{margin:'5px'}}>
+                                    <div className="saveButton" style={{margin: '5px'}}>
                                         <Button type="submit" variant="success" size="lg" block>
                                             Save
                                         </Button>
@@ -125,11 +123,11 @@ class EditSkillsPage extends Component {
                                 <div className="container">
 
                                     <div className="row">
-                                        <div className="col-6" style={{padding:'5px'}}>
+                                        <div className="col-6" style={{padding: '5px'}}>
                                             <Back/>
                                         </div>
 
-                                        <div className="col-6" style={{padding:'5px'}}>
+                                        <div className="col-6" style={{padding: '5px'}}>
                                             <Button
                                                 variant="outline-danger"
                                                 size="lg"
@@ -139,36 +137,39 @@ class EditSkillsPage extends Component {
 
                                                 Delete
                                             </Button>
-
                                         </div>
 
                                     </div>
 
                                 </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                );
-                }
-                }
-                EditSkillsPage.propTypes = {
-                updateSkills: PropTypes.func.isRequired,
-                deleteSkills: PropTypes.func.isRequired,
-                getTheSkillsById: PropTypes.func.isRequired,
+        );
+    }
+}
 
-
-            };
-                function mapStateToProps(state) {
-                return {skills: state.skills.skills  ,
-                user: state.user.user};
-            }
+EditSkillsPage.propTypes = {
+    updateSkills: PropTypes.func.isRequired,
+    deleteSkills: PropTypes.func.isRequired,
+    getTheSkillsById: PropTypes.func.isRequired,
 
 
-                export default connect(
-                mapStateToProps,
-                {updateSkills,  deleteSkills, getTheSkillsById}
-                )(EditSkillsPage);
+};
+
+function mapStateToProps(state) {
+    return {
+        skills: state.skills.skills,
+        user: state.user.user
+    };
+}
+
+
+export default connect(
+    mapStateToProps,
+    {updateSkills, deleteSkills, getTheSkillsById}
+)(EditSkillsPage);
 

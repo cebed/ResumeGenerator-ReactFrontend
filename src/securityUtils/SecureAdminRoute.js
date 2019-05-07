@@ -1,16 +1,16 @@
 import React from "react";
-import {Route, Redirect, Link} from "react-router-dom";
-import { connect } from "react-redux";
+import {Route, Redirect} from "react-router-dom";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 
-const SecureAdminRoute = ({ component: Component, security, ...otherProps }) => (
+const SecureAdminRoute = ({component: Component, security, ...otherProps}) => (
     <Route
         {...otherProps}
         render={props =>
-             security.user.adminOrUser=== true ? (
+            security.user.adminOrUser === true ? (
                 <Component {...props} />
             ) : (
-                <Redirect to={`/ResumeBoard/${security.user.id}`} />
+                <Redirect to={`/ResumeBoard/${security.user.id}`}/>
             )
         }
     />

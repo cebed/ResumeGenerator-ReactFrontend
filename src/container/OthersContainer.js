@@ -1,58 +1,55 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import _ from 'lodash';
-import AddOthersPage from "../pages/AddOthersPage";
 import OthersComponent from "../components/OthersComponent";
 
 class OthersContainer extends React.Component {
 
-
-
-    renderWorkEx(){
+    renderWorkEx() {
         return _.map(this.props.user.others, list => {
-            return(
+            return (
 
-                    <OthersComponent
+                <OthersComponent
 
-                        titleOthers={list.title}
+                    titleOthers={list.title}
 
-                        description={list.description}
+                    description={list.description}
 
-                        id = {list.others_Id}
+                    id={list.others_Id}
 
-                    />
+                />
             )
         });
     }
 
-    render(){
-
-const {id} = this.props.user
+    render() {
         return (
             <div>
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
-                        <div className="card-header"><h1 className="display-4 text-center">Other competences</h1></div>
+                        <div className="card-header">
+                            <h1 className="display-4 text-center">Other competences</h1>
+                        </div>
 
-                    {this.renderWorkEx()}
+                        {this.renderWorkEx()}
 
-                <Link className="btn btn-primary" to="/AddOthersPage">
-                    Add new information
-                </Link>
-            </div>
-            </div>
+                        <Link className="btn btn-primary" to="/AddOthersPage">
+                            Add new information
+                        </Link>
+                    </div>
+                </div>
             </div>
 
         );
     };
-};
-
-function mapStateToProps(state) {
-    return { other: state.others.others ,
-        user: state.user.user};
 }
 
+function mapStateToProps(state) {
+    return {
+        other: state.others.others,
+        user: state.user.user
+    };
+}
 
 export default connect(mapStateToProps)(OthersContainer);

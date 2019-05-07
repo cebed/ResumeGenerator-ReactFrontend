@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-
-
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import Button from "react-bootstrap/Button";
 import {UppdateUser} from "../actions/securityActions";
 import {getUsersById} from "../actions/userActions";
@@ -10,24 +8,23 @@ import Back from "./Back";
 
 
 class UpdateUser extends Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.getUsersById(this.props.match.params.id);
-
     }
 
-    constructor(){
+    constructor() {
         super();
         this.state = {
             currentTitle: '',
             fullName: '',
-            username:'',
+            username: '',
             address: '',
-            phone:'',
-            image:'',
-            userProfile:'',
-            password:''
+            phone: '',
+            image: '',
+            userProfile: '',
+            password: ''
 
-           // errors: {}
+            // errors: {}
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -59,7 +56,7 @@ class UpdateUser extends Component {
         });
     }
 
-    onSubmit(event){
+    onSubmit(event) {
         event.preventDefault();
         const updateCurrentUser = {
             currentTitle: this.state.currentTitle,
@@ -71,7 +68,7 @@ class UpdateUser extends Component {
             userProfile: this.state.userProfile,
             password: this.state.password
         };
-        const {id} =   this.props.user;
+        const {id} = this.props.user;
         console.log(id);
 
 
@@ -79,23 +76,23 @@ class UpdateUser extends Component {
     }
 
 
-    onChange(e){
-        this.setState({ [e.target.name]: e.target.value });
+    onChange(e) {
+        this.setState({[e.target.name]: e.target.value});
     }
-
 
 
     render() {
 
         return (
             <register>
-               {this.state.currentTitle}
+                {this.state.currentTitle}
                 <div className="register">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-8 m-auto">
                                 <div className="card border-dark mb-3">
-                                    <div className="card-header"><h1 className="display-4 text-center">Update Information</h1></div>
+                                    <div className="card-header"><h1 className="display-4 text-center">Update
+                                        Information</h1></div>
                                     <div className="card-body">
 
                                         <p className="lead text-center">User details</p>
@@ -105,7 +102,8 @@ class UpdateUser extends Component {
 
                                             <div className="input-group">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text"  style={{width:'90px'}} id="">Title</span>
+                                                    <span className="input-group-text" style={{width: '90px'}}
+                                                          id="">Title</span>
                                                 </div>
                                                 <input type="text" className="form-control"
                                                        placeholder="My title"
@@ -119,7 +117,8 @@ class UpdateUser extends Component {
 
                                             <div className="input-group">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Name</span>
+                                                    <span className="input-group-text" id=""
+                                                          style={{width: '90px'}}>Name</span>
                                                 </div>
                                                 <input type="text" className="form-control"
                                                        placeholder="Full Name"
@@ -132,7 +131,8 @@ class UpdateUser extends Component {
 
                                             <div className="input-group">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Email</span>
+                                                    <span className="input-group-text" id=""
+                                                          style={{width: '90px'}}>Email</span>
                                                 </div>
                                                 <input type="text" className="form-control"
                                                        placeholder="Email Address"
@@ -145,10 +145,10 @@ class UpdateUser extends Component {
                                             </div>
 
 
-
                                             <div className="input-group">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Address</span>
+                                                    <span className="input-group-text" id=""
+                                                          style={{width: '90px'}}>Address</span>
                                                 </div>
                                                 <input type="text" className="form-control"
                                                        placeholder="Address"
@@ -161,7 +161,8 @@ class UpdateUser extends Component {
 
                                             <div className="input-group">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Phone</span>
+                                                    <span className="input-group-text" id=""
+                                                          style={{width: '90px'}}>Phone</span>
                                                 </div>
                                                 <input type="text" className="form-control"
                                                        placeholder="Phone"
@@ -174,7 +175,8 @@ class UpdateUser extends Component {
 
                                             <div className="input-group">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Image</span>
+                                                    <span className="input-group-text" id=""
+                                                          style={{width: '90px'}}>Image</span>
                                                 </div>
                                                 <input type="text" className="form-control"
                                                        placeholder="Image url"
@@ -186,7 +188,8 @@ class UpdateUser extends Component {
 
                                             <div className="input-group">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text" id="" style={{width:'90px'}}>Password</span>
+                                                    <span className="input-group-text" id=""
+                                                          style={{width: '90px'}}>Password</span>
                                                 </div>
                                                 <input type="password" className="form-control"
                                                        placeholder="password"
@@ -196,24 +199,23 @@ class UpdateUser extends Component {
                                                 />
                                             </div>
 
-                                            <div style={{padding:'5px'}}>
+                                            <div style={{padding: '5px'}}>
                                                 <h6>Profile</h6>
                                             </div>
                                             <div className="form-group">
                                                 <textarea className="form-control" rows="5" id="comment"
 
-                                                       placeholder="userProfile"
-                                                       name="userProfile"
-                                                       value={this.state.userProfile}
-                                                       onChange={this.onChange}
+                                                          placeholder="userProfile"
+                                                          name="userProfile"
+                                                          value={this.state.userProfile}
+                                                          onChange={this.onChange}
                                                 />
                                             </div>
 
 
-
                                             <div>
                                                 <Button type="submit" variant="success" size="lg" block>
-                                                   Save
+                                                    Save
                                                 </Button>
 
                                                 <div>
@@ -249,5 +251,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { UppdateUser, getUsersById}
+    {UppdateUser, getUsersById}
 )(UpdateUser);

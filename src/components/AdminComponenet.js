@@ -2,67 +2,55 @@ import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {fechUsers} from "../actions/userActions";
-import { Link } from 'react-router-dom';
 import _ from "lodash";
-import CourseComponent from "./CourseComponent";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import CardDeck from "react-bootstrap/CardDeck";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 class adminComponenet extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.fechUsers();
 
     }
 
-    renderUsers(){
+    renderUsers() {
         return _.map(this.props.user.user, list => {
-            return(
+            return (
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="paddingCard">
 
 
-                <Card className="text-center" style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={list.image}  alt="Upload Image" />
-                    <Card.Body>
-                        <Card.Title>{list.fullName}</Card.Title>
+                            <Card className="text-center" style={{width: '18rem'}}>
+                                <Card.Img variant="top" src={list.image} alt="Upload Image"/>
+                                <Card.Body>
+                                    <Card.Title>{list.fullName}</Card.Title>
 
-                    </Card.Body>
-                    <ListGroup className="list-group-flush">
-                        <ListGroupItem>{list.username}</ListGroupItem>
+                                </Card.Body>
+                                <ListGroup className="list-group-flush">
+                                    <ListGroupItem>{list.username}</ListGroupItem>
 
-                    </ListGroup>
-                    <Card.Body>
-                        <Button href={`/ResumeBoard/${list.id}`}>
+                                </ListGroup>
+                                <Card.Body>
+                                    <Button href={`/ResumeBoard/${list.id}`}>
 
-                            View CV
+                                        View CV
 
-                        </Button>
+                                    </Button>
 
-                    </Card.Body>
-                </Card>
+                                </Card.Body>
+                            </Card>
 
+                        </div>
                     </div>
-                    </div></div>
+                </div>
 
 
-
-
-
-
-
-
-
-        )
+            )
         });
     }
-
-
-
 
 
     render() {
@@ -72,8 +60,8 @@ class adminComponenet extends Component {
 
                 <div className="container">
                     <div className="card card-body bg-light mb-3">
-                {this.renderUsers()}
-                </div>
+                        {this.renderUsers()}
+                    </div>
                 </div>
             </div>
         );
@@ -92,5 +80,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-    mapStateToProps,{fechUsers}
+    mapStateToProps, {fechUsers}
 )(adminComponenet)
