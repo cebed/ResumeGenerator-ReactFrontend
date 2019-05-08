@@ -39,7 +39,8 @@ class EditFrontEdgeAddressPage extends Component {
 
 
         };
-
+        const {user} = this.props.security;
+        window.location.href=(`/ResumeBoard/${user.id}`);
         this.props.updateFrontEdgeInformation(update);
 
     }
@@ -66,6 +67,7 @@ class EditFrontEdgeAddressPage extends Component {
 
 
     render() {
+
         return (
             <div className="container">
                 <div className="row">
@@ -155,6 +157,7 @@ EditFrontEdgeAddressPage.propTypes = {
 
 function mapStateToProps(state) {
     return {
+        security: state.security,
         others: state.others.others,
         user: state.user.user
     };

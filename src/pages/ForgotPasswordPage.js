@@ -35,7 +35,9 @@ class ForgotPasswordPage extends Component {
 
         // console.log()
 
-        this.props.forgotpassword(update);
+        this.props.forgotpassword(update, this.props.history);
+
+
 
     }
 
