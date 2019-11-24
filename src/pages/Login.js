@@ -49,9 +49,9 @@ class Login extends Component {
 
         const userIsAuthenticated = (
 
-            <div className="head">
+            <div className="head" Style="height:600px">
                 <div>
-                    <h1>Front<span className="last-word">Edge</span><br/><span className="ittext">IT</span></h1>
+
                 </div>
 
             </div>
@@ -63,52 +63,59 @@ class Login extends Component {
 
 
             <div className="head">
-                <div>
-                    <h1>Front<span className="last-word">Edge</span><br/><span className="ittext">IT</span></h1>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-6">
+                            <div Style="height:150px"></div>
+                            <Form className="logier" onSubmit={this.onSubmit}>
+                                <Form.Group>
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control placeholder="Email"
+                                                  type="text"
+                                                  className={classnames("form-control form-control-lg", {
+                                                      "is-invalid": errors.username
+                                                  })}
+                                                  name="username"
+                                                  value={this.state.username}
+                                                  onChange={this.onChange}/>
+                                    {errors.username && (
+                                        <div className="invalid-feedback">{errors.username}</div>
+                                    )}
+                                </Form.Group>
+
+                                <Form.Group controlId="formBasicPassword">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password"
+                                                  className={classnames("form-control form-control-lg", {
+                                                      "is-invalid": errors.password
+                                                  })}
+                                                  placeholder="Password"
+                                                  name="password"
+                                                  value={this.state.password}
+                                                  onChange={this.onChange}
+                                    />
+                                    {errors.password && (
+                                        <div className="invalid-feedback">{errors.password}</div>
+                                    )}
+                                </Form.Group>
+
+
+                                <Button className="login" type="submit"  style={{width: '200px'}}>
+                                    Login
+                                </Button>
+
+
+                            </Form>
+                            <Link className="fa" to={`/ForgotPasswordPage`} style={{padding: '20px'}}>
+                                Forgot password
+                            </Link>
+                            <div Style="height:200px"></div>
+                        </div>
+
+
+
+                    </div>
                 </div>
-
-                <Form className="logier" onSubmit={this.onSubmit}>
-                    <Form.Group>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control placeholder="Email"
-                                      type="text"
-                                      className={classnames("form-control form-control-lg", {
-                                          "is-invalid": errors.username
-                                      })}
-                                      name="username"
-                                      value={this.state.username}
-                                      onChange={this.onChange}/>
-                        {errors.username && (
-                            <div className="invalid-feedback">{errors.username}</div>
-                        )}
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password"
-                                      className={classnames("form-control form-control-lg", {
-                                          "is-invalid": errors.password
-                                      })}
-                                      placeholder="Password"
-                                      name="password"
-                                      value={this.state.password}
-                                      onChange={this.onChange}
-                        />
-                        {errors.password && (
-                            <div className="invalid-feedback">{errors.password}</div>
-                        )}
-                    </Form.Group>
-
-
-                    <Button className="login" type="submit">
-                        Login
-                    </Button>
-                    <Link className="fa" to={`/ForgotPasswordPage`} style={{padding: '20px'}}>
-                        Forgot password
-                    </Link>
-
-                </Form>
-<div Style="height:120px"></div>
             </div>
 
 

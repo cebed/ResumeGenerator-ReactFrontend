@@ -79,7 +79,7 @@ class Header extends Component {
                  </Dropdown.Menu>
                  </Dropdown>
                  </li>**/}
-                <NavDropdown title="Dropdown" id="collasible-nav-dropdown" variant="success">
+                <NavDropdown title="Admin menu" id="collasible-nav-dropdown" className="btn-primary">
                     <NavDropdown.Item href="/AdminComponenet"> Search for employees</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="/EditFrontEdgeAddressPage">Edit company information</NavDropdown.Item>
