@@ -108,7 +108,7 @@ class Login extends Component {
                     </Link>
 
                 </Form>
-
+<div Style="height:120px"></div>
             </div>
 
 
@@ -125,7 +125,7 @@ class Login extends Component {
         return (
 
             //render css
-            <loginpage>
+            <loginpage >
                 {headerLinks}
             </loginpage>
 

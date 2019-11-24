@@ -2,28 +2,22 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 
-
-//WE WANT TO SET THE INITIALSTATE OF OUR APP PRIO NUMBER 1
 const initalState = {};
-
 const middleware = [thunk];
 
-//DEFINE THE STORE
 let store;
 
-//CONFIGURATION PART SO STORE WORKS WITH CHROME AND REDUX DEVTOOL AND OTHER BROWSERS
-if (window.navigator.userAgent.includes("Chrome")) {
+const ReactReduxDevTools =
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+if (window.navigator.userAgent.includes("Chrome") && ReactReduxDevTools) {
     store = createStore(
         rootReducer,
         initalState,
         compose(
-            //PASS AN ARRAY OF MIDDLEWARE
             applyMiddleware(...middleware),
-           window.__REDUX_DEVTOOLS_EXTENSION__ &&
-              window.__REDUX_DEVTOOLS_EXTENSION__()
-            //window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose
-
-)
+            ReactReduxDevTools
+        )
     );
 } else {
     store = createStore(
@@ -32,4 +26,5 @@ if (window.navigator.userAgent.includes("Chrome")) {
         compose(applyMiddleware(...middleware))
     );
 }
+
 export default store;
