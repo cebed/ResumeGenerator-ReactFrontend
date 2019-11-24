@@ -97,14 +97,7 @@ loginpage {
 }
 
 loginpage div.head {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  width: 70%;
-  grid-template-columns: repeat(2,1fr);
-  margin: 0 auto;
-  padding-top: 10%;
-  align-items: center;
+
 
 }
 
@@ -115,14 +108,7 @@ loginpage div.head  {
 
 {/* vertikal linje */}
 loginpage div.head h1 {
-  font-size: 5rem;
-  font-weight: bold;
-  height: 340px;
-  margin-bottom: 10%;
-  margin-top: -10%;
-  padding-top: -1px;
-  letter-spacing: 4px;
-  border-right: 2px solid #111;
+
 }
 
 loginpage .last-word{
@@ -178,8 +164,7 @@ loginpage div.head p {
   opacity: 20;
 }
 .logier{
-  margin-left: 150px;
-  font-weight: bold;
+
   width: 90%;
 }
 
@@ -189,7 +174,7 @@ footer {
   display: grid;
   align-items: center;
   text-align: center;
-  
+
 
   /*
   position:fixed;
@@ -222,6 +207,7 @@ footer ul:first-of-type li{
 footer ul:first-of-type li span {
   font-weight: bold;
   color: lightseagreen;
+
 }
 
 
