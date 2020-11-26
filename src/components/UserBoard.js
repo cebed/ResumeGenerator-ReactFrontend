@@ -40,8 +40,8 @@ class UserBoard extends Component {
                             </div>
 
                         </h4>
+                        {/**<LinkedInPage/>**/}
 
-                        <LinkedInPage/>
                     </div>
 
                     <div className="row">

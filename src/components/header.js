@@ -158,15 +158,16 @@ class Header extends Component {
                  </div>
                  </nav>**/}
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">Resume generator</Navbar.Brand>
+                    <Navbar.Brand href={`/ResumeBoard/${user.id}`}>Resume generator</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mr-auto">
+                        <Nav className="ml-auto">
                             {Admin}
 
-                        </Nav>
+
 
                             {headerLinks}
+                        </Nav>
 
                     </Navbar.Collapse>
                 </Navbar>

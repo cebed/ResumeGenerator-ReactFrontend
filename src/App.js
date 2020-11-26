@@ -111,7 +111,7 @@ class App extends Component {
                             <Route path="/ForgotPasswordPage" component={ForgotPasswordPage}/>
 
                         </Switch>
-                        <Footer/>
+                        <Footer />
 
 
                     </div>

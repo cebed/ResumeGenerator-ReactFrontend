@@ -11,8 +11,8 @@ class Login extends Component {
     constructor() {
         super();
         this.state = {
-            username: '',
-            password: '',
+            username: 'nurhusein11@hotmail.com',
+            password: '111111',
             errors: {}
         };
         this.onChange = this.onChange.bind(this);
@@ -66,7 +66,9 @@ class Login extends Component {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-6">
-                            <div Style="height:150px"></div>
+                            <div Style="height:50px"></div>
+                            to log in as a user:  testuser@test.se
+                            <div Style="height:100px"></div>
                             <Form className="logier" onSubmit={this.onSubmit}>
                                 <Form.Group>
                                     <Form.Label>Email</Form.Label>

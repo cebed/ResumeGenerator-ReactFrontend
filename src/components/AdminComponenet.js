@@ -18,12 +18,12 @@ class adminComponenet extends Component {
     renderUsers() {
         return _.map(this.props.user.user, list => {
             return (
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="paddingCard">
+
+                   <div className="col-md-4 ">
+                        <div className="row ">
 
 
-                            <Card className="text-center" style={{width: '18rem'}}>
+                            <Card className="" style={{width: '18rem'}}>
                                 <Card.Img variant="top" src={list.image} alt="Upload Image"/>
                                 <Card.Body>
                                     <Card.Title>{list.fullName}</Card.Title>
@@ -44,8 +44,7 @@ class adminComponenet extends Component {
                             </Card>
 
                         </div>
-                    </div>
-                </div>
+                 </div>
 
 
             )
@@ -58,10 +57,15 @@ class adminComponenet extends Component {
         return (
             <div>
 
-                <div className="container">
-                    <div className="card card-body bg-light mb-3">
+                <div className="container ">
+                    <div Style="height:100px"></div>
+                    <h3 >  Search for employees</h3>
+                    <div Style="height:200px"></div>
+                    <div className="row  ">
+
                         {this.renderUsers()}
-                    </div>
+
+                        </div>
                 </div>
             </div>
         );

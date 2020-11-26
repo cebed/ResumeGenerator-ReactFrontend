@@ -157,6 +157,7 @@ class EditCoursePage extends Component {
                         </div>
                     </div>
                 </div>
+                <div Style="height:300px"></div>
             </div>
 
         );
